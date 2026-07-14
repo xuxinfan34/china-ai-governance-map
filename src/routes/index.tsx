@@ -12,8 +12,9 @@ function Index() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
       <section className="max-w-3xl">
-        <p className="mb-4 font-zh text-sm tracking-wider text-primary">中国 · 人工智能治理</p>
+        <p className="mb-4 font-serif text-sm tracking-wider text-primary">Jingwei · 经纬</p>
         <h1 className="font-serif text-5xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-6xl">
+
           {t("tagline")}
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">

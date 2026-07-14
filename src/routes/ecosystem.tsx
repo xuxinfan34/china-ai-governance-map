@@ -5,7 +5,7 @@ import { useLang } from "../lib/i18n";
 export const Route = createFileRoute("/ecosystem")({
   head: () => ({
     meta: [
-      { title: "Ecosystem Actors — China AI Governance Map" },
+      { title: "Ecosystem Actors — Jingwei (经纬)" },
       {
         name: "description",
         content:
@@ -13,6 +13,7 @@ export const Route = createFileRoute("/ecosystem")({
       },
     ],
   }),
+
   component: Page,
 });
 

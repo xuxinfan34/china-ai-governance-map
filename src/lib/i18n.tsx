@@ -10,8 +10,9 @@ type Ctx = {
 
 export const strings = {
   en: {
-    site_title: "China AI Governance Map",
-    tagline: "Making China's AI governance ecosystem legible",
+    site_title: "Jingwei",
+    tagline: "A tool to navigate China AI Governance",
+
     nav_home: "Home",
     nav_ecosystem: "Ecosystem Actors",
     nav_bridges: "Bridges & Interpreters",
@@ -49,8 +50,9 @@ export const strings = {
     no_results: "No entries match these filters.",
   },
   zh: {
-    site_title: "中国人工智能治理图谱",
-    tagline: "让中国人工智能治理生态清晰可读",
+    site_title: "经纬",
+    tagline: "中国人工智能治理导航工具",
+
     nav_home: "首页",
     nav_ecosystem: "生态参与者",
     nav_bridges: "桥梁与解读者",
