@@ -13,6 +13,7 @@ import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as BridgesRouteImport } from './routes/bridges'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ActorsIdRouteImport } from './routes/actors.$id'
 
 const EcosystemRoute = EcosystemRouteImport.update({
   id: '/ecosystem',
@@ -34,18 +35,25 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ActorsIdRoute = ActorsIdRouteImport.update({
+  id: '/actors/$id',
+  path: '/actors/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/bridges': typeof BridgesRoute
   '/ecosystem': typeof EcosystemRoute
+  '/actors/$id': typeof ActorsIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/bridges': typeof BridgesRoute
   '/ecosystem': typeof EcosystemRoute
+  '/actors/$id': typeof ActorsIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,14 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/bridges': typeof BridgesRoute
   '/ecosystem': typeof EcosystemRoute
+  '/actors/$id': typeof ActorsIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/bridges' | '/ecosystem'
+  fullPaths: '/' | '/about' | '/bridges' | '/ecosystem' | '/actors/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/bridges' | '/ecosystem'
-  id: '__root__' | '/' | '/about' | '/bridges' | '/ecosystem'
+  to: '/' | '/about' | '/bridges' | '/ecosystem' | '/actors/$id'
+  id: '__root__' | '/' | '/about' | '/bridges' | '/ecosystem' | '/actors/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +76,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BridgesRoute: typeof BridgesRoute
   EcosystemRoute: typeof EcosystemRoute
+  ActorsIdRoute: typeof ActorsIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +109,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/actors/$id': {
+      id: '/actors/$id'
+      path: '/actors/$id'
+      fullPath: '/actors/$id'
+      preLoaderRoute: typeof ActorsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +124,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BridgesRoute: BridgesRoute,
   EcosystemRoute: EcosystemRoute,
+  ActorsIdRoute: ActorsIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

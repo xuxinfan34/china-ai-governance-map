@@ -34,11 +34,11 @@ export const Route = createFileRoute("/actors/$id")({
 });
 
 function Profile() {
-  const { actor } = Route.useLoaderData();
+  const { actor } = Route.useLoaderData() as { actor: Actor };
   const { t } = useLang();
 
   const related = actor.related
-    .map((id) => ACTORS.find((a) => a.id === id))
+    .map((id: string) => ACTORS.find((a) => a.id === id))
     .filter((a): a is Actor => Boolean(a));
 
   return (
@@ -79,7 +79,7 @@ function Profile() {
       {actor.leadership.length > 0 && (
         <Section title={t("leadership")}>
           <ul className="divide-y divide-border rounded-md border border-border">
-            {actor.leadership.map((l) => (
+            {actor.leadership.map((l: { name: string; role: string }) => (
               <li key={l.name} className="flex justify-between px-4 py-3">
                 <span className="font-serif text-foreground">{l.name}</span>
                 <span className="text-sm text-muted-foreground">{l.role}</span>
@@ -109,7 +109,7 @@ function Profile() {
       {related.length > 0 && (
         <Section title={t("related")}>
           <div className="flex flex-wrap gap-2">
-            {related.map((r) => (
+            {related.map((r: Actor) => (
               <Link
                 key={r.id}
                 to="/actors/$id"
