@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
+import { Route as BridgesRouteImport } from './routes/bridges'
 import { Route as IndexRouteImport } from './routes/index'
 
 const EcosystemRoute = EcosystemRouteImport.update({
   id: '/ecosystem',
   path: '/ecosystem',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BridgesRoute = BridgesRouteImport.update({
+  id: '/bridges',
+  path: '/bridges',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,31 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bridges': typeof BridgesRoute
   '/ecosystem': typeof EcosystemRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bridges': typeof BridgesRoute
   '/ecosystem': typeof EcosystemRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bridges': typeof BridgesRoute
   '/ecosystem': typeof EcosystemRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/ecosystem'
+  fullPaths: '/' | '/bridges' | '/ecosystem'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ecosystem'
-  id: '__root__' | '/' | '/ecosystem'
+  to: '/' | '/bridges' | '/ecosystem'
+  id: '__root__' | '/' | '/bridges' | '/ecosystem'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BridgesRoute: typeof BridgesRoute
   EcosystemRoute: typeof EcosystemRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/ecosystem'
       fullPath: '/ecosystem'
       preLoaderRoute: typeof EcosystemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bridges': {
+      id: '/bridges'
+      path: '/bridges'
+      fullPath: '/bridges'
+      preLoaderRoute: typeof BridgesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BridgesRoute: BridgesRoute,
   EcosystemRoute: EcosystemRoute,
 }
 export const routeTree = rootRouteImport
