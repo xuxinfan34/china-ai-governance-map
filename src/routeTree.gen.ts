@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as BridgesRouteImport } from './routes/bridges'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const EcosystemRoute = EcosystemRouteImport.update({
@@ -23,6 +24,11 @@ const BridgesRoute = BridgesRouteImport.update({
   path: '/bridges',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,30 +37,34 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/bridges': typeof BridgesRoute
   '/ecosystem': typeof EcosystemRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/bridges': typeof BridgesRoute
   '/ecosystem': typeof EcosystemRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/bridges': typeof BridgesRoute
   '/ecosystem': typeof EcosystemRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/bridges' | '/ecosystem'
+  fullPaths: '/' | '/about' | '/bridges' | '/ecosystem'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/bridges' | '/ecosystem'
-  id: '__root__' | '/' | '/bridges' | '/ecosystem'
+  to: '/' | '/about' | '/bridges' | '/ecosystem'
+  id: '__root__' | '/' | '/about' | '/bridges' | '/ecosystem'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   BridgesRoute: typeof BridgesRoute
   EcosystemRoute: typeof EcosystemRoute
 }
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BridgesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   BridgesRoute: BridgesRoute,
   EcosystemRoute: EcosystemRoute,
 }
