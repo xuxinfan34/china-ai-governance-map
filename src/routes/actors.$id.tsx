@@ -13,7 +13,7 @@ export const Route = createFileRoute("/actors/$id")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Not found — China AI Governance Map" },
+          { title: "Not found — Jingwei (经纬)" },
           { name: "robots", content: "noindex" },
         ],
       };
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/actors/$id")({
     const a = loaderData.actor;
     return {
       meta: [
-        { title: a.name_en + " — China AI Governance Map" },
+        { title: a.name_en + " — Jingwei (经纬)" },
         { name: "description", content: a.overview },
         { property: "og:title", content: a.name_en },
         { property: "og:description", content: a.overview },
