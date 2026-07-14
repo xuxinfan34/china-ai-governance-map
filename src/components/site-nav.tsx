@@ -12,8 +12,9 @@ export function SiteNav() {
             {t("site_title")}
           </span>
           <span className="hidden font-zh text-sm text-muted-foreground sm:inline">
-            中国人工智能治理图谱
+            中国人工智能治理导航工具
           </span>
+
         </Link>
         <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
           <NavLink to="/ecosystem">{t("nav_ecosystem")}</NavLink>
