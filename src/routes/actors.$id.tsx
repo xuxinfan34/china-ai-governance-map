@@ -92,9 +92,11 @@ function Profile() {
         {actor.name_zh && (
           <p className="mt-2 font-zh text-2xl text-muted-foreground">{actor.name_zh}</p>
         )}
-        <p className="mt-4 text-sm text-muted-foreground">
-          {t("location")}: {actor.location}
-        </p>
+        {actor.location && (
+          <p className="mt-4 text-sm text-muted-foreground">
+            {t("location")}: {actor.location}
+          </p>
+        )}
       </header>
 
       <Section title={t("overview")}>
