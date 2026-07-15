@@ -1,5 +1,21 @@
 export type Layer = "ecosystem" | "bridge";
 export type SafetyRelevance = "core" | "significant" | "contextual";
+export type StakeholderType = "government" | "research" | "company" | "civil";
+export type Confidence = "High" | "Medium" | "Low";
+
+export const STAKEHOLDER_COLORS: Record<StakeholderType, string> = {
+  government: "#2E5C8A",
+  research: "#4A7C59",
+  company: "#C97B3B",
+  civil: "#C9A227",
+};
+
+export const STAKEHOLDER_LABEL: Record<StakeholderType, { en: string; zh: string }> = {
+  government: { en: "Government", zh: "政府" },
+  research: { en: "Research", zh: "研究" },
+  company: { en: "Company", zh: "企业" },
+  civil: { en: "Civil / Association", zh: "行业协会 / 民间" },
+};
 
 export interface Actor {
   id: string;
@@ -7,14 +23,45 @@ export interface Actor {
   name_en: string;
   name_zh: string;
   category: string;
+  stakeholder_type: StakeholderType;
+  /** For bridges: newsletter | podcast | organization | individual | translation */
+  bridge_type?: "newsletter" | "podcast" | "organization" | "individual" | "translation";
   location: string;
-  safety_relevance: SafetyRelevance;
+  safety_relevance?: SafetyRelevance;
   overview: string;
   leadership: { name: string; role: string }[];
   website: string;
-  rationale: string;
-  related: string[];
+  rationale?: string;
+  related?: string[];
   sources?: { label: string; url: string }[];
+}
+
+export interface Relationship {
+  id: string;
+  source: string;
+  target: string;
+  type: string;
+  direction: "directed" | "undirected";
+  summary: string;
+  instrument?: string;
+  status: "Current" | "Historical";
+  confidence: Confidence;
+  evidence_url: string;
+  evidence_title: string;
+  evidence_lang: "Chinese" | "English";
+  evidence_date: string;
+}
+
+export interface GovDocument {
+  id: string;
+  title_en: string;
+  title_zh: string;
+  doc_type: string;
+  issuers: string[];
+  issued: string;
+  status: "In force" | "Draft" | "Superseded";
+  official_url: string;
+  translation_url?: string;
 }
 
 export const ACTORS: Actor[] = [
