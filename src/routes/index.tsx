@@ -22,7 +22,7 @@ function Index() {
         </p>
       </section>
 
-      <section className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2">
+      <section className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
         <EntryCard
           to="/ecosystem"
           eyebrow="I."
@@ -39,13 +39,21 @@ function Index() {
           body="Newsletters, podcasts, organizations, and individuals translating Chinese AI discourse for the world."
           cta={t("enter")}
         />
+        <EntryCard
+          to="/network"
+          eyebrow="III."
+          title={t("nav_network")}
+          zh="关系网络"
+          body="Verified institutional relationships among China-based ecosystem actors, rendered as a force-directed graph."
+          cta={t("enter")}
+        />
       </section>
 
       <section className="mt-20 border-t border-border pt-10">
         <div className="grid grid-cols-3 gap-6">
           <Stat n={ECOSYSTEM_STATS.ecosystem} label={t("stat_ecosystem")} />
           <Stat n={ECOSYSTEM_STATS.bridges} label={t("stat_bridges")} />
-          <Stat n={ECOSYSTEM_STATS.total} label={t("stat_total")} />
+          <Stat n={ECOSYSTEM_STATS.relationships} label={t("stat_relationships")} />
         </div>
       </section>
     </div>
