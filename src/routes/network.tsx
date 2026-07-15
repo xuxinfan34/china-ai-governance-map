@@ -26,9 +26,6 @@ export const Route = createFileRoute("/network")({
   ssr: false,
 });
 
-type ConfMode = "high" | "hm" | "all";
-type StatusMode = "current" | "all";
-
 interface GraphNode {
   id: string;
   actor: Actor;
@@ -46,9 +43,6 @@ function NetworkPage() {
   const [Graph, setGraph] = useState<any>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
   const [selected, setSelected] = useState<string | null>(null);
-  const [conf, setConf] = useState<ConfMode>("all");
-  const [status, setStatus] = useState<StatusMode>("all");
-  const [typeFilter, setTypeFilter] = useState<string | "all">("all");
   const [search, setSearch] = useState("");
   const [panelOpen, setPanelOpen] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -84,34 +78,68 @@ function NetworkPage() {
     [ecosystemIds],
   );
 
-  const topTypes = useMemo(() => {
+  const categoryCounts = useMemo(() => {
     const counts = new Map<string, number>();
-    eligibleRels.forEach((r) => counts.set(r.type, (counts.get(r.type) ?? 0) + 1));
-    return Array.from(counts.entries())
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 8)
-      .map(([k]) => k);
-  }, [eligibleRels]);
+    ecosystemActors.forEach((a) => counts.set(a.category, (counts.get(a.category) ?? 0) + 1));
+    return Array.from(counts.entries()).sort((a, b) => a[0].localeCompare(b[0]));
+  }, [ecosystemActors]);
 
-  const filteredRels = useMemo(
+  const locationCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    ecosystemActors.forEach((a) => {
+      if (a.location && a.location.trim()) counts.set(a.location, (counts.get(a.location) ?? 0) + 1);
+    });
+    return Array.from(counts.entries()).sort((a, b) => a[0].localeCompare(b[0]));
+  }, [ecosystemActors]);
+
+  const [selCats, setSelCats] = useState<Set<string>>(new Set());
+  const [selLocs, setSelLocs] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    setSelCats(new Set(categoryCounts.map(([k]) => k)));
+  }, [categoryCounts]);
+  useEffect(() => {
+    setSelLocs(new Set(locationCounts.map(([k]) => k)));
+  }, [locationCounts]);
+
+  const visibleActors = useMemo(
     () =>
-      eligibleRels.filter((r) => {
-        if (conf === "high" && r.confidence !== "High") return false;
-        if (conf === "hm" && r.confidence === "Low") return false;
-        if (status === "current" && r.status !== "Current") return false;
-        if (typeFilter !== "all" && r.type !== typeFilter) return false;
+      ecosystemActors.filter((a) => {
+        if (!selCats.has(a.category)) return false;
+        if (a.location && a.location.trim() && !selLocs.has(a.location)) return false;
         return true;
       }),
-    [eligibleRels, conf, status, typeFilter],
+    [ecosystemActors, selCats, selLocs],
+  );
+
+  const visibleIds = useMemo(() => new Set(visibleActors.map((a) => a.id)), [visibleActors]);
+
+  const filteredRels = useMemo(
+    () => eligibleRels.filter((r) => visibleIds.has(r.source) && visibleIds.has(r.target)),
+    [eligibleRels, visibleIds],
   );
 
   const graphData = useMemo(
     () => ({
-      nodes: ecosystemActors.map((a) => ({ id: a.id, actor: a })) as GraphNode[],
+      nodes: visibleActors.map((a) => ({ id: a.id, actor: a })) as GraphNode[],
       links: filteredRels.map((r) => ({ source: r.source, target: r.target, rel: r })) as GraphLink[],
     }),
-    [ecosystemActors, filteredRels],
+    [visibleActors, filteredRels],
   );
+
+  // Smoothly reheat simulation when filters change
+  useEffect(() => {
+    if (fgRef.current?.d3ReheatSimulation) {
+      fgRef.current.d3ReheatSimulation();
+    }
+  }, [visibleIds, filteredRels]);
+
+  function toggle(set: Set<string>, setSet: (s: Set<string>) => void, key: string) {
+    const next = new Set(set);
+    if (next.has(key)) next.delete(key);
+    else next.add(key);
+    setSet(next);
+  }
 
   const connectedIds = useMemo(() => {
     if (!selected) return null;
@@ -268,45 +296,66 @@ function NetworkPage() {
                 {panelOpen ? "→" : "←"}
               </button>
               <div className="h-full w-72 overflow-y-auto border-l border-border bg-background/95 p-5 backdrop-blur">
-                <p className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                  {t("filter_type")}
-                </p>
-                <div className="mb-5 flex flex-wrap gap-1.5">
-                  <PanelChip active={typeFilter === "all"} onClick={() => setTypeFilter("all")}>
-                    {t("filter_all")}
-                  </PanelChip>
-                  {topTypes.map((tp) => (
-                    <PanelChip key={tp} active={typeFilter === tp} onClick={() => setTypeFilter(tp)}>
-                      {tp}
+                <div className="mb-5 flex items-center justify-between">
+                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                    Stakeholder type
+                  </p>
+                  <div className="flex gap-2 text-[10px] uppercase tracking-wider">
+                    <button
+                      onClick={() => setSelCats(new Set(categoryCounts.map(([k]) => k)))}
+                      className="text-muted-foreground hover:text-primary"
+                    >
+                      All
+                    </button>
+                    <button
+                      onClick={() => setSelCats(new Set())}
+                      className="text-muted-foreground hover:text-primary"
+                    >
+                      None
+                    </button>
+                  </div>
+                </div>
+                <div className="mb-6 flex flex-wrap gap-1.5">
+                  {categoryCounts.map(([cat, count]) => (
+                    <PanelChip
+                      key={cat}
+                      active={selCats.has(cat)}
+                      onClick={() => toggle(selCats, setSelCats, cat)}
+                    >
+                      {cat} <span className="opacity-70">({count})</span>
                     </PanelChip>
                   ))}
                 </div>
 
-                <p className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                  Confidence
-                </p>
-                <div className="mb-5 flex flex-wrap gap-1.5">
-                  <PanelChip active={conf === "high"} onClick={() => setConf("high")}>
-                    {t("conf_high_only")}
-                  </PanelChip>
-                  <PanelChip active={conf === "hm"} onClick={() => setConf("hm")}>
-                    {t("conf_high_medium")}
-                  </PanelChip>
-                  <PanelChip active={conf === "all"} onClick={() => setConf("all")}>
-                    {t("conf_all")}
-                  </PanelChip>
+                <div className="mb-5 flex items-center justify-between">
+                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                    Location
+                  </p>
+                  <div className="flex gap-2 text-[10px] uppercase tracking-wider">
+                    <button
+                      onClick={() => setSelLocs(new Set(locationCounts.map(([k]) => k)))}
+                      className="text-muted-foreground hover:text-primary"
+                    >
+                      All
+                    </button>
+                    <button
+                      onClick={() => setSelLocs(new Set())}
+                      className="text-muted-foreground hover:text-primary"
+                    >
+                      None
+                    </button>
+                  </div>
                 </div>
-
-                <p className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                  Status
-                </p>
-                <div className="mb-5 flex flex-wrap gap-1.5">
-                  <PanelChip active={status === "current"} onClick={() => setStatus("current")}>
-                    {t("status_current")}
-                  </PanelChip>
-                  <PanelChip active={status === "all"} onClick={() => setStatus("all")}>
-                    {t("status_all")}
-                  </PanelChip>
+                <div className="flex flex-wrap gap-1.5">
+                  {locationCounts.map(([loc, count]) => (
+                    <PanelChip
+                      key={loc}
+                      active={selLocs.has(loc)}
+                      onClick={() => toggle(selLocs, setSelLocs, loc)}
+                    >
+                      {loc} <span className="opacity-70">({count})</span>
+                    </PanelChip>
+                  ))}
                 </div>
               </div>
             </div>
@@ -368,8 +417,8 @@ function PanelChip({
       onClick={onClick}
       className={`rounded-full border px-2.5 py-0.5 text-[11px] transition-colors ${
         active
-          ? "border-primary bg-primary text-primary-foreground"
-          : "border-border bg-card text-foreground hover:border-primary/50"
+          ? "border-[#9E2B25] bg-[#9E2B25] text-white"
+          : "border-[#9E2B25] bg-transparent text-neutral-600 hover:bg-[#9E2B25]/10"
       }`}
     >
       {children}
