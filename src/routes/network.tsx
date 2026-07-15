@@ -264,14 +264,24 @@ function NetworkPage() {
                   const color = STAKEHOLDER_COLORS[a.stakeholder_type];
                   const dim = connectedIds && !connectedIds.has(a.id);
                   ctx.globalAlpha = dim ? 0.15 : 1;
-                  ctx.beginPath();
-                  ctx.arc(node.x, node.y, 6, 0, 2 * Math.PI, false);
                   ctx.fillStyle = color;
-                  ctx.fill();
-                  if (selected === a.id) {
-                    ctx.lineWidth = 2;
-                    ctx.strokeStyle = "#9E2B25";
-                    ctx.stroke();
+                  if (a.layer === "bridge") {
+                    const s = 11;
+                    ctx.fillRect(node.x - s / 2, node.y - s / 2, s, s);
+                    if (selected === a.id) {
+                      ctx.lineWidth = 2;
+                      ctx.strokeStyle = "#9E2B25";
+                      ctx.strokeRect(node.x - s / 2, node.y - s / 2, s, s);
+                    }
+                  } else {
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, 6, 0, 2 * Math.PI, false);
+                    ctx.fill();
+                    if (selected === a.id) {
+                      ctx.lineWidth = 2;
+                      ctx.strokeStyle = "#9E2B25";
+                      ctx.stroke();
+                    }
                   }
                   const label = a.name_en.length > 28 ? a.name_en.slice(0, 26) + "…" : a.name_en;
                   const fontSize = 11 / Math.max(globalScale, 1);
