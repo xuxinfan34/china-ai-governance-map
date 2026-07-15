@@ -1,8 +1,21 @@
+import { actors as RAW_ACTORS } from "../data/actors";
+import { relationships as RAW_RELATIONSHIPS } from "../data/relationships";
+import { documents as RAW_DOCUMENTS } from "../data/documents";
+
 export type Layer = "ecosystem" | "bridge";
-export type SafetyRelevance = "core" | "significant" | "contextual";
 export type StakeholderType = "government" | "research" | "company" | "civil";
-export type Confidence = "High" | "Medium" | "Low";
+export type Confidence = "High" | "Medium" | "Low" | string;
 export type BridgeType = "newsletter" | "podcast" | "organization" | "individual" | "translation";
+
+export const REL_CATEGORIES = [
+  "Joint rulemaking",
+  "Institutional relationship",
+  "Personnel bridge",
+  "Membership",
+  "Collaboration",
+  "Publication / production",
+] as const;
+export type RelCategory = (typeof REL_CATEGORIES)[number];
 
 export const STAKEHOLDER_COLORS: Record<StakeholderType, string> = {
   government: "#2E5C8A",
@@ -35,13 +48,10 @@ export interface Actor {
   stakeholder_type: StakeholderType;
   bridge_type?: BridgeType;
   location: string;
-  safety_relevance?: SafetyRelevance;
   overview: string;
   leadership: { name: string; role: string }[];
   website: string;
-  rationale?: string;
   related?: string[];
-  sources?: { label: string; url: string }[];
 }
 
 export interface Relationship {
@@ -49,15 +59,18 @@ export interface Relationship {
   source: string;
   target: string;
   type: string;
-  direction: "directed" | "undirected";
+  category: string;
+  basis?: string;
+  direction: "directed" | "undirected" | string;
   summary: string;
   instrument?: string;
-  status: "Current" | "Historical";
+  status: string;
   confidence: Confidence;
   evidence_url: string;
   evidence_title: string;
-  evidence_lang: "Chinese" | "English";
+  evidence_lang: "Chinese" | "English" | string;
   evidence_date: string;
+  notes?: string;
 }
 
 export interface GovDocument {
@@ -65,12 +78,80 @@ export interface GovDocument {
   title_en: string;
   title_zh: string;
   doc_type: string;
-  issuers: string[];
+  issuers: string[]; // actor ids (nulls filtered)
+  issuers_display: string[]; // names for display when no id link
   issued: string;
-  status: "In force" | "Draft" | "Superseded";
+  status: string;
+  relevance?: string;
   official_url: string;
   translation_url?: string;
 }
+
+function deriveStakeholder(category: string): StakeholderType {
+  const c = category.toLowerCase();
+  if (c.startsWith("government")) return "government";
+  if (c.startsWith("research institute") || c.includes("academia")) return "research";
+  if (c.startsWith("ai company") || c.startsWith("ai safety company")) return "company";
+  return "civil";
+}
+
+function deriveBridgeType(category: string): BridgeType | undefined {
+  const c = category.toLowerCase();
+  if (!c.startsWith("bridge")) return undefined;
+  if (c.includes("newsletter") && c.includes("podcast")) return "podcast";
+  if (c.includes("newsletter") || c.includes("substack")) return "newsletter";
+  if (c.includes("podcast")) return "podcast";
+  if (c.includes("translation")) return "translation";
+  if (c.includes("individual")) return "individual";
+  return "organization";
+}
+
+export const ACTORS: Actor[] = RAW_ACTORS.map((a) => ({
+  id: a.id,
+  layer: a.layer as Layer,
+  name_en: a.name_en,
+  name_zh: a.name_zh,
+  category: a.category,
+  stakeholder_type: deriveStakeholder(a.category),
+  bridge_type: deriveBridgeType(a.category),
+  location: "",
+  overview: a.overview,
+  leadership: a.leadership ?? [],
+  website: a.website ?? "",
+}));
+
+export const RELATIONSHIPS: Relationship[] = RAW_RELATIONSHIPS.map((r) => ({
+  id: r.id,
+  source: r.source,
+  target: r.target,
+  type: r.type,
+  category: r.category,
+  basis: r.basis,
+  direction: r.direction,
+  summary: r.summary,
+  instrument: r.instrument,
+  status: r.status,
+  confidence: r.confidence,
+  evidence_url: r.evidence?.url ?? "",
+  evidence_title: r.evidence?.title ?? "",
+  evidence_lang: r.evidence?.lang ?? "",
+  evidence_date: r.evidence_date ?? r.evidence?.published ?? "",
+  notes: r.notes,
+}));
+
+export const DOCUMENTS: GovDocument[] = RAW_DOCUMENTS.map((d) => ({
+  id: d.id,
+  title_en: d.title_en,
+  title_zh: d.title_zh,
+  doc_type: d.doc_type,
+  issuers: (d.issuers ?? []).map((i) => i.id).filter((x): x is string => Boolean(x)),
+  issuers_display: (d.issuers ?? []).map((i) => i.name),
+  issued: d.issued,
+  status: d.status,
+  relevance: d.relevance,
+  official_url: d.official_url,
+  translation_url: d.translation_url || undefined,
+}));
 
 export const ACTORS: Actor[] = [
   {
@@ -620,7 +701,7 @@ export function documentsForActor(id: string): GovDocument[] {
 }
 
 export const ECOSYSTEM_STATS = {
-  ecosystem: 61,
-  bridges: 27,
-  relationships: 86,
+  ecosystem: ACTORS.filter((a) => a.layer === "ecosystem").length,
+  bridges: ACTORS.filter((a) => a.layer === "bridge").length,
+  relationships: RELATIONSHIPS.length,
 };
