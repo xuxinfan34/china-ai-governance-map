@@ -80,11 +80,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Jingwei (经纬) — A tool to navigate China AI Governance" },
-      { name: "description", content: "A bilingual reference to China's AI governance ecosystem: regulators, research institutes, standards bodies, and the bridges that translate them." },
-      { name: "author", content: "Jingwei" },
-      { property: "og:title", content: "Jingwei (经纬)" },
-      { property: "og:description", content: "A tool to navigate China AI Governance." },
+      { title: "China AI Jingwei — An interactive reference to China's AI governance" },
+      { name: "description", content: "An interactive reference to China's AI governance: regulators, research institutes, standards bodies, and the bridges that translate them." },
+      { name: "author", content: "China AI Jingwei" },
+      { property: "og:title", content: "China AI Jingwei" },
+      { property: "og:description", content: "An interactive reference to China's AI governance." },
 
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
