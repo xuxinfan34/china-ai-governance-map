@@ -1,51 +1,45 @@
 import { Link } from "@tanstack/react-router";
 import type { Actor } from "../lib/data";
+import { STAKEHOLDER_COLORS, STAKEHOLDER_LABEL } from "../lib/data";
+import { LayerGlyph } from "./glyphs";
 import { useLang } from "../lib/i18n";
 
-const safetyClasses: Record<Actor["safety_relevance"], string> = {
-  core: "bg-primary/10 text-primary border-primary/30",
-  significant: "bg-accent text-accent-foreground border-border",
-  contextual: "bg-muted text-muted-foreground border-border",
-};
-
 export function ActorCard({ actor }: { actor: Actor }) {
-  const { t, lang } = useLang();
-  const safetyLabel =
-    actor.safety_relevance === "core"
-      ? t("safety_core")
-      : actor.safety_relevance === "significant"
-        ? t("safety_significant")
-        : t("safety_contextual");
+  const { lang } = useLang();
+  const bg = actor.layer === "ecosystem" ? "var(--color-ecosystem-bg)" : "var(--color-bridge-bg)";
+  const dot = STAKEHOLDER_COLORS[actor.stakeholder_type];
+  const typeLabel = STAKEHOLDER_LABEL[actor.stakeholder_type][lang];
   return (
     <Link
       to="/actors/$id"
       params={{ id: actor.id }}
-      className="group flex flex-col gap-3 rounded-lg border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-sm"
+      style={{ backgroundColor: bg }}
+      className="group relative flex flex-col gap-3 rounded-lg border border-border p-6 transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-sm"
     >
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <h3 className="font-serif text-lg leading-tight text-foreground group-hover:text-primary">
-            {actor.name_en}
-          </h3>
-          {actor.name_zh && (
-            <p className="font-zh text-sm text-muted-foreground">{actor.name_zh}</p>
-          )}
-        </div>
+      <div className="absolute right-4 top-4">
+        <LayerGlyph layer={actor.layer} className="h-5 w-5" />
+      </div>
+      <div className="pr-8">
+        <h3 className="font-serif text-lg leading-tight text-foreground group-hover:text-primary">
+          {actor.name_en}
+        </h3>
+        {actor.name_zh && (
+          <p className="font-zh text-sm text-muted-foreground">{actor.name_zh}</p>
+        )}
+      </div>
+      <div className="flex items-center gap-2">
         <span
-          className={`shrink-0 rounded-full border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider ${safetyClasses[actor.safety_relevance]}`}
+          className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background/70 px-2 py-0.5 text-[11px] font-medium text-foreground/80"
         >
-          {safetyLabel}
+          <span className="inline-block h-2 w-2 rounded-full" style={{ backgroundColor: dot }} />
+          {typeLabel}
         </span>
+        <span className="text-xs text-muted-foreground">· {actor.category}</span>
       </div>
       <p className="text-sm leading-relaxed text-foreground/80 line-clamp-3">
         {actor.overview}
       </p>
-      <div className="mt-auto flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
-        <span className="rounded-sm bg-secondary px-2 py-0.5 text-secondary-foreground">
-          {actor.category}
-        </span>
-        <span>· {actor.location}</span>
-      </div>
+      <p className="mt-auto text-xs text-muted-foreground">{actor.location}</p>
     </Link>
   );
 }

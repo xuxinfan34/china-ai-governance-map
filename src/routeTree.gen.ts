@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as NetworkRouteImport } from './routes/network'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as BridgesRouteImport } from './routes/bridges'
 import { Route as AboutRouteImport } from './routes/about'
@@ -19,6 +20,11 @@ import { Route as ActorsIdRouteImport } from './routes/actors.$id'
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NetworkRoute = NetworkRouteImport.update({
+  id: '/network',
+  path: '/network',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EcosystemRoute = EcosystemRouteImport.update({
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/bridges': typeof BridgesRoute
   '/ecosystem': typeof EcosystemRoute
+  '/network': typeof NetworkRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/actors/$id': typeof ActorsIdRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/bridges': typeof BridgesRoute
   '/ecosystem': typeof EcosystemRoute
+  '/network': typeof NetworkRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/actors/$id': typeof ActorsIdRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/bridges': typeof BridgesRoute
   '/ecosystem': typeof EcosystemRoute
+  '/network': typeof NetworkRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/actors/$id': typeof ActorsIdRoute
 }
@@ -79,6 +88,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/bridges'
     | '/ecosystem'
+    | '/network'
     | '/sitemap.xml'
     | '/actors/$id'
   fileRoutesByTo: FileRoutesByTo
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/bridges'
     | '/ecosystem'
+    | '/network'
     | '/sitemap.xml'
     | '/actors/$id'
   id:
@@ -95,6 +106,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/bridges'
     | '/ecosystem'
+    | '/network'
     | '/sitemap.xml'
     | '/actors/$id'
   fileRoutesById: FileRoutesById
@@ -104,6 +116,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BridgesRoute: typeof BridgesRoute
   EcosystemRoute: typeof EcosystemRoute
+  NetworkRoute: typeof NetworkRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ActorsIdRoute: typeof ActorsIdRoute
 }
@@ -115,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/network': {
+      id: '/network'
+      path: '/network'
+      fullPath: '/network'
+      preLoaderRoute: typeof NetworkRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ecosystem': {
@@ -160,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BridgesRoute: BridgesRoute,
   EcosystemRoute: EcosystemRoute,
+  NetworkRoute: NetworkRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ActorsIdRoute: ActorsIdRoute,
 }

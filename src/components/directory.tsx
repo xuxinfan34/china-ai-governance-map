@@ -1,6 +1,14 @@
 import { useMemo, useState } from "react";
-import type { Actor, Layer, SafetyRelevance } from "../lib/data";
-import { ACTORS } from "../lib/data";
+import Fuse from "fuse.js";
+import {
+  ACTORS,
+  STAKEHOLDER_LABEL,
+  BRIDGE_TYPE_LABEL,
+  type Actor,
+  type Layer,
+  type StakeholderType,
+  type BridgeType,
+} from "../lib/data";
 import { ActorCard } from "./actor-card";
 import { useLang } from "../lib/i18n";
 
@@ -11,37 +19,39 @@ interface Props {
 }
 
 export function Directory({ layer, title, subtitle }: Props) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [q, setQ] = useState("");
-  const [type, setType] = useState<string>("all");
+  const [stakeholder, setStakeholder] = useState<string>("all");
+  const [bridgeType, setBridgeType] = useState<string>("all");
   const [loc, setLoc] = useState<string>("all");
-  const [safety, setSafety] = useState<string>("all");
   const [tab, setTab] = useState<"directory" | "map">("directory");
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   const pool = useMemo(() => ACTORS.filter((a) => a.layer === layer), [layer]);
-  const types = useMemo(
-    () => Array.from(new Set(pool.map((a) => a.category))).sort(),
+
+  const fuse = useMemo(
+    () =>
+      new Fuse(pool, {
+        keys: ["name_en", "name_zh", "overview", "category", "location"],
+        threshold: 0.35,
+        ignoreLocation: true,
+      }),
     [pool],
   );
+
   const locations = useMemo(
     () => Array.from(new Set(pool.map((a) => a.location))).sort(),
     [pool],
   );
 
-  const filtered = pool.filter((a: Actor) => {
-    if (type !== "all" && a.category !== type) return false;
+  const stakeholderTypes: StakeholderType[] = ["government", "research", "company", "civil"];
+  const bridgeTypes: BridgeType[] = ["newsletter", "podcast", "organization", "individual", "translation"];
+
+  const searched = q.trim() ? fuse.search(q).map((r) => r.item) : pool;
+  const filtered = searched.filter((a: Actor) => {
+    if (stakeholder !== "all" && a.stakeholder_type !== stakeholder) return false;
+    if (layer === "bridge" && bridgeType !== "all" && a.bridge_type !== bridgeType) return false;
     if (loc !== "all" && a.location !== loc) return false;
-    if (safety !== "all" && a.safety_relevance !== safety) return false;
-    if (q.trim()) {
-      const needle = q.toLowerCase();
-      if (
-        !a.name_en.toLowerCase().includes(needle) &&
-        !a.name_zh.includes(q) &&
-        !a.overview.toLowerCase().includes(needle)
-      )
-        return false;
-    }
     return true;
   });
 
@@ -67,9 +77,7 @@ export function Directory({ layer, title, subtitle }: Props) {
 
       {tab === "map" ? (
         <div className="rounded-lg border border-dashed border-border bg-muted/40 py-24 text-center">
-          <p className="font-serif text-xl italic text-muted-foreground">
-            {t("map_soon")}
-          </p>
+          <p className="font-serif text-xl italic text-muted-foreground">{t("map_soon")}</p>
         </div>
       ) : (
         <>
@@ -88,33 +96,31 @@ export function Directory({ layer, title, subtitle }: Props) {
             </button>
           </div>
 
-          {/* Desktop filters */}
           <div className="mb-8 hidden flex-wrap gap-x-6 gap-y-3 sm:flex">
             <ChipGroup
-              label={t("filter_type")}
-              value={type}
-              onChange={setType}
-              options={types}
+              label={t("filter_stakeholder")}
+              value={stakeholder}
+              onChange={setStakeholder}
+              options={stakeholderTypes}
               tAll={t("filter_all")}
+              labelMap={Object.fromEntries(stakeholderTypes.map((k) => [k, STAKEHOLDER_LABEL[k][lang]]))}
             />
+            {layer === "bridge" && (
+              <ChipGroup
+                label={t("filter_bridge_type")}
+                value={bridgeType}
+                onChange={setBridgeType}
+                options={bridgeTypes}
+                tAll={t("filter_all")}
+                labelMap={Object.fromEntries(bridgeTypes.map((k) => [k, BRIDGE_TYPE_LABEL[k][lang]]))}
+              />
+            )}
             <ChipGroup
               label={t("filter_location")}
               value={loc}
               onChange={setLoc}
               options={locations}
               tAll={t("filter_all")}
-            />
-            <ChipGroup
-              label={t("filter_safety")}
-              value={safety}
-              onChange={setSafety}
-              options={["core", "significant", "contextual"] as SafetyRelevance[]}
-              tAll={t("filter_all")}
-              labelMap={{
-                core: t("safety_core"),
-                significant: t("safety_significant"),
-                contextual: t("safety_contextual"),
-              }}
             />
           </div>
 
@@ -128,7 +134,6 @@ export function Directory({ layer, title, subtitle }: Props) {
             </div>
           )}
 
-          {/* Mobile bottom sheet */}
           {filtersOpen && (
             <div
               className="fixed inset-0 z-50 flex items-end bg-black/40 sm:hidden"
@@ -140,41 +145,37 @@ export function Directory({ layer, title, subtitle }: Props) {
               >
                 <div className="mb-4 flex items-center justify-between">
                   <h2 className="font-serif text-xl">Filters</h2>
-                  <button
-                    onClick={() => setFiltersOpen(false)}
-                    className="text-sm text-muted-foreground"
-                  >
+                  <button onClick={() => setFiltersOpen(false)} className="text-sm text-muted-foreground">
                     Done
                   </button>
                 </div>
                 <div className="flex flex-col gap-5">
                   <ChipGroup
-                    label={t("filter_type")}
-                    value={type}
-                    onChange={setType}
-                    options={types}
+                    label={t("filter_stakeholder")}
+                    value={stakeholder}
+                    onChange={setStakeholder}
+                    options={stakeholderTypes}
                     tAll={t("filter_all")}
+                    labelMap={Object.fromEntries(stakeholderTypes.map((k) => [k, STAKEHOLDER_LABEL[k][lang]]))}
                     stacked
                   />
+                  {layer === "bridge" && (
+                    <ChipGroup
+                      label={t("filter_bridge_type")}
+                      value={bridgeType}
+                      onChange={setBridgeType}
+                      options={bridgeTypes}
+                      tAll={t("filter_all")}
+                      labelMap={Object.fromEntries(bridgeTypes.map((k) => [k, BRIDGE_TYPE_LABEL[k][lang]]))}
+                      stacked
+                    />
+                  )}
                   <ChipGroup
                     label={t("filter_location")}
                     value={loc}
                     onChange={setLoc}
                     options={locations}
                     tAll={t("filter_all")}
-                    stacked
-                  />
-                  <ChipGroup
-                    label={t("filter_safety")}
-                    value={safety}
-                    onChange={setSafety}
-                    options={["core", "significant", "contextual"] as SafetyRelevance[]}
-                    tAll={t("filter_all")}
-                    labelMap={{
-                      core: t("safety_core"),
-                      significant: t("safety_significant"),
-                      contextual: t("safety_contextual"),
-                    }}
                     stacked
                   />
                 </div>
@@ -187,22 +188,12 @@ export function Directory({ layer, title, subtitle }: Props) {
   );
 }
 
-function TabBtn({
-  active,
-  onClick,
-  children,
-}: {
-  active: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-}) {
+function TabBtn({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
   return (
     <button
       onClick={onClick}
       className={`-mb-px border-b-2 px-1 pb-3 text-sm transition-colors ${
-        active
-          ? "border-primary text-foreground"
-          : "border-transparent text-muted-foreground hover:text-foreground"
+        active ? "border-primary text-foreground" : "border-transparent text-muted-foreground hover:text-foreground"
       }`}
     >
       {children}
@@ -229,9 +220,7 @@ function ChipGroup({
 }) {
   return (
     <div className={stacked ? "flex flex-col gap-2" : "flex items-center gap-2"}>
-      <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-        {label}
-      </span>
+      <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{label}</span>
       <div className="flex flex-wrap gap-1.5">
         <Chip active={value === "all"} onClick={() => onChange("all")}>
           {tAll}
@@ -246,15 +235,7 @@ function ChipGroup({
   );
 }
 
-function Chip({
-  active,
-  onClick,
-  children,
-}: {
-  active: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-}) {
+function Chip({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
   return (
     <button
       onClick={onClick}
