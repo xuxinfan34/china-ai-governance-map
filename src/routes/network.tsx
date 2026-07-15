@@ -46,6 +46,7 @@ function NetworkPage() {
   const [selected, setSelected] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const [panelOpen, setPanelOpen] = useState(true);
+  const [showUnconnected, setShowUnconnected] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const fgRef = useRef<any>(null);
 
@@ -71,27 +72,27 @@ function NetworkPage() {
     return () => window.removeEventListener("resize", update);
   }, [Graph]);
 
-  const ecosystemActors = useMemo(() => ACTORS.filter((a) => a.layer === "ecosystem"), []);
-  const ecosystemIds = useMemo(() => new Set(ecosystemActors.map((a) => a.id)), [ecosystemActors]);
+  const allActors = useMemo(() => ACTORS, []);
+  const allIds = useMemo(() => new Set(allActors.map((a) => a.id)), [allActors]);
 
   const eligibleRels = useMemo(
-    () => RELATIONSHIPS.filter((r) => ecosystemIds.has(r.source) && ecosystemIds.has(r.target)),
-    [ecosystemIds],
+    () => RELATIONSHIPS.filter((r) => allIds.has(r.source) && allIds.has(r.target)),
+    [allIds],
   );
 
   const categoryCounts = useMemo(() => {
     const counts = new Map<string, number>();
-    ecosystemActors.forEach((a) => counts.set(a.category, (counts.get(a.category) ?? 0) + 1));
+    allActors.forEach((a) => counts.set(a.category, (counts.get(a.category) ?? 0) + 1));
     return Array.from(counts.entries()).sort((a, b) => a[0].localeCompare(b[0]));
-  }, [ecosystemActors]);
+  }, [allActors]);
 
   const locationCounts = useMemo(() => {
     const counts = new Map<string, number>();
-    ecosystemActors.forEach((a) => {
+    allActors.forEach((a) => {
       if (a.location && a.location.trim()) counts.set(a.location, (counts.get(a.location) ?? 0) + 1);
     });
     return Array.from(counts.entries()).sort((a, b) => a[0].localeCompare(b[0]));
-  }, [ecosystemActors]);
+  }, [allActors]);
 
   const [selCats, setSelCats] = useState<Set<string>>(new Set());
   const [selLocs, setSelLocs] = useState<Set<string>>(new Set());
@@ -104,28 +105,41 @@ function NetworkPage() {
     setSelLocs(new Set(locationCounts.map(([k]) => k)));
   }, [locationCounts]);
 
-  const visibleActors = useMemo(
+  const preActors = useMemo(
     () =>
-      ecosystemActors.filter((a) => {
+      allActors.filter((a) => {
         if (!selCats.has(a.category)) return false;
         if (a.location && a.location.trim() && !selLocs.has(a.location)) return false;
         return true;
       }),
-    [ecosystemActors, selCats, selLocs],
+    [allActors, selCats, selLocs],
   );
 
-  const visibleIds = useMemo(() => new Set(visibleActors.map((a) => a.id)), [visibleActors]);
+  const preIds = useMemo(() => new Set(preActors.map((a) => a.id)), [preActors]);
 
   const filteredRels = useMemo(
     () =>
       eligibleRels.filter(
-        (r) =>
-          visibleIds.has(r.source) &&
-          visibleIds.has(r.target) &&
-          selRelCats.has(r.category),
+        (r) => preIds.has(r.source) && preIds.has(r.target) && selRelCats.has(r.category),
       ),
-    [eligibleRels, visibleIds, selRelCats],
+    [eligibleRels, preIds, selRelCats],
   );
+
+  const connectedActorIds = useMemo(() => {
+    const s = new Set<string>();
+    filteredRels.forEach((r) => {
+      s.add(r.source);
+      s.add(r.target);
+    });
+    return s;
+  }, [filteredRels]);
+
+  const visibleActors = useMemo(
+    () => (showUnconnected ? preActors : preActors.filter((a) => connectedActorIds.has(a.id))),
+    [preActors, connectedActorIds, showUnconnected],
+  );
+
+  const visibleIds = useMemo(() => new Set(visibleActors.map((a) => a.id)), [visibleActors]);
 
   const graphData = useMemo(
     () => ({
@@ -165,7 +179,7 @@ function NetworkPage() {
     e.preventDefault();
     if (!search.trim() || !fgRef.current) return;
     const needle = search.trim().toLowerCase();
-    const match = ecosystemActors.find(
+    const match = allActors.find(
       (a) =>
         a.name_en.toLowerCase().includes(needle) ||
         a.name_zh.includes(search.trim()) ||
@@ -250,14 +264,24 @@ function NetworkPage() {
                   const color = STAKEHOLDER_COLORS[a.stakeholder_type];
                   const dim = connectedIds && !connectedIds.has(a.id);
                   ctx.globalAlpha = dim ? 0.15 : 1;
-                  ctx.beginPath();
-                  ctx.arc(node.x, node.y, 6, 0, 2 * Math.PI, false);
                   ctx.fillStyle = color;
-                  ctx.fill();
-                  if (selected === a.id) {
-                    ctx.lineWidth = 2;
-                    ctx.strokeStyle = "#9E2B25";
-                    ctx.stroke();
+                  if (a.layer === "bridge") {
+                    const s = 11;
+                    ctx.fillRect(node.x - s / 2, node.y - s / 2, s, s);
+                    if (selected === a.id) {
+                      ctx.lineWidth = 2;
+                      ctx.strokeStyle = "#9E2B25";
+                      ctx.strokeRect(node.x - s / 2, node.y - s / 2, s, s);
+                    }
+                  } else {
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, 6, 0, 2 * Math.PI, false);
+                    ctx.fill();
+                    if (selected === a.id) {
+                      ctx.lineWidth = 2;
+                      ctx.strokeStyle = "#9E2B25";
+                      ctx.stroke();
+                    }
                   }
                   const label = a.name_en.length > 28 ? a.name_en.slice(0, 26) + "…" : a.name_en;
                   const fontSize = 11 / Math.max(globalScale, 1);
@@ -304,6 +328,15 @@ function NetworkPage() {
                 {panelOpen ? "→" : "←"}
               </button>
               <div className="h-full w-72 overflow-y-auto border-l border-border bg-background/95 p-5 backdrop-blur">
+                <label className="mb-5 flex items-center gap-2 text-xs text-foreground">
+                  <input
+                    type="checkbox"
+                    checked={showUnconnected}
+                    onChange={(e) => setShowUnconnected(e.target.checked)}
+                    className="h-3.5 w-3.5"
+                  />
+                  Show unconnected actors
+                </label>
                 <div className="mb-5 flex items-center justify-between">
                   <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                     Stakeholder type
