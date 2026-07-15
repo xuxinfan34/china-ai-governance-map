@@ -5,6 +5,7 @@ import {
   RELATIONSHIPS,
   STAKEHOLDER_COLORS,
   STAKEHOLDER_LABEL,
+  REL_CATEGORIES,
   type Actor,
   type Relationship,
 } from "../lib/data";
@@ -94,6 +95,7 @@ function NetworkPage() {
 
   const [selCats, setSelCats] = useState<Set<string>>(new Set());
   const [selLocs, setSelLocs] = useState<Set<string>>(new Set());
+  const [selRelCats, setSelRelCats] = useState<Set<string>>(new Set(REL_CATEGORIES));
 
   useEffect(() => {
     setSelCats(new Set(categoryCounts.map(([k]) => k)));
@@ -115,8 +117,14 @@ function NetworkPage() {
   const visibleIds = useMemo(() => new Set(visibleActors.map((a) => a.id)), [visibleActors]);
 
   const filteredRels = useMemo(
-    () => eligibleRels.filter((r) => visibleIds.has(r.source) && visibleIds.has(r.target)),
-    [eligibleRels, visibleIds],
+    () =>
+      eligibleRels.filter(
+        (r) =>
+          visibleIds.has(r.source) &&
+          visibleIds.has(r.target) &&
+          selRelCats.has(r.category),
+      ),
+    [eligibleRels, visibleIds, selRelCats],
   );
 
   const graphData = useMemo(
@@ -357,6 +365,40 @@ function NetworkPage() {
                     </PanelChip>
                   ))}
                 </div>
+
+                <div className="mb-5 mt-6 flex items-center justify-between">
+                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                    Relationship category
+                  </p>
+                  <div className="flex gap-2 text-[10px] uppercase tracking-wider">
+                    <button
+                      onClick={() => setSelRelCats(new Set(REL_CATEGORIES))}
+                      className="text-muted-foreground hover:text-primary"
+                    >
+                      All
+                    </button>
+                    <button
+                      onClick={() => setSelRelCats(new Set())}
+                      className="text-muted-foreground hover:text-primary"
+                    >
+                      None
+                    </button>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {REL_CATEGORIES.map((cat) => {
+                    const count = eligibleRels.filter((r) => r.category === cat).length;
+                    return (
+                      <PanelChip
+                        key={cat}
+                        active={selRelCats.has(cat)}
+                        onClick={() => toggle(selRelCats, setSelRelCats, cat)}
+                      >
+                        {cat} <span className="opacity-70">({count})</span>
+                      </PanelChip>
+                    );
+                  })}
+                </div>
               </div>
             </div>
 
@@ -382,7 +424,9 @@ function NetworkPage() {
                     style={{ backgroundColor: STAKEHOLDER_COLORS[selectedActor.stakeholder_type] }}
                   />
                   {STAKEHOLDER_LABEL[selectedActor.stakeholder_type][lang]}
-                  <span className="text-muted-foreground">· {selectedActor.location}</span>
+                  {selectedActor.location && (
+                    <span className="text-muted-foreground">· {selectedActor.location}</span>
+                  )}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-foreground/85 line-clamp-4">
                   {selectedActor.overview}

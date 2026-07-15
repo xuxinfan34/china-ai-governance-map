@@ -92,20 +92,16 @@ function Profile() {
         {actor.name_zh && (
           <p className="mt-2 font-zh text-2xl text-muted-foreground">{actor.name_zh}</p>
         )}
-        <p className="mt-4 text-sm text-muted-foreground">
-          {t("location")}: {actor.location}
-        </p>
+        {actor.location && (
+          <p className="mt-4 text-sm text-muted-foreground">
+            {t("location")}: {actor.location}
+          </p>
+        )}
       </header>
 
       <Section title={t("overview")}>
         <p className="leading-relaxed text-foreground/85">{actor.overview}</p>
       </Section>
-
-      {actor.rationale && (
-        <Section title={t("why")}>
-          <p className="leading-relaxed text-foreground/85">{actor.rationale}</p>
-        </Section>
-      )}
 
       {actor.leadership.length > 0 && (
         <Section title={t("leadership")}>
@@ -223,11 +219,11 @@ function Profile() {
   );
 }
 
-function ConfidenceBadge({ c }: { c: "High" | "Medium" | "Low" }) {
+function ConfidenceBadge({ c }: { c: string }) {
   const base = "rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider";
   if (c === "High") return <span className={`${base} bg-foreground text-background`}>High</span>;
   if (c === "Medium") return <span className={`${base} border border-foreground text-foreground`}>Medium</span>;
-  return <span className={`${base} border border-dashed border-foreground text-foreground`}>Low</span>;
+  return <span className={`${base} border border-dashed border-foreground text-foreground`}>{c || "Low"}</span>;
 }
 
 function Section({ title, children }: { title: string; children: ReactNode }) {

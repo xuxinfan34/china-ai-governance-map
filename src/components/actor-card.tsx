@@ -39,7 +39,9 @@ export function ActorCard({ actor }: { actor: Actor }) {
       <p className="text-sm leading-relaxed text-foreground/80 line-clamp-3">
         {actor.overview}
       </p>
-      <p className="mt-auto text-xs text-muted-foreground">{actor.location}</p>
+      {actor.location && (
+        <p className="mt-auto text-xs text-muted-foreground">{actor.location}</p>
+      )}
     </Link>
   );
 }
