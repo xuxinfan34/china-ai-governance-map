@@ -40,7 +40,7 @@ export function Directory({ layer, title, subtitle }: Props) {
   );
 
   const locations = useMemo(
-    () => Array.from(new Set(pool.map((a) => a.location))).sort(),
+    () => Array.from(new Set(pool.map((a) => a.location).filter(Boolean))).sort(),
     [pool],
   );
 
