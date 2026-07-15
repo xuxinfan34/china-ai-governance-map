@@ -328,6 +328,15 @@ function NetworkPage() {
                 {panelOpen ? "→" : "←"}
               </button>
               <div className="h-full w-72 overflow-y-auto border-l border-border bg-background/95 p-5 backdrop-blur">
+                <label className="mb-5 flex items-center gap-2 text-xs text-foreground">
+                  <input
+                    type="checkbox"
+                    checked={showUnconnected}
+                    onChange={(e) => setShowUnconnected(e.target.checked)}
+                    className="h-3.5 w-3.5"
+                  />
+                  Show unconnected actors
+                </label>
                 <div className="mb-5 flex items-center justify-between">
                   <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                     Stakeholder type
