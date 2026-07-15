@@ -7,14 +7,13 @@ export function SiteNav() {
   return (
     <header className="border-b border-border bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-5">
-        <Link to="/" className="flex items-baseline gap-3">
-          <span className="font-serif text-xl font-semibold tracking-tight text-foreground">
-            {t("site_title")}
+        <Link to="/" className="flex flex-col leading-tight">
+          <span className="font-serif text-2xl font-semibold tracking-tight text-foreground">
+            China AI Jingwei
           </span>
-          <span className="hidden font-zh text-sm text-muted-foreground sm:inline">
-            中国人工智能治理导航工具
+          <span className="text-xs text-muted-foreground sm:text-sm">
+            An interactive reference to China's AI governance
           </span>
-
         </Link>
         <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
           <NavLink to="/ecosystem">{t("nav_ecosystem")}</NavLink>
