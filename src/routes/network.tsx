@@ -46,6 +46,7 @@ function NetworkPage() {
   const [selected, setSelected] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const [panelOpen, setPanelOpen] = useState(true);
+  const [showUnconnected, setShowUnconnected] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const fgRef = useRef<any>(null);
 
@@ -71,27 +72,27 @@ function NetworkPage() {
     return () => window.removeEventListener("resize", update);
   }, [Graph]);
 
-  const ecosystemActors = useMemo(() => ACTORS.filter((a) => a.layer === "ecosystem"), []);
-  const ecosystemIds = useMemo(() => new Set(ecosystemActors.map((a) => a.id)), [ecosystemActors]);
+  const allActors = useMemo(() => ACTORS, []);
+  const allIds = useMemo(() => new Set(allActors.map((a) => a.id)), [allActors]);
 
   const eligibleRels = useMemo(
-    () => RELATIONSHIPS.filter((r) => ecosystemIds.has(r.source) && ecosystemIds.has(r.target)),
-    [ecosystemIds],
+    () => RELATIONSHIPS.filter((r) => allIds.has(r.source) && allIds.has(r.target)),
+    [allIds],
   );
 
   const categoryCounts = useMemo(() => {
     const counts = new Map<string, number>();
-    ecosystemActors.forEach((a) => counts.set(a.category, (counts.get(a.category) ?? 0) + 1));
+    allActors.forEach((a) => counts.set(a.category, (counts.get(a.category) ?? 0) + 1));
     return Array.from(counts.entries()).sort((a, b) => a[0].localeCompare(b[0]));
-  }, [ecosystemActors]);
+  }, [allActors]);
 
   const locationCounts = useMemo(() => {
     const counts = new Map<string, number>();
-    ecosystemActors.forEach((a) => {
+    allActors.forEach((a) => {
       if (a.location && a.location.trim()) counts.set(a.location, (counts.get(a.location) ?? 0) + 1);
     });
     return Array.from(counts.entries()).sort((a, b) => a[0].localeCompare(b[0]));
-  }, [ecosystemActors]);
+  }, [allActors]);
 
   const [selCats, setSelCats] = useState<Set<string>>(new Set());
   const [selLocs, setSelLocs] = useState<Set<string>>(new Set());
@@ -104,28 +105,41 @@ function NetworkPage() {
     setSelLocs(new Set(locationCounts.map(([k]) => k)));
   }, [locationCounts]);
 
-  const visibleActors = useMemo(
+  const preActors = useMemo(
     () =>
-      ecosystemActors.filter((a) => {
+      allActors.filter((a) => {
         if (!selCats.has(a.category)) return false;
         if (a.location && a.location.trim() && !selLocs.has(a.location)) return false;
         return true;
       }),
-    [ecosystemActors, selCats, selLocs],
+    [allActors, selCats, selLocs],
   );
 
-  const visibleIds = useMemo(() => new Set(visibleActors.map((a) => a.id)), [visibleActors]);
+  const preIds = useMemo(() => new Set(preActors.map((a) => a.id)), [preActors]);
 
   const filteredRels = useMemo(
     () =>
       eligibleRels.filter(
-        (r) =>
-          visibleIds.has(r.source) &&
-          visibleIds.has(r.target) &&
-          selRelCats.has(r.category),
+        (r) => preIds.has(r.source) && preIds.has(r.target) && selRelCats.has(r.category),
       ),
-    [eligibleRels, visibleIds, selRelCats],
+    [eligibleRels, preIds, selRelCats],
   );
+
+  const connectedActorIds = useMemo(() => {
+    const s = new Set<string>();
+    filteredRels.forEach((r) => {
+      s.add(r.source);
+      s.add(r.target);
+    });
+    return s;
+  }, [filteredRels]);
+
+  const visibleActors = useMemo(
+    () => (showUnconnected ? preActors : preActors.filter((a) => connectedActorIds.has(a.id))),
+    [preActors, connectedActorIds, showUnconnected],
+  );
+
+  const visibleIds = useMemo(() => new Set(visibleActors.map((a) => a.id)), [visibleActors]);
 
   const graphData = useMemo(
     () => ({
@@ -165,7 +179,7 @@ function NetworkPage() {
     e.preventDefault();
     if (!search.trim() || !fgRef.current) return;
     const needle = search.trim().toLowerCase();
-    const match = ecosystemActors.find(
+    const match = allActors.find(
       (a) =>
         a.name_en.toLowerCase().includes(needle) ||
         a.name_zh.includes(search.trim()) ||
