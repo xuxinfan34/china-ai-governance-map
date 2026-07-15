@@ -1,5 +1,5 @@
 // Auto-generated from China_AI_Risk_Actors_with_relationships.xlsx
-// 108 items | Regenerated: 2026-07-15
+// 126 items | Regenerated: 2026-07-15
 // Do not edit by hand.
 
 export type Relationship = {
@@ -2398,5 +2398,401 @@ export const relationships = [
       "published": "2026-06-11"
     },
     "notes": "Confidence Medium: attested by third-party ChinaFile profile rather than Concordia's own team page. Worth re-verifying against Concordia's site."
+  },
+  {
+    "id": "REL-109",
+    "source": "cnaisda",
+    "target": "caict",
+    "type": "Founding member institution",
+    "category": "Membership",
+    "basis": "CnAISDA founding coalition",
+    "direction": "undirected",
+    "summary": "China Academy of Information and Communications Technology (CAICT) is a founding member institution of the China AI Safety and Development Association (CnAISDA), launched February 2025 at the Paris AI Action Summit as China's counterpart to international AI Safety Institutes.",
+    "instrument": "China AI Safety and Development Association (CnAISDA)",
+    "evidence_date": "2025-02-11",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://aisafetychina.substack.com/p/ai-safety-in-china-19",
+      "title": "AI Safety in China #19 — CnAISDA founding coverage",
+      "lang": "English",
+      "type": "Newsletter analysis",
+      "published": "2025-02-25"
+    },
+    "notes": "CAICT explicitly named as a government-affiliated think tank member of CnAISDA."
+  },
+  {
+    "id": "REL-110",
+    "source": "cnaisda",
+    "target": "ccid",
+    "type": "Founding member institution",
+    "category": "Membership",
+    "basis": "CnAISDA founding coalition",
+    "direction": "undirected",
+    "summary": "China Center for Information Industry Development (CCID) is a founding member institution of the China AI Safety and Development Association (CnAISDA), launched February 2025 at the Paris AI Action Summit as China's counterpart to international AI Safety Institutes.",
+    "instrument": "China AI Safety and Development Association (CnAISDA)",
+    "evidence_date": "2025-02-11",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://aisafetychina.substack.com/p/ai-safety-in-china-19",
+      "title": "AI Safety in China #19 — CnAISDA founding coverage",
+      "lang": "English",
+      "type": "Newsletter analysis",
+      "published": "2025-02-25"
+    },
+    "notes": "CCID explicitly named as a government-affiliated think tank member of CnAISDA."
+  },
+  {
+    "id": "REL-111",
+    "source": "cnaisda",
+    "target": "shlab",
+    "type": "Founding member institution",
+    "category": "Membership",
+    "basis": "CnAISDA founding coalition",
+    "direction": "undirected",
+    "summary": "Shanghai Artificial Intelligence Laboratory (SHLAB) is a founding member institution of the China AI Safety and Development Association (CnAISDA), launched February 2025 at the Paris AI Action Summit as China's counterpart to international AI Safety Institutes.",
+    "instrument": "China AI Safety and Development Association (CnAISDA)",
+    "evidence_date": "2025-02-11",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://aisafetychina.substack.com/p/ai-safety-in-china-19",
+      "title": "AI Safety in China #19 — CnAISDA founding coverage",
+      "lang": "English",
+      "type": "Newsletter analysis",
+      "published": "2025-02-25"
+    },
+    "notes": "SHLAB named as one of the state-backed labs constituting CnAISDA."
+  },
+  {
+    "id": "REL-112",
+    "source": "cnaisda",
+    "target": "baai",
+    "type": "Founding member institution",
+    "category": "Membership",
+    "basis": "CnAISDA founding coalition",
+    "direction": "undirected",
+    "summary": "Beijing Academy of Artificial Intelligence (BAAI) is a founding member institution of the China AI Safety and Development Association (CnAISDA), launched February 2025 at the Paris AI Action Summit as China's counterpart to international AI Safety Institutes.",
+    "instrument": "China AI Safety and Development Association (CnAISDA)",
+    "evidence_date": "2025-02-11",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://aisafetychina.substack.com/p/ai-safety-in-china-19",
+      "title": "AI Safety in China #19 — CnAISDA founding coverage",
+      "lang": "English",
+      "type": "Newsletter analysis",
+      "published": "2025-02-25"
+    },
+    "notes": "BAAI named as a state-backed lab member of CnAISDA."
+  },
+  {
+    "id": "REL-113",
+    "source": "cnaisda",
+    "target": "sqz",
+    "type": "Founding member institution",
+    "category": "Membership",
+    "basis": "CnAISDA founding coalition",
+    "direction": "undirected",
+    "summary": "Shanghai Qi Zhi Institute (SQZ) is a founding member institution of the China AI Safety and Development Association (CnAISDA), launched February 2025 at the Paris AI Action Summit as China's counterpart to international AI Safety Institutes.",
+    "instrument": "China AI Safety and Development Association (CnAISDA)",
+    "evidence_date": "2025-02-11",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://aisafetychina.substack.com/p/ai-safety-in-china-19",
+      "title": "AI Safety in China #19 — CnAISDA founding coverage",
+      "lang": "English",
+      "type": "Newsletter analysis",
+      "published": "2025-02-25"
+    },
+    "notes": "Shanghai Qi Zhi Institute (SQZ) named as a state-backed lab member of CnAISDA; also co-hosted the CnAISDA launch event."
+  },
+  {
+    "id": "REL-114",
+    "source": "cnaisda",
+    "target": "iaiig",
+    "type": "Founding member institution",
+    "category": "Membership",
+    "basis": "CnAISDA founding coalition",
+    "direction": "undirected",
+    "summary": "Tsinghua University – Institute for AI International Governance (I-AIIG) is a founding member institution of the China AI Safety and Development Association (CnAISDA), launched February 2025 at the Paris AI Action Summit as China's counterpart to international AI Safety Institutes.",
+    "instrument": "China AI Safety and Development Association (CnAISDA)",
+    "evidence_date": "2025-02-11",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://aisafetychina.substack.com/p/ai-safety-in-china-19",
+      "title": "AI Safety in China #19 — CnAISDA founding coverage",
+      "lang": "English",
+      "type": "Newsletter analysis",
+      "published": "2025-02-25"
+    },
+    "notes": "Tsinghua serves as CnAISDA's organizational hub (address and phone number at Tsinghua). Modeled here via I-AIIG, which co-hosted the launch event and whose Dean Xue Lan introduced CnAISDA."
+  },
+  {
+    "id": "REL-115",
+    "source": "cnaisda",
+    "target": "pku-aisg",
+    "type": "Founding member institution",
+    "category": "Membership",
+    "basis": "CnAISDA founding coalition",
+    "direction": "undirected",
+    "summary": "Peking University – Center for AI Safety and Governance is a founding member institution of the China AI Safety and Development Association (CnAISDA), launched February 2025 at the Paris AI Action Summit as China's counterpart to international AI Safety Institutes.",
+    "instrument": "China AI Safety and Development Association (CnAISDA)",
+    "evidence_date": "2025-02-11",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://aisafetychina.substack.com/p/ai-safety-in-china-19",
+      "title": "AI Safety in China #19 — CnAISDA founding coverage",
+      "lang": "English",
+      "type": "Newsletter analysis",
+      "published": "2025-02-25"
+    },
+    "notes": "Peking University named among CnAISDA's founding university members; modeled via its dedicated AI safety and governance center."
+  },
+  {
+    "id": "REL-116",
+    "source": "cnaisda",
+    "target": "casia-aieg",
+    "type": "Founding member institution",
+    "category": "Membership",
+    "basis": "CnAISDA founding coalition",
+    "direction": "undirected",
+    "summary": "Research Center for AI Ethics and Governance, CAS Institute of Automation is a founding member institution of the China AI Safety and Development Association (CnAISDA), launched February 2025 at the Paris AI Action Summit as China's counterpart to international AI Safety Institutes.",
+    "instrument": "China AI Safety and Development Association (CnAISDA)",
+    "evidence_date": "2025-02-11",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://aisafetychina.substack.com/p/ai-safety-in-china-19",
+      "title": "AI Safety in China #19 — CnAISDA founding coverage",
+      "lang": "English",
+      "type": "Newsletter analysis",
+      "published": "2025-02-25"
+    },
+    "notes": "CAS Institute of Automation (CASIA) named among CnAISDA's founding research institutes; modeled via its dedicated AI Ethics and Governance research center."
+  },
+  {
+    "id": "REL-117",
+    "source": "deepseek",
+    "target": "aiia",
+    "type": "AI Safety Commitments signatory",
+    "category": "Membership",
+    "basis": "Signed AIIA-issued AI Safety Commitments (December 2024)",
+    "direction": "directed",
+    "summary": "DeepSeek is among the 17 Chinese AI companies that signed the AI Industry Alliance of China's 'AI Safety Commitments' released December 24, 2024, pledging safety-team allocation, red-teaming, data security, infrastructure protection, and transparency.",
+    "instrument": "AIIA AI Safety Commitments (December 2024)",
+    "evidence_date": "2024-12-24",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises",
+      "title": "DeepSeek and Other Chinese Firms Converge with Western Companies on AI Promises",
+      "lang": "English",
+      "type": "Think-tank analysis",
+      "published": "2025-01-20"
+    },
+    "notes": "Signatories confirmed across multiple sources including Carnegie's analysis and Concordia AI Safety in China #19."
+  },
+  {
+    "id": "REL-118",
+    "source": "zhipu",
+    "target": "aiia",
+    "type": "AI Safety Commitments signatory",
+    "category": "Membership",
+    "basis": "Signed AIIA-issued AI Safety Commitments (December 2024)",
+    "direction": "directed",
+    "summary": "Zhipu AI is among the 17 Chinese AI companies that signed the AI Industry Alliance of China's 'AI Safety Commitments' released December 24, 2024, pledging safety-team allocation, red-teaming, data security, infrastructure protection, and transparency.",
+    "instrument": "AIIA AI Safety Commitments (December 2024)",
+    "evidence_date": "2024-12-24",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises",
+      "title": "DeepSeek and Other Chinese Firms Converge with Western Companies on AI Promises",
+      "lang": "English",
+      "type": "Think-tank analysis",
+      "published": "2025-01-20"
+    },
+    "notes": "Signatories confirmed across multiple sources including Carnegie's analysis and Concordia AI Safety in China #19."
+  },
+  {
+    "id": "REL-119",
+    "source": "minimax",
+    "target": "aiia",
+    "type": "AI Safety Commitments signatory",
+    "category": "Membership",
+    "basis": "Signed AIIA-issued AI Safety Commitments (December 2024)",
+    "direction": "directed",
+    "summary": "MiniMax is among the 17 Chinese AI companies that signed the AI Industry Alliance of China's 'AI Safety Commitments' released December 24, 2024, pledging safety-team allocation, red-teaming, data security, infrastructure protection, and transparency.",
+    "instrument": "AIIA AI Safety Commitments (December 2024)",
+    "evidence_date": "2024-12-24",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises",
+      "title": "DeepSeek and Other Chinese Firms Converge with Western Companies on AI Promises",
+      "lang": "English",
+      "type": "Think-tank analysis",
+      "published": "2025-01-20"
+    },
+    "notes": "Signatories confirmed across multiple sources including Carnegie's analysis and Concordia AI Safety in China #19."
+  },
+  {
+    "id": "REL-120",
+    "source": "alibaba",
+    "target": "aiia",
+    "type": "AI Safety Commitments signatory",
+    "category": "Membership",
+    "basis": "Signed AIIA-issued AI Safety Commitments (December 2024)",
+    "direction": "directed",
+    "summary": "Alibaba is among the 17 Chinese AI companies that signed the AI Industry Alliance of China's 'AI Safety Commitments' released December 24, 2024, pledging safety-team allocation, red-teaming, data security, infrastructure protection, and transparency.",
+    "instrument": "AIIA AI Safety Commitments (December 2024)",
+    "evidence_date": "2024-12-24",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises",
+      "title": "DeepSeek and Other Chinese Firms Converge with Western Companies on AI Promises",
+      "lang": "English",
+      "type": "Think-tank analysis",
+      "published": "2025-01-20"
+    },
+    "notes": "Signatories confirmed across multiple sources including Carnegie's analysis and Concordia AI Safety in China #19."
+  },
+  {
+    "id": "REL-121",
+    "source": "baidu",
+    "target": "aiia",
+    "type": "AI Safety Commitments signatory",
+    "category": "Membership",
+    "basis": "Signed AIIA-issued AI Safety Commitments (December 2024)",
+    "direction": "directed",
+    "summary": "Baidu is among the 17 Chinese AI companies that signed the AI Industry Alliance of China's 'AI Safety Commitments' released December 24, 2024, pledging safety-team allocation, red-teaming, data security, infrastructure protection, and transparency.",
+    "instrument": "AIIA AI Safety Commitments (December 2024)",
+    "evidence_date": "2024-12-24",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises",
+      "title": "DeepSeek and Other Chinese Firms Converge with Western Companies on AI Promises",
+      "lang": "English",
+      "type": "Think-tank analysis",
+      "published": "2025-01-20"
+    },
+    "notes": "Signatories confirmed across multiple sources including Carnegie's analysis and Concordia AI Safety in China #19."
+  },
+  {
+    "id": "REL-122",
+    "source": "tencent",
+    "target": "aiia",
+    "type": "AI Safety Commitments signatory",
+    "category": "Membership",
+    "basis": "Signed AIIA-issued AI Safety Commitments (December 2024)",
+    "direction": "directed",
+    "summary": "Tencent is among the 17 Chinese AI companies that signed the AI Industry Alliance of China's 'AI Safety Commitments' released December 24, 2024, pledging safety-team allocation, red-teaming, data security, infrastructure protection, and transparency.",
+    "instrument": "AIIA AI Safety Commitments (December 2024)",
+    "evidence_date": "2024-12-24",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises",
+      "title": "DeepSeek and Other Chinese Firms Converge with Western Companies on AI Promises",
+      "lang": "English",
+      "type": "Think-tank analysis",
+      "published": "2025-01-20"
+    },
+    "notes": "Signatories confirmed across multiple sources including Carnegie's analysis and Concordia AI Safety in China #19."
+  },
+  {
+    "id": "REL-123",
+    "source": "huawei",
+    "target": "aiia",
+    "type": "AI Safety Commitments signatory",
+    "category": "Membership",
+    "basis": "Signed AIIA-issued AI Safety Commitments (December 2024)",
+    "direction": "directed",
+    "summary": "Huawei is among the 17 Chinese AI companies that signed the AI Industry Alliance of China's 'AI Safety Commitments' released December 24, 2024, pledging safety-team allocation, red-teaming, data security, infrastructure protection, and transparency.",
+    "instrument": "AIIA AI Safety Commitments (December 2024)",
+    "evidence_date": "2024-12-24",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises",
+      "title": "DeepSeek and Other Chinese Firms Converge with Western Companies on AI Promises",
+      "lang": "English",
+      "type": "Think-tank analysis",
+      "published": "2025-01-20"
+    },
+    "notes": "Signatories confirmed across multiple sources including Carnegie's analysis and Concordia AI Safety in China #19."
+  },
+  {
+    "id": "REL-124",
+    "source": "aiia",
+    "target": "caict",
+    "type": "Operational backbone",
+    "category": "Institutional relationship",
+    "basis": "AIIA operationally led by CAICT",
+    "direction": "undirected",
+    "summary": "AIIA is 'a prominent industry consortium guided by MIIT' with CAICT as its operational backbone; the AI Safety Commitments effort was spearheaded by AIIA in explicit collaboration with CAICT, which continues to compile implementation practices from signatories.",
+    "instrument": "AIIA operational structure under CAICT",
+    "evidence_date": "2017-10-01",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises",
+      "title": "DeepSeek and Other Chinese Firms Converge with Western Companies on AI Promises",
+      "lang": "English",
+      "type": "Think-tank analysis",
+      "published": "2025-01-20"
+    },
+    "notes": "This edge densely connects the AIIA hub to CAICT, which in turn has multiple existing edges to standards bodies. Central node in the map."
+  },
+  {
+    "id": "REL-125",
+    "source": "waic",
+    "target": "weike-yinli",
+    "type": "Operating subsidiary",
+    "category": "Institutional relationship",
+    "basis": "Wholly-owned subsidiary structure",
+    "direction": "directed",
+    "summary": "Weike Yinli (上海东浩兰生威客引力信息科技有限公司) is a wholly-owned subsidiary established December 2024 by Donghao Lansheng Exhibition Group to run WAIC year-round as a standalone 'global AI ecosystem connector' — WAIC's operational company.",
+    "instrument": "Weike Yinli as WAIC's operating company",
+    "evidence_date": "2024-12-01",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://baike.baidu.com/",
+      "title": "Weike Yinli (Baidu Baike company entry)",
+      "lang": "English",
+      "type": "Baike / company registration",
+      "published": ""
+    },
+    "notes": "Directional edge: WAIC organizing committee → operating subsidiary (Weike Yinli). Documents the corporate operator behind the flagship convening."
+  },
+  {
+    "id": "REL-126",
+    "source": "zhipu",
+    "target": "baai",
+    "type": "Shared scientific leadership",
+    "category": "Personnel bridge",
+    "basis": "Tang Jie serves in both organizations",
+    "direction": "undirected",
+    "summary": "Tang Jie is co-founder and chief scientist of Zhipu AI while also serving as vice director of the Beijing Academy of Artificial Intelligence (BAAI); he was a technical lead in BAAI's Wudao project before Zhipu's LLM pivot.",
+    "instrument": "Tang Jie's dual role (Zhipu co-founder / BAAI vice director)",
+    "evidence_date": "2021-01-01",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://aiwiki.ai/wiki/z_ai",
+      "title": "Z.ai — AI Wiki (Tang Jie biographical entry)",
+      "lang": "English",
+      "type": "Wiki-style biographical",
+      "published": "2026-03-18"
+    },
+    "notes": "Personnel bridge illustrating academia-industry flow; Tang Jie's mentoring of Yang Zhilin (Moonshot founder) creates further indirect ties."
   }
 ] as const;
