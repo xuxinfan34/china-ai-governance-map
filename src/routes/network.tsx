@@ -424,7 +424,9 @@ function NetworkPage() {
                     style={{ backgroundColor: STAKEHOLDER_COLORS[selectedActor.stakeholder_type] }}
                   />
                   {STAKEHOLDER_LABEL[selectedActor.stakeholder_type][lang]}
-                  <span className="text-muted-foreground">· {selectedActor.location}</span>
+                  {selectedActor.location && (
+                    <span className="text-muted-foreground">· {selectedActor.location}</span>
+                  )}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-foreground/85 line-clamp-4">
                   {selectedActor.overview}
