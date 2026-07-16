@@ -47,6 +47,7 @@ function NetworkPage() {
   const [search, setSearch] = useState("");
   const [panelOpen, setPanelOpen] = useState(true);
   const [showUnconnected, setShowUnconnected] = useState(false);
+  const [hoverLink, setHoverLink] = useState<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const fgRef = useRef<any>(null);
 
