@@ -205,6 +205,23 @@ function NetworkPage() {
     return MIN + (MAX - MIN) * t;
   }
 
+  const REL_COLORS: Record<string, string> = {
+    "Joint rulemaking": "#4A6B8A",
+    "Institutional relationship": "#2F6B5A",
+    "Personnel bridge": "#B8752C",
+    Membership: "#7A5C8A",
+    Collaboration: "#5A7A4A",
+    "Publication / production": "#8A3F4B",
+  };
+
+  function hexToRgba(hex: string, alpha: number) {
+    const h = hex.replace("#", "");
+    const r = parseInt(h.slice(0, 2), 16);
+    const g = parseInt(h.slice(2, 4), 16);
+    const b = parseInt(h.slice(4, 6), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  }
+
   const graphData = useMemo(
     () => ({
       nodes: visibleActors.map((a) => ({ id: a.id, actor: a })) as GraphNode[],
