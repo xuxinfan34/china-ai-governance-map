@@ -375,15 +375,18 @@ function NetworkPage() {
                   ctx.globalAlpha = 1;
                 }}
                 linkColor={(l: any) => {
-                  if (connectedIds) {
-                    const s = typeof l.source === "object" ? l.source.id : l.source;
-                    const tgt = typeof l.target === "object" ? l.target.id : l.target;
-                    const on = connectedIds.has(s) && connectedIds.has(tgt);
-                    return on ? "#9E2B25" : "rgba(120,120,120,0.15)";
-                  }
-                  return "rgba(80,80,80,0.4)";
+                  const base = REL_COLORS[l.rel.category] ?? "#666";
+                  const s = typeof l.source === "object" ? l.source.id : l.source;
+                  const tgt = typeof l.target === "object" ? l.target.id : l.target;
+                  const highlighted =
+                    hoverLink === l ||
+                    (connectedIds && connectedIds.has(s) && connectedIds.has(tgt));
+                  if (highlighted) return hexToRgba(base, 1);
+                  if (connectedIds) return hexToRgba(base, 0.1);
+                  return hexToRgba(base, 0.32);
                 }}
                 linkWidth={(l: any) => {
+                  if (hoverLink === l) return 2.5;
                   if (!connectedIds) return 1;
                   const s = typeof l.source === "object" ? l.source.id : l.source;
                   const tgt = typeof l.target === "object" ? l.target.id : l.target;
@@ -391,6 +394,7 @@ function NetworkPage() {
                 }}
                 linkDirectionalArrowLength={(l: any) => (l.rel.direction === "directed" ? 5 : 0)}
                 linkDirectionalArrowRelPos={1}
+                onLinkHover={(l: any) => setHoverLink(l)}
                 onNodeClick={(n: any) => setSelected(n.id)}
                 onBackgroundClick={() => setSelected(null)}
                 cooldownTicks={100}
