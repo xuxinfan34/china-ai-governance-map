@@ -7,6 +7,7 @@ export type Actor = {
   layer: 'ecosystem' | 'bridge';
   name_en: string;
   name_zh: string;
+  short_name: string;
   category: string;
   overview: string;
   leadership: { name: string; role: string }[];
@@ -27,7 +28,8 @@ export const actors = [
         "role": "Chairman of the NPC Standing Committee"
       }
     ],
-    "website": "http://www.npc.gov.cn/"
+    "website": "http://www.npc.gov.cn/",
+    "short_name": "NPC"
   },
   {
     "id": "cac",
@@ -42,7 +44,8 @@ export const actors = [
         "role": "Director"
       }
     ],
-    "website": "http://www.cac.gov.cn/"
+    "website": "http://www.cac.gov.cn/",
+    "short_name": "CAC"
   },
   {
     "id": "miit",
@@ -57,7 +60,8 @@ export const actors = [
         "role": "Minister"
       }
     ],
-    "website": "https://www.miit.gov.cn/"
+    "website": "https://www.miit.gov.cn/",
+    "short_name": "MIIT"
   },
   {
     "id": "most",
@@ -72,7 +76,8 @@ export const actors = [
         "role": "Minister"
       }
     ],
-    "website": "https://www.most.gov.cn/"
+    "website": "https://www.most.gov.cn/",
+    "short_name": "MOST"
   },
   {
     "id": "ndrc",
@@ -87,7 +92,8 @@ export const actors = [
         "role": "Director"
       }
     ],
-    "website": "https://www.ndrc.gov.cn/"
+    "website": "https://www.ndrc.gov.cn/",
+    "short_name": "NDRC"
   },
   {
     "id": "mps",
@@ -102,7 +108,8 @@ export const actors = [
         "role": "Minister"
       }
     ],
-    "website": "https://www.mps.gov.cn/"
+    "website": "https://www.mps.gov.cn/",
+    "short_name": "MPS"
   },
   {
     "id": "nrta",
@@ -117,7 +124,8 @@ export const actors = [
         "role": "Director"
       }
     ],
-    "website": "https://www.nrta.gov.cn/"
+    "website": "https://www.nrta.gov.cn/",
+    "short_name": "NRTA"
   },
   {
     "id": "samr",
@@ -132,7 +140,8 @@ export const actors = [
         "role": "Director"
       }
     ],
-    "website": "https://www.samr.gov.cn/"
+    "website": "https://www.samr.gov.cn/",
+    "short_name": "SAMR"
   },
   {
     "id": "sac",
@@ -147,7 +156,8 @@ export const actors = [
         "role": "Director"
       }
     ],
-    "website": "http://www.sac.gov.cn/"
+    "website": "http://www.sac.gov.cn/",
+    "short_name": "SAC"
   },
   {
     "id": "moe",
@@ -162,7 +172,8 @@ export const actors = [
         "role": "Minister"
       }
     ],
-    "website": "http://www.moe.gov.cn/"
+    "website": "http://www.moe.gov.cn/",
+    "short_name": "MOE"
   },
   {
     "id": "mfa",
@@ -177,7 +188,8 @@ export const actors = [
         "role": "Minister"
       }
     ],
-    "website": "https://www.mfa.gov.cn/"
+    "website": "https://www.mfa.gov.cn/",
+    "short_name": "MFA"
   },
   {
     "id": "nda",
@@ -192,7 +204,8 @@ export const actors = [
         "role": "Director"
       }
     ],
-    "website": "https://www.nda.gov.cn/"
+    "website": "https://www.nda.gov.cn/",
+    "short_name": "NDA"
   },
   {
     "id": "tc260",
@@ -211,7 +224,8 @@ export const actors = [
         "role": "Secretary-General"
       }
     ],
-    "website": "https://www.tc260.org.cn/"
+    "website": "https://www.tc260.org.cn/",
+    "short_name": "TC260"
   },
   {
     "id": "nai-std-group",
@@ -230,7 +244,8 @@ export const actors = [
         "role": "Expert Advisory Group Leader"
       }
     ],
-    "website": "https://www.cesi.cn/"
+    "website": "https://www.cesi.cn/",
+    "short_name": "AI Std Group"
   },
   {
     "id": "st-ethics-committee",
@@ -245,7 +260,8 @@ export const actors = [
         "role": "director of the Central Science and Technology Commission, which houses this committee"
       }
     ],
-    "website": "https://www.most.gov.cn/"
+    "website": "https://www.most.gov.cn/",
+    "short_name": "S&T Ethics Cmte"
   },
   {
     "id": "ai-gov-committee",
@@ -260,7 +276,8 @@ export const actors = [
         "role": "Chair"
       }
     ],
-    "website": "https://www.most.gov.cn/kjbgz/202109/t20210926_177324.html"
+    "website": "https://www.most.gov.cn/kjbgz/202109/t20210926_177324.html",
+    "short_name": "AI Gov Cmte"
   },
   {
     "id": "spc",
@@ -275,7 +292,8 @@ export const actors = [
         "role": "President & Chief Justice"
       }
     ],
-    "website": "https://www.court.gov.cn/"
+    "website": "https://www.court.gov.cn/",
+    "short_name": "SPC"
   },
   {
     "id": "internet-courts",
@@ -290,7 +308,8 @@ export const actors = [
         "role": "President, Beijing Internet Court"
       }
     ],
-    "website": "https://www.bjinternetcourt.gov.cn/"
+    "website": "https://www.bjinternetcourt.gov.cn/",
+    "short_name": "Internet Courts"
   },
   {
     "id": "deepseek",
@@ -305,7 +324,8 @@ export const actors = [
         "role": "Founder & CEO"
       }
     ],
-    "website": "https://www.deepseek.com/"
+    "website": "https://www.deepseek.com/",
+    "short_name": "DeepSeek"
   },
   {
     "id": "zhipu",
@@ -324,7 +344,8 @@ export const actors = [
         "role": "Co-founder & Chief Scientist"
       }
     ],
-    "website": "https://www.zhipuai.cn/"
+    "website": "https://www.zhipuai.cn/",
+    "short_name": "Zhipu AI"
   },
   {
     "id": "moonshot",
@@ -339,7 +360,8 @@ export const actors = [
         "role": "Founder & CEO"
       }
     ],
-    "website": "https://www.moonshot.ai/"
+    "website": "https://www.moonshot.ai/",
+    "short_name": "Moonshot"
   },
   {
     "id": "minimax",
@@ -354,7 +376,8 @@ export const actors = [
         "role": "Co-founder & CEO"
       }
     ],
-    "website": "https://www.minimax.io/"
+    "website": "https://www.minimax.io/",
+    "short_name": "MiniMax"
   },
   {
     "id": "stepfun",
@@ -369,7 +392,8 @@ export const actors = [
         "role": "Founder"
       }
     ],
-    "website": "https://stepfun.ai/"
+    "website": "https://stepfun.ai/",
+    "short_name": "StepFun"
   },
   {
     "id": "alibaba",
@@ -388,7 +412,8 @@ export const actors = [
         "role": "CEO"
       }
     ],
-    "website": "https://www.alibabagroup.com/"
+    "website": "https://www.alibabagroup.com/",
+    "short_name": "Alibaba"
   },
   {
     "id": "baidu",
@@ -403,7 +428,8 @@ export const actors = [
         "role": "Co-founder, Chairman & CEO"
       }
     ],
-    "website": "https://www.baidu.com/"
+    "website": "https://www.baidu.com/",
+    "short_name": "Baidu"
   },
   {
     "id": "tencent",
@@ -418,7 +444,8 @@ export const actors = [
         "role": "Co-founder, Chairman & CEO"
       }
     ],
-    "website": "https://www.tencent.com/"
+    "website": "https://www.tencent.com/",
+    "short_name": "Tencent"
   },
   {
     "id": "bytedance",
@@ -433,7 +460,8 @@ export const actors = [
         "role": "Chairman"
       }
     ],
-    "website": "https://www.bytedance.com/en/"
+    "website": "https://www.bytedance.com/en/",
+    "short_name": "ByteDance"
   },
   {
     "id": "china-mobile",
@@ -452,7 +480,8 @@ export const actors = [
         "role": "CEO"
       }
     ],
-    "website": "https://www.chinamobileltd.com/en/global/home.php"
+    "website": "https://www.chinamobileltd.com/en/global/home.php",
+    "short_name": "China Mobile"
   },
   {
     "id": "ant-group",
@@ -467,7 +496,8 @@ export const actors = [
         "role": "Chairman"
       }
     ],
-    "website": "https://www.antgroup.com/"
+    "website": "https://www.antgroup.com/",
+    "short_name": "Ant Group"
   },
   {
     "id": "huawei",
@@ -482,7 +512,8 @@ export const actors = [
         "role": "Rotating and Acting Chair, Apr–Sep 2026"
       }
     ],
-    "website": "https://www.huawei.com/"
+    "website": "https://www.huawei.com/",
+    "short_name": "Huawei"
   },
   {
     "id": "sensetime",
@@ -497,7 +528,8 @@ export const actors = [
         "role": "Co-founder, Executive Chairman & CEO"
       }
     ],
-    "website": "https://www.sensetime.com/"
+    "website": "https://www.sensetime.com/",
+    "short_name": "SenseTime"
   },
   {
     "id": "caict",
@@ -512,7 +544,8 @@ export const actors = [
         "role": "President"
       }
     ],
-    "website": "http://www.caict.ac.cn/"
+    "website": "http://www.caict.ac.cn/",
+    "short_name": "CAICT"
   },
   {
     "id": "ccid",
@@ -527,7 +560,8 @@ export const actors = [
         "role": "President"
       }
     ],
-    "website": "http://www.ccidgroup.com/"
+    "website": "http://www.ccidgroup.com/",
+    "short_name": "CCID"
   },
   {
     "id": "cesi",
@@ -537,7 +571,8 @@ export const actors = [
     "category": "Research institute – Government-affiliated / standard-setter",
     "overview": "A Ministry of Industry and Information Technology-affiliated institute that conducts electronics and information-technology standardization, testing, and certification. It serves standardization bodies working on AI and has published AI standardization research and guidance.",
     "leadership": [],
-    "website": "https://www.cesi.cn/page/"
+    "website": "https://www.cesi.cn/page/",
+    "short_name": "CESI"
   },
   {
     "id": "cacs",
@@ -552,7 +587,8 @@ export const actors = [
         "role": "president"
       }
     ],
-    "website": "https://www.cac.gov.cn/2017-10/09/c_1121779900.htm"
+    "website": "https://www.cac.gov.cn/2017-10/09/c_1121779900.htm",
+    "short_name": "CACS"
   },
   {
     "id": "drc",
@@ -567,7 +603,8 @@ export const actors = [
         "role": "Director"
       }
     ],
-    "website": "https://www.drc.gov.cn/"
+    "website": "https://www.drc.gov.cn/",
+    "short_name": "DRC"
   },
   {
     "id": "shlab",
@@ -582,7 +619,8 @@ export const actors = [
         "role": "Director & Chief Scientist"
       }
     ],
-    "website": "https://www.shlab.org.cn/"
+    "website": "https://www.shlab.org.cn/",
+    "short_name": "Shanghai Artif"
   },
   {
     "id": "beijing-aisi",
@@ -597,7 +635,8 @@ export const actors = [
         "role": "Dean"
       }
     ],
-    "website": "https://beijing-aisi.ac.cn/"
+    "website": "https://beijing-aisi.ac.cn/",
+    "short_name": "Beijing-AISI"
   },
   {
     "id": "bjlab-safeai",
@@ -607,7 +646,8 @@ export const actors = [
     "category": "Research institute – Government-affiliated",
     "overview": "Key laboratory led by the CAS Institute of Automation, in collaboration with Peking University and Beijing Normal University, focused on safety risks of frontier AI and research breakthroughs in AI safety and superalignment.",
     "leadership": [],
-    "website": "https://brain-cog.ai/safelab"
+    "website": "https://brain-cog.ai/safelab",
+    "short_name": "BJ Safe AI Lab"
   },
   {
     "id": "baai",
@@ -626,7 +666,8 @@ export const actors = [
         "role": "President"
       }
     ],
-    "website": "https://www.baai.ac.cn/"
+    "website": "https://www.baai.ac.cn/",
+    "short_name": "BAAI"
   },
   {
     "id": "bigai",
@@ -641,7 +682,8 @@ export const actors = [
         "role": "Founder & Dean"
       }
     ],
-    "website": "https://www.bigai.ai/"
+    "website": "https://www.bigai.ai/",
+    "short_name": "BIGAI"
   },
   {
     "id": "casia-aieg",
@@ -656,7 +698,8 @@ export const actors = [
         "role": "Director"
       }
     ],
-    "website": "https://www.ia.cas.cn/jgsz/kyxt/llyzl/"
+    "website": "https://www.ia.cas.cn/jgsz/kyxt/llyzl/",
+    "short_name": "CASIA-AIEG"
   },
   {
     "id": "ircaieg",
@@ -671,7 +714,8 @@ export const actors = [
         "role": "Director"
       }
     ],
-    "website": "https://ai-ethics-and-governance.institute/"
+    "website": "https://ai-ethics-and-governance.institute/",
+    "short_name": "IRCAIEG"
   },
   {
     "id": "clai",
@@ -686,7 +730,8 @@ export const actors = [
         "role": "Founder"
       }
     ],
-    "website": "https://longtermai.cn/"
+    "website": "https://longtermai.cn/",
+    "short_name": "CLAI"
   },
   {
     "id": "sh-aisgi",
@@ -696,7 +741,8 @@ export const actors = [
     "category": "Research institute – Government-affiliated",
     "overview": "City-level public service platform for AI safety and governance unveiled at WAIC 2024, operating under the Shanghai AI Laboratory to support Shanghai's development as an AI governance hub.",
     "leadership": [],
-    "website": "https://www.shlab.org.cn/"
+    "website": "https://www.shlab.org.cn/",
+    "short_name": "Shanghai AISGI"
   },
   {
     "id": "sqz",
@@ -711,7 +757,8 @@ export const actors = [
         "role": "President"
       }
     ],
-    "website": "https://www.sqz.ac.cn/"
+    "website": "https://www.sqz.ac.cn/",
+    "short_name": "Qi Zhi Institute"
   },
   {
     "id": "iaiig",
@@ -734,7 +781,8 @@ export const actors = [
         "role": "Vice Dean"
       }
     ],
-    "website": "https://aiig.tsinghua.edu.cn/en/"
+    "website": "https://aiig.tsinghua.edu.cn/en/",
+    "short_name": "I-AIIG"
   },
   {
     "id": "ciss",
@@ -749,7 +797,8 @@ export const actors = [
         "role": "Director"
       }
     ],
-    "website": "https://ciss.tsinghua.edu.cn/"
+    "website": "https://ciss.tsinghua.edu.cn/",
+    "short_name": "CISS"
   },
   {
     "id": "pku-aisg",
@@ -768,7 +817,8 @@ export const actors = [
         "role": "Executive Director"
       }
     ],
-    "website": "https://www.ai.pku.edu.cn/en/Centers/Centers_for_AI_Humanities_and_Social_Sciences/Center_for_AI_Safety_and_Governance.htm"
+    "website": "https://www.ai.pku.edu.cn/en/Centers/Centers_for_AI_Humanities_and_Social_Sciences/Center_for_AI_Safety_and_Governance.htm",
+    "short_name": "PKU-AISG"
   },
   {
     "id": "fudan-cgaig",
@@ -778,7 +828,8 @@ export const actors = [
     "category": "Research institute – Academia",
     "overview": "Center inaugurated at WAIC 2025 building a collaborative platform connecting Shanghai, China, and the world on AI governance, talent development, and AI for social good, with the aim of contributing to global AI governance frameworks.",
     "leadership": [],
-    "website": "https://www.fdsm.fudan.edu.cn/"
+    "website": "https://www.fdsm.fudan.edu.cn/",
+    "short_name": "Fudan CGAIG"
   },
   {
     "id": "sjtu-aigl",
@@ -793,7 +844,8 @@ export const actors = [
         "role": "Director"
       }
     ],
-    "website": "https://www.socio-legal.sjtu.edu.cn/gk/index.aspx"
+    "website": "https://www.socio-legal.sjtu.edu.cn/gk/index.aspx",
+    "short_name": "SJTU-AIGL"
   },
   {
     "id": "tongji-aisg",
@@ -808,7 +860,8 @@ export const actors = [
         "role": "Secretary-general"
       }
     ],
-    "website": "https://aisg.tongji.edu.cn/"
+    "website": "https://aisg.tongji.edu.cn/",
+    "short_name": "Tongji AISG"
   },
   {
     "id": "cass-law",
@@ -823,7 +876,8 @@ export const actors = [
         "role": "Director"
       }
     ],
-    "website": "http://iolaw.cssn.cn/"
+    "website": "http://iolaw.cssn.cn/",
+    "short_name": "CASS Law"
   },
   {
     "id": "realai",
@@ -842,7 +896,8 @@ export const actors = [
         "role": "Tsinghua"
       }
     ],
-    "website": "https://www.realai.ai/"
+    "website": "https://www.realai.ai/",
+    "short_name": "RealAI"
   },
   {
     "id": "cnaisda",
@@ -857,7 +912,8 @@ export const actors = [
         "role": ""
       }
     ],
-    "website": "https://cnaisi.cn/"
+    "website": "https://cnaisi.cn/",
+    "short_name": "CnAISDA"
   },
   {
     "id": "aiia",
@@ -876,7 +932,8 @@ export const actors = [
         "role": "Expert Committee Director"
       }
     ],
-    "website": "https://aiiaorg.cn/"
+    "website": "https://aiiaorg.cn/",
+    "short_name": "AIIA"
   },
   {
     "id": "csac",
@@ -891,7 +948,8 @@ export const actors = [
         "role": "Chairman"
       }
     ],
-    "website": "http://www.cybersac.cn"
+    "website": "http://www.cybersac.cn",
+    "short_name": "CSAC"
   },
   {
     "id": "waic",
@@ -910,7 +968,8 @@ export const actors = [
         "role": ""
       }
     ],
-    "website": "https://www.worldaic.com.cn/"
+    "website": "https://www.worldaic.com.cn/",
+    "short_name": "WAIC"
   },
   {
     "id": "weike-yinli",
@@ -925,7 +984,8 @@ export const actors = [
         "role": "CEO"
       }
     ],
-    "website": "https://www.worldaic.com.cn/"
+    "website": "https://www.worldaic.com.cn/",
+    "short_name": "Weike Yinli"
   },
   {
     "id": "concordia",
@@ -940,7 +1000,8 @@ export const actors = [
         "role": "Founder & CEO"
       }
     ],
-    "website": "https://concordia-ai.com/"
+    "website": "https://concordia-ai.com/",
+    "short_name": "Concordia AI"
   },
   {
     "id": "fungimind",
@@ -955,7 +1016,8 @@ export const actors = [
         "role": "Founder & Host"
       }
     ],
-    "website": "https://podcasts.apple.com/ca/podcast/%E6%99%BA%E5%B9%BB%E6%97%B6%E5%88%BBfungimind/id1802110330"
+    "website": "https://podcasts.apple.com/ca/podcast/%E6%99%BA%E5%B9%BB%E6%97%B6%E5%88%BBfungimind/id1802110330",
+    "short_name": "Fungimind"
   },
   {
     "id": "chinai",
@@ -974,7 +1036,8 @@ export const actors = [
         "role": ""
       }
     ],
-    "website": "https://chinai.substack.com/"
+    "website": "https://chinai.substack.com/",
+    "short_name": "ChinAI"
   },
   {
     "id": "chinatalk",
@@ -989,7 +1052,8 @@ export const actors = [
         "role": "Founder"
       }
     ],
-    "website": "https://www.chinatalk.media/"
+    "website": "https://www.chinatalk.media/",
+    "short_name": "ChinaTalk"
   },
   {
     "id": "recode-china-ai",
@@ -1004,7 +1068,8 @@ export const actors = [
         "role": "Author"
       }
     ],
-    "website": "https://recodechinaai.substack.com/"
+    "website": "https://recodechinaai.substack.com/",
+    "short_name": "Recode China AI"
   },
   {
     "id": "concordia-substack",
@@ -1019,7 +1084,8 @@ export const actors = [
         "role": ""
       }
     ],
-    "website": "https://aisafetychina.substack.com/"
+    "website": "https://aisafetychina.substack.com/",
+    "short_name": "AI Safety in China"
   },
   {
     "id": "weijin",
@@ -1034,7 +1100,8 @@ export const actors = [
         "role": "Founder"
       }
     ],
-    "website": "https://weijinresearch.substack.com/"
+    "website": "https://weijinresearch.substack.com/",
+    "short_name": "Weijin Research"
   },
   {
     "id": "sinoai-insights",
@@ -1049,7 +1116,8 @@ export const actors = [
         "role": ""
       }
     ],
-    "website": "https://ciss.tsinghua.edu.cn/"
+    "website": "https://ciss.tsinghua.edu.cn/",
+    "short_name": "SinoAI Insights"
   },
   {
     "id": "cset",
@@ -1064,7 +1132,8 @@ export const actors = [
         "role": "Executive Director"
       }
     ],
-    "website": "https://cset.georgetown.edu/"
+    "website": "https://cset.georgetown.edu/",
+    "short_name": "CSET"
   },
   {
     "id": "digichina",
@@ -1079,7 +1148,8 @@ export const actors = [
         "role": "Editor-in-Chief"
       }
     ],
-    "website": "https://digichina.stanford.edu/"
+    "website": "https://digichina.stanford.edu/",
+    "short_name": "DigiChina"
   },
   {
     "id": "china-law-translate",
@@ -1098,7 +1168,8 @@ export const actors = [
         "role": ""
       }
     ],
-    "website": "https://www.chinalawtranslate.com/"
+    "website": "https://www.chinalawtranslate.com/",
+    "short_name": "China Law Trans."
   },
   {
     "id": "interpret-china",
@@ -1117,7 +1188,8 @@ export const actors = [
         "role": ""
       }
     ],
-    "website": "https://interpret.csis.org/"
+    "website": "https://interpret.csis.org/",
+    "short_name": "Interpret: China"
   },
   {
     "id": "carnegie",
@@ -1132,7 +1204,8 @@ export const actors = [
         "role": "Senior Fellow"
       }
     ],
-    "website": "https://carnegieendowment.org/"
+    "website": "https://carnegieendowment.org/",
+    "short_name": "Carnegie"
   },
   {
     "id": "trivium",
@@ -1147,7 +1220,8 @@ export const actors = [
         "role": "Head of Tech Policy"
       }
     ],
-    "website": "https://triviumchina.com/"
+    "website": "https://triviumchina.com/",
+    "short_name": "Trivium"
   },
   {
     "id": "govai",
@@ -1166,7 +1240,8 @@ export const actors = [
         "role": "President"
       }
     ],
-    "website": "https://www.governance.ai/"
+    "website": "https://www.governance.ai/",
+    "short_name": "GovAI"
   },
   {
     "id": "csis-wadhwani",
@@ -1185,7 +1260,8 @@ export const actors = [
         "role": ""
       }
     ],
-    "website": "https://www.csis.org/programs/wadhwani-ai-center"
+    "website": "https://www.csis.org/programs/wadhwani-ai-center",
+    "short_name": "CSIS Wadhwani"
   },
   {
     "id": "rand",
@@ -1200,7 +1276,8 @@ export const actors = [
         "role": "President & CEO"
       }
     ],
-    "website": "https://www.rand.org/"
+    "website": "https://www.rand.org/",
+    "short_name": "RAND"
   },
   {
     "id": "cnas",
@@ -1215,7 +1292,8 @@ export const actors = [
         "role": "Executive Vice President"
       }
     ],
-    "website": "https://www.cnas.org/"
+    "website": "https://www.cnas.org/",
+    "short_name": "CNAS"
   },
   {
     "id": "brookings",
@@ -1230,7 +1308,8 @@ export const actors = [
         "role": "Director, John L. Thornton China Center"
       }
     ],
-    "website": "https://www.brookings.edu/"
+    "website": "https://www.brookings.edu/",
+    "short_name": "Brookings"
   },
   {
     "id": "paul-triolo",
@@ -1245,7 +1324,8 @@ export const actors = [
         "role": ""
       }
     ],
-    "website": "https://asiasociety.org/policy-institute/paul-triolo"
+    "website": "https://asiasociety.org/policy-institute/paul-triolo",
+    "short_name": "Paul Triolo"
   },
   {
     "id": "angela-zhang",
@@ -1260,7 +1340,8 @@ export const actors = [
         "role": ""
       }
     ],
-    "website": "https://gould.usc.edu/"
+    "website": "https://gould.usc.edu/",
+    "short_name": "Angela Zhang"
   },
   {
     "id": "samm-sacks",
@@ -1275,7 +1356,8 @@ export const actors = [
         "role": ""
       }
     ],
-    "website": "https://law.yale.edu/samm-sacks"
+    "website": "https://law.yale.edu/samm-sacks",
+    "short_name": "Samm Sacks"
   },
   {
     "id": "selina-xu",
@@ -1290,7 +1372,8 @@ export const actors = [
         "role": ""
       }
     ],
-    "website": "https://selinaxu.com/"
+    "website": "https://selinaxu.com/",
+    "short_name": "Selina Xu"
   },
   {
     "id": "china-ai-bulletin",
@@ -1305,7 +1388,8 @@ export const actors = [
         "role": "Author"
       }
     ],
-    "website": "https://chinaaibulletin.substack.com/"
+    "website": "https://chinaaibulletin.substack.com/",
+    "short_name": "China AI Bulletin"
   },
   {
     "id": "oxford-cpl",
@@ -1324,7 +1408,8 @@ export const actors = [
         "role": ""
       }
     ],
-    "website": "https://oxfordchinapolicylab.org/"
+    "website": "https://oxfordchinapolicylab.org/",
+    "short_name": "Oxford CPL"
   },
   {
     "id": "iaps",
@@ -1339,7 +1424,8 @@ export const actors = [
         "role": "Executive Director"
       }
     ],
-    "website": "https://www.iaps.ai/"
+    "website": "https://www.iaps.ai/",
+    "short_name": "IAPS"
   },
   {
     "id": "saif",
@@ -1354,7 +1440,8 @@ export const actors = [
         "role": "Executive Director"
       }
     ],
-    "website": "https://saif.org/"
+    "website": "https://saif.org/",
+    "short_name": "SAIF"
   },
   {
     "id": "emmie-hine",
@@ -1369,7 +1456,8 @@ export const actors = [
         "role": ""
       }
     ],
-    "website": "https://emmiehine.com/"
+    "website": "https://emmiehine.com/",
+    "short_name": "Emmie Hine"
   },
   {
     "id": "scott-singer",
@@ -1384,6 +1472,7 @@ export const actors = [
         "role": ""
       }
     ],
-    "website": "https://carnegieendowment.org/people/scott-singer"
+    "website": "https://carnegieendowment.org/people/scott-singer",
+    "short_name": "Scott Singer"
   }
 ] as const;
