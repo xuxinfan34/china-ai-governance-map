@@ -50,6 +50,8 @@ function NetworkPage() {
   const [hoverLink, setHoverLink] = useState<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const fgRef = useRef<any>(null);
+  const forcesConfiguredRef = useRef(false);
+
 
   useEffect(() => {
     let cancelled = false;
@@ -236,6 +238,27 @@ function NetworkPage() {
       fgRef.current.d3ReheatSimulation();
     }
   }, [visibleIds, filteredRels]);
+
+  // Loosen the force simulation: stronger repulsion, weaker links, longer distance
+  useEffect(() => {
+    if (!fgRef.current?.d3Force || forcesConfiguredRef.current) return;
+    forcesConfiguredRef.current = true;
+    const charge = fgRef.current.d3Force("charge") as any;
+    if (charge?.strength) charge.strength(-42);
+    const link = fgRef.current.d3Force("link") as any;
+    if (link) {
+      if (link.distance) link.distance(45);
+      const oldStrength = link.strength?.();
+      if (typeof oldStrength === "function") {
+        link.strength((l: any) => 0.7 * oldStrength(l));
+      }
+    }
+    if (fgRef.current?.d3ReheatSimulation) {
+      fgRef.current.d3ReheatSimulation();
+    }
+  }, [Graph]);
+
+
 
   function toggle(set: Set<string>, setSet: (s: Set<string>) => void, key: string) {
     const next = new Set(set);
