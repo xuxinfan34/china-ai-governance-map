@@ -253,7 +253,11 @@ function NetworkPage() {
         link.strength((l: any) => 0.7 * oldStrength(l));
       }
     }
+    if (fgRef.current?.d3ReheatSimulation) {
+      fgRef.current.d3ReheatSimulation();
+    }
   }, [Graph]);
+
 
 
   function toggle(set: Set<string>, setSet: (s: Set<string>) => void, key: string) {
