@@ -80,11 +80,50 @@ function NetworkPage() {
     [allIds],
   );
 
-  const categoryCounts = useMemo(() => {
-    const counts = new Map<string, number>();
-    allActors.forEach((a) => counts.set(a.category, (counts.get(a.category) ?? 0) + 1));
-    return Array.from(counts.entries()).sort((a, b) => a[0].localeCompare(b[0]));
-  }, [allActors]);
+  const GROUPS: { key: string; label: string; match: (a: Actor) => boolean }[] = [
+    {
+      key: "government",
+      label: "Government",
+      match: (a) => a.layer !== "bridge" && a.category.startsWith("Government agency"),
+    },
+    {
+      key: "research",
+      label: "Research",
+      match: (a) =>
+        a.layer !== "bridge" &&
+        (a.category.startsWith("Research institute") ||
+          a.category.startsWith("Research & talent institution")),
+    },
+    {
+      key: "company",
+      label: "Company",
+      match: (a) =>
+        a.layer !== "bridge" && (a.category === "AI company" || a.category === "AI safety company"),
+    },
+    {
+      key: "association",
+      label: "Association / civil society",
+      match: (a) =>
+        a.layer !== "bridge" &&
+        [
+          "Professional association",
+          "Civil society",
+          "Civil society – Media / podcast",
+          "Convening platform",
+          "Convening platform – Operator",
+        ].includes(a.category),
+    },
+    {
+      key: "bridge",
+      label: "Bridge / interpreter",
+      match: (a) => a.layer === "bridge",
+    },
+  ];
+
+  const groupCounts = useMemo(
+    () => GROUPS.map((g) => ({ ...g, count: allActors.filter(g.match).length })),
+    [allActors],
+  );
 
   const locationCounts = useMemo(() => {
     const counts = new Map<string, number>();
@@ -94,13 +133,10 @@ function NetworkPage() {
     return Array.from(counts.entries()).sort((a, b) => a[0].localeCompare(b[0]));
   }, [allActors]);
 
-  const [selCats, setSelCats] = useState<Set<string>>(new Set());
+  const [selGroups, setSelGroups] = useState<Set<string>>(new Set(GROUPS.map((g) => g.key)));
   const [selLocs, setSelLocs] = useState<Set<string>>(new Set());
   const [selRelCats, setSelRelCats] = useState<Set<string>>(new Set(REL_CATEGORIES));
 
-  useEffect(() => {
-    setSelCats(new Set(categoryCounts.map(([k]) => k)));
-  }, [categoryCounts]);
   useEffect(() => {
     setSelLocs(new Set(locationCounts.map(([k]) => k)));
   }, [locationCounts]);
@@ -108,11 +144,12 @@ function NetworkPage() {
   const preActors = useMemo(
     () =>
       allActors.filter((a) => {
-        if (!selCats.has(a.category)) return false;
+        const group = GROUPS.find((g) => g.match(a));
+        if (!group || !selGroups.has(group.key)) return false;
         if (a.location && a.location.trim() && !selLocs.has(a.location)) return false;
         return true;
       }),
-    [allActors, selCats, selLocs],
+    [allActors, selGroups, selLocs],
   );
 
   const preIds = useMemo(() => new Set(preActors.map((a) => a.id)), [preActors]);
@@ -343,13 +380,13 @@ function NetworkPage() {
                   </p>
                   <div className="flex gap-2 text-[10px] uppercase tracking-wider">
                     <button
-                      onClick={() => setSelCats(new Set(categoryCounts.map(([k]) => k)))}
+                      onClick={() => setSelGroups(new Set(GROUPS.map((g) => g.key)))}
                       className="text-muted-foreground hover:text-primary"
                     >
                       All
                     </button>
                     <button
-                      onClick={() => setSelCats(new Set())}
+                      onClick={() => setSelGroups(new Set())}
                       className="text-muted-foreground hover:text-primary"
                     >
                       None
@@ -357,13 +394,13 @@ function NetworkPage() {
                   </div>
                 </div>
                 <div className="mb-6 flex flex-wrap gap-1.5">
-                  {categoryCounts.map(([cat, count]) => (
+                  {groupCounts.map((g) => (
                     <PanelChip
-                      key={cat}
-                      active={selCats.has(cat)}
-                      onClick={() => toggle(selCats, setSelCats, cat)}
+                      key={g.key}
+                      active={selGroups.has(g.key)}
+                      onClick={() => toggle(selGroups, setSelGroups, g.key)}
                     >
-                      {cat} <span className="opacity-70">({count})</span>
+                      {g.label} <span className="opacity-70">({g.count})</span>
                     </PanelChip>
                   ))}
                 </div>
