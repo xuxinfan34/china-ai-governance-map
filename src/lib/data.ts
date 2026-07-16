@@ -44,6 +44,7 @@ export interface Actor {
   layer: Layer;
   name_en: string;
   name_zh: string;
+  short_name: string;
   category: string;
   stakeholder_type: StakeholderType;
   bridge_type?: BridgeType;
@@ -111,6 +112,7 @@ export const ACTORS: Actor[] = RAW_ACTORS.map((a): Actor => ({
   layer: a.layer as Layer,
   name_en: a.name_en,
   name_zh: a.name_zh,
+  short_name: (a as any).short_name ?? a.name_en,
   category: a.category,
   stakeholder_type: deriveStakeholder(a.category),
   bridge_type: deriveBridgeType(a.category),

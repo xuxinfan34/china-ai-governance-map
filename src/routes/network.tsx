@@ -48,6 +48,7 @@ function NetworkPage() {
   const [panelOpen, setPanelOpen] = useState(true);
   const [showUnconnected, setShowUnconnected] = useState(false);
   const [hoverLink, setHoverLink] = useState<any>(null);
+  const [hoverNode, setHoverNode] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const fgRef = useRef<any>(null);
   const forcesConfiguredRef = useRef(false);
@@ -388,13 +389,16 @@ function NetworkPage() {
                       ctx.stroke();
                     }
                   }
-                  const label = a.name_en.length > 28 ? a.name_en.slice(0, 26) + "…" : a.name_en;
-                  const fontSize = 11 / Math.max(globalScale, 1);
-                  ctx.font = `${fontSize + 2}px Inter, sans-serif`;
+                  const label = a.short_name;
+                  const fontSize = 10.5 / Math.max(globalScale, 1);
+                  ctx.font = `${fontSize}px Inter, sans-serif`;
                   ctx.textAlign = "center";
                   ctx.textBaseline = "top";
+                  const focused = hoverNode === a.id || selected === a.id;
+                  const labelAlpha = dim ? 0.15 : focused ? 1 : 0.75;
+                  ctx.globalAlpha = labelAlpha;
                   ctx.fillStyle = "#1a1a1a";
-                  ctx.fillText(label, node.x, node.y + r + 2);
+                  ctx.fillText(label, node.x, node.y + r + 3);
                   ctx.globalAlpha = 1;
                 }}
                 linkColor={(l: any) => {
@@ -418,6 +422,7 @@ function NetworkPage() {
                 linkDirectionalArrowLength={(l: any) => (l.rel.direction === "directed" ? 5 : 0)}
                 linkDirectionalArrowRelPos={1}
                 onLinkHover={(l: any) => setHoverLink(l)}
+                onNodeHover={(n: any) => setHoverNode(n ? n.id : null)}
                 onNodeClick={(n: any) => setSelected(n.id)}
                 onBackgroundClick={() => setSelected(null)}
                 cooldownTicks={100}
