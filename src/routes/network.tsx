@@ -178,6 +178,32 @@ function NetworkPage() {
 
   const visibleIds = useMemo(() => new Set(visibleActors.map((a) => a.id)), [visibleActors]);
 
+  const degreeMap = useMemo(() => {
+    const m = new Map<string, number>();
+    filteredRels.forEach((r) => {
+      m.set(r.source, (m.get(r.source) ?? 0) + 1);
+      m.set(r.target, (m.get(r.target) ?? 0) + 1);
+    });
+    return m;
+  }, [filteredRels]);
+
+  const maxDegree = useMemo(() => {
+    let max = 0;
+    degreeMap.forEach((v) => {
+      if (v > max) max = v;
+    });
+    return max;
+  }, [degreeMap]);
+
+  function nodeRadius(id: string) {
+    const d = degreeMap.get(id) ?? 0;
+    const MIN = 4;
+    const MAX = 16;
+    if (maxDegree <= 1) return MIN;
+    const t = Math.log(d + 1) / Math.log(maxDegree + 1);
+    return MIN + (MAX - MIN) * t;
+  }
+
   const graphData = useMemo(
     () => ({
       nodes: visibleActors.map((a) => ({ id: a.id, actor: a })) as GraphNode[],
@@ -302,8 +328,9 @@ function NetworkPage() {
                   const dim = connectedIds && !connectedIds.has(a.id);
                   ctx.globalAlpha = dim ? 0.15 : 1;
                   ctx.fillStyle = color;
+                  const r = nodeRadius(a.id);
                   if (a.layer === "bridge") {
-                    const s = 11;
+                    const s = r * 1.8;
                     ctx.fillRect(node.x - s / 2, node.y - s / 2, s, s);
                     if (selected === a.id) {
                       ctx.lineWidth = 2;
@@ -312,7 +339,7 @@ function NetworkPage() {
                     }
                   } else {
                     ctx.beginPath();
-                    ctx.arc(node.x, node.y, 6, 0, 2 * Math.PI, false);
+                    ctx.arc(node.x, node.y, r, 0, 2 * Math.PI, false);
                     ctx.fill();
                     if (selected === a.id) {
                       ctx.lineWidth = 2;
@@ -326,7 +353,7 @@ function NetworkPage() {
                   ctx.textAlign = "center";
                   ctx.textBaseline = "top";
                   ctx.fillStyle = "#1a1a1a";
-                  ctx.fillText(label, node.x, node.y + 8);
+                  ctx.fillText(label, node.x, node.y + r + 2);
                   ctx.globalAlpha = 1;
                 }}
                 linkColor={(l: any) => {
