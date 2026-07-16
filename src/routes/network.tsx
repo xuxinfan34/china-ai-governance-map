@@ -50,6 +50,8 @@ function NetworkPage() {
   const [hoverLink, setHoverLink] = useState<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const fgRef = useRef<any>(null);
+  const forcesConfiguredRef = useRef(false);
+
 
   useEffect(() => {
     let cancelled = false;
