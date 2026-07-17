@@ -80,10 +80,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "China AI Jingwei — An interactive reference to China's AI governance" },
+      { title: "China AI Governance Map — An interactive reference to China's AI governance" },
       { name: "description", content: "An interactive reference to China's AI governance: regulators, research institutes, standards bodies, and the bridges that translate them." },
-      { name: "author", content: "China AI Jingwei" },
-      { property: "og:title", content: "China AI Jingwei" },
+      { name: "author", content: "China AI Governance Map" },
+      { property: "og:title", content: "China AI Governance Map" },
       { property: "og:description", content: "An interactive reference to China's AI governance." },
 
       { property: "og:type", content: "website" },
