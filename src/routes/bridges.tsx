@@ -5,7 +5,7 @@ import { useLang } from "../lib/i18n";
 export const Route = createFileRoute("/bridges")({
   head: () => ({
     meta: [
-      { title: "Bridges & Interpreters — China AI Governance Map (经纬)" },
+      { title: "Bridges & Interpreters — China AI Governance Map (Sinograph AI)" },
       {
         name: "description",
         content:

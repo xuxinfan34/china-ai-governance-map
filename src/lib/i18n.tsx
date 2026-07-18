@@ -67,7 +67,7 @@ export const strings = {
     see_profile: "See profile",
   },
   zh: {
-    site_title: "经纬",
+    site_title: "Sinograph AI",
     tagline: "中国人工智能治理导航工具",
 
     nav_home: "首页",
