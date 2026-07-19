@@ -15,7 +15,7 @@ import { LayerGlyph } from "../components/glyphs";
 export const Route = createFileRoute("/network")({
   head: () => ({
     meta: [
-      { title: "Network — China AI Governance Map (经纬)" },
+      { title: "Network — China AI Governance Map (Sinograph AI)" },
       {
         name: "description",
         content:
