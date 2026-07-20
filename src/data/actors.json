@@ -1017,6 +1017,18 @@
     "short_name": "Fungimind"
   },
   {
+    "id": "waico",
+    "layer": "ecosystem",
+    "name_en": "World Artificial Intelligence Cooperation Organization (WAICO)",
+    "name_zh": "世界人工智能合作组织",
+    "category": "Intergovernmental organization (China-hosted)",
+    "overview": "An intergovernmental international organization established July 16, 2026 in Shanghai on the eve of WAIC 2026, with 29 founding member countries. Following the UN Charter, WAICO's mission is to promote cooperation on global AI governance, capacity-building, and safety, with an emphasis on bridging developed and developing economies. The signing ceremony was jointly hosted by China's Ministry of Foreign Affairs, MIIT, and the Shanghai Municipal Government; Foreign Minister Wang Yi signed on China's behalf, with UN Secretary-General António Guterres in attendance. Shanghai AI Laboratory and Fudan University served as the de facto secretariat during the establishment process. First proposed by Premier Li Qiang at WAIC 2025, reiterated by President Xi Jinping at APEC 2025, and formally announced by Xi in his July 17, 2026 WAIC 2026 opening keynote titled \"Joining Hands to Build a Just and Equitable System for Global AI Governance\" (Xinhua English full text linked as reference URL; additional coverage via Xinhua Chinese, gov.cn, CGTN, and China's State Council Information Office). No standalone WAICO website has been established at time of entry.",
+    "leadership": [],
+    "website": "https://english.news.cn/20260717/893fe11097db460ea31b98f131e34ef0/c.html",
+    "wikipedia": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization",
+    "short_name": "WAICO"
+  },
+  {
     "id": "chinai",
     "layer": "bridge",
     "name_en": "ChinAI Newsletter",
