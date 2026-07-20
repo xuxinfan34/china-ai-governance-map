@@ -10,7 +10,6 @@ import {
   type Actor,
   type Relationship,
 } from "../lib/data";
-import { LayerGlyph } from "../components/glyphs";
 import { useLang } from "../lib/i18n";
 
 export const Route = createFileRoute("/actors/$id")({
