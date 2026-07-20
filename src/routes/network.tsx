@@ -10,7 +10,7 @@ import {
   type Relationship,
 } from "../lib/data";
 import { useLang } from "../lib/i18n";
-import { LayerGlyph } from "../components/glyphs";
+
 
 export const Route = createFileRoute("/network")({
   head: () => ({
@@ -553,7 +553,12 @@ function NetworkPage() {
             {selectedActor && (
               <div className="absolute bottom-4 right-80 z-20 w-80 rounded-lg border border-border bg-background p-5 shadow-lg">
                 <div className="mb-2 flex items-start justify-between">
-                  <LayerGlyph layer={selectedActor.layer} className="h-5 w-5" />
+                  <span
+                    className="rounded-full border border-border/60 bg-background/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide"
+                    style={{ color: selectedActor.layer === "ecosystem" ? "#9E2B25" : "#2A2A2A" }}
+                  >
+                    {selectedActor.layer === "ecosystem" ? t("badge_ecosystem") : t("badge_bridge")}
+                  </span>
                   <button
                     onClick={() => setSelected(null)}
                     className="text-xs text-muted-foreground hover:text-foreground"
