@@ -1,1248 +1,1487 @@
 [
   {
-    "id": "ACT-002",
-    "name": "National People's Congress (NPC) / 全国人民代表大会",
+    "id": "npc",
+    "layer": "ecosystem",
     "name_en": "National People's Congress (NPC)",
     "name_zh": "全国人民代表大会",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Legislator",
     "overview": "China's national legislature and highest organ of state power. Enacted the foundational laws underpinning AI governance (Cybersecurity Law, Data Security Law, Personal Information Protection Law), and a comprehensive AI Law has been placed on its legislative agenda.",
-    "stakeholder_type": "Government agency – Legislator",
-    "leadership": "Zhao Leji (Chairman of the NPC Standing Committee)",
+    "leadership": [
+      {
+        "name": "Zhao Leji",
+        "role": "Chairman of the NPC Standing Committee"
+      }
+    ],
     "website": "http://www.npc.gov.cn/",
     "wikipedia": "https://en.wikipedia.org/wiki/National_People%27s_Congress",
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 2
+    "short_name": "NPC"
   },
   {
-    "id": "ACT-003",
-    "name": "Cyberspace Administration of China (CAC) / 国家互联网信息办公室",
+    "id": "cac",
+    "layer": "ecosystem",
     "name_en": "Cyberspace Administration of China (CAC)",
     "name_zh": "国家互联网信息办公室",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Regulator & Standard-setter",
     "overview": "Central regulator for internet-related matters, covering online content, cybersecurity, data security, and personal information protection. Lead drafter and enforcer of China's core AI regulations, including the algorithm recommendation, deep synthesis, and generative AI rules, and operator of the algorithm and generative AI service filing regimes.",
-    "stakeholder_type": "Government agency – Regulator & Standard-setter",
-    "leadership": "Zhuang Rongwen (Director)",
+    "leadership": [
+      {
+        "name": "Zhuang Rongwen",
+        "role": "Director"
+      }
+    ],
     "website": "http://www.cac.gov.cn/",
     "wikipedia": "https://en.wikipedia.org/wiki/Cyberspace_Administration_of_China",
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 3
+    "short_name": "CAC"
   },
   {
-    "id": "ACT-004",
-    "name": "Ministry of Industry and Information Technology (MIIT) / 工业和信息化部",
+    "id": "miit",
+    "layer": "ecosystem",
     "name_en": "Ministry of Industry and Information Technology (MIIT)",
     "name_zh": "工业和信息化部",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Regulator & Standard-setter",
     "overview": "State agency responsible for industry and information technology, overseeing the telecom, software, and AI industries. Co-issuer of key AI regulations, supervisor of CAICT and industry standards work, and a driving force behind AI industry development and safety/testing infrastructure.",
-    "stakeholder_type": "Government agency – Regulator & Standard-setter",
-    "leadership": "Li Lecheng (Minister)",
+    "leadership": [
+      {
+        "name": "Li Lecheng",
+        "role": "Minister"
+      }
+    ],
     "website": "https://www.miit.gov.cn/",
     "wikipedia": "https://en.wikipedia.org/wiki/Ministry_of_Industry_and_Information_Technology",
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 4
+    "short_name": "MIIT"
   },
   {
-    "id": "ACT-005",
-    "name": "Ministry of Science and Technology (MOST) / 科学技术部",
+    "id": "most",
+    "layer": "ecosystem",
     "name_en": "Ministry of Science and Technology (MOST)",
     "name_zh": "科学技术部",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Regulator & Standard-setter",
     "overview": "Executive agency for national science and technology strategy. It coordinates implementation of the State Council's New Generation AI Development Plan, supports the New Generation AI Governance Professional Committee, and leads science and technology ethics governance, including ethics-review measures.",
-    "stakeholder_type": "Government agency – Regulator & Standard-setter",
-    "leadership": "Yin Hejun (Minister)",
+    "leadership": [
+      {
+        "name": "Yin Hejun",
+        "role": "Minister"
+      }
+    ],
     "website": "https://www.most.gov.cn/",
     "wikipedia": "https://en.wikipedia.org/wiki/Ministry_of_Science_and_Technology_(China)",
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 5
+    "short_name": "MOST"
   },
   {
-    "id": "ACT-006",
-    "name": "National Development and Reform Commission (NDRC) / 国家发展和改革委员会",
+    "id": "ndrc",
+    "layer": "ecosystem",
     "name_en": "National Development and Reform Commission (NDRC)",
     "name_zh": "国家发展和改革委员会",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Regulator",
     "overview": "China's primary macroeconomic management agency under the State Council. Shapes AI-relevant industrial policy, compute and data infrastructure planning (e.g., national computing networks), and co-issued the generative AI measures.",
-    "stakeholder_type": "Government agency – Regulator",
-    "leadership": "Zheng Shanjie (Director)",
+    "leadership": [
+      {
+        "name": "Zheng Shanjie",
+        "role": "Director"
+      }
+    ],
     "website": "https://www.ndrc.gov.cn/",
     "wikipedia": "https://en.wikipedia.org/wiki/National_Development_and_Reform_Commission",
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 6
+    "short_name": "NDRC"
   },
   {
-    "id": "ACT-007",
-    "name": "Ministry of Public Security (MPS) / 公安部",
+    "id": "mps",
+    "layer": "ecosystem",
     "name_en": "Ministry of Public Security (MPS)",
     "name_zh": "公安部",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Regulator",
     "overview": "Principal police and security authority. Co-issuer and enforcer of AI-related regulations touching public security and law enforcement, including security assessment and filing requirements for algorithmic and generative AI services.",
-    "stakeholder_type": "Government agency – Regulator",
-    "leadership": "Wang Xiaohong (Minister)",
+    "leadership": [
+      {
+        "name": "Wang Xiaohong",
+        "role": "Minister"
+      }
+    ],
     "website": "https://www.mps.gov.cn/",
     "wikipedia": "https://en.wikipedia.org/wiki/Ministry_of_Public_Security_(China)",
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 7
+    "short_name": "MPS"
   },
   {
-    "id": "ACT-008",
-    "name": "National Radio and Television Administration (NRTA) / 国家广播电视总局",
+    "id": "nrta",
+    "layer": "ecosystem",
     "name_en": "National Radio and Television Administration (NRTA)",
     "name_zh": "国家广播电视总局",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Regulator",
     "overview": "National regulator for broadcasting and audiovisual content; a signatory regulator of the 2023 Interim Measures for Generative AI Services and active in rules on AI-generated audiovisual content.",
-    "stakeholder_type": "Government agency – Regulator",
-    "leadership": "Cao Shumin (Director)",
+    "leadership": [
+      {
+        "name": "Cao Shumin",
+        "role": "Director"
+      }
+    ],
     "website": "https://www.nrta.gov.cn/",
     "wikipedia": "https://en.wikipedia.org/wiki/National_Radio_and_Television_Administration",
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 8
+    "short_name": "NRTA"
   },
   {
-    "id": "ACT-009",
-    "name": "State Administration for Market Regulation (SAMR) / 国家市场监督管理总局",
+    "id": "samr",
+    "layer": "ecosystem",
     "name_en": "State Administration for Market Regulation (SAMR)",
     "name_zh": "国家市场监督管理总局",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Regulator & Standard-setter",
     "overview": "Ministerial-level market supervision agency responsible for competition, product quality, certification, and national standards administration. Relevant to AI governance through standards (via SAC), certification, and oversight of algorithmic market conduct.",
-    "stakeholder_type": "Government agency – Regulator & Standard-setter",
-    "leadership": "Luo Wen (Director)",
+    "leadership": [
+      {
+        "name": "Luo Wen",
+        "role": "Director"
+      }
+    ],
     "website": "https://www.samr.gov.cn/",
     "wikipedia": "https://en.wikipedia.org/wiki/State_Administration_for_Market_Regulation",
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 9
+    "short_name": "SAMR"
   },
   {
-    "id": "ACT-010",
-    "name": "Standardization Administration of China (SAC) / 国家标准化管理委员会",
+    "id": "sac",
+    "layer": "ecosystem",
     "name_en": "Standardization Administration of China (SAC)",
     "name_zh": "国家标准化管理委员会",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Standard-setter",
     "overview": "Competent authority for national standardization work, operating under SAMR. Administers China's national standards system, including AI standards, and co-issued the 2024 Guidelines for Building a National AI Industry Comprehensive Standardization System that set targets for AI standards development.",
-    "stakeholder_type": "Government agency – Standard-setter",
-    "leadership": "Deng Zhiyong (Director)",
+    "leadership": [
+      {
+        "name": "Deng Zhiyong",
+        "role": "Director"
+      }
+    ],
     "website": "https://www.sac.gov.cn/AboutSAC/Whoweare/index.html",
     "wikipedia": "https://en.wikipedia.org/wiki/National_Standardization_Administration",
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 10
+    "short_name": "SAC"
   },
   {
-    "id": "ACT-011",
-    "name": "Ministry of Education (MOE) / 教育部",
+    "id": "moe",
+    "layer": "ecosystem",
     "name_en": "Ministry of Education (MOE)",
     "name_zh": "教育部",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Regulator",
     "overview": "Primary agency for China's education system; increasingly involved in AI governance through rules and guidance on AI use in education, AI literacy, and ethics education, and as a co-issuer of the generative AI measures.",
-    "stakeholder_type": "Government agency – Regulator",
-    "leadership": "Huai Jinpeng (Minister)",
+    "leadership": [
+      {
+        "name": "Huai Jinpeng",
+        "role": "Minister"
+      }
+    ],
     "website": "http://www.moe.gov.cn/",
     "wikipedia": "https://en.wikipedia.org/wiki/Ministry_of_Education_of_the_People%27s_Republic_of_China",
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 11
+    "short_name": "MOE"
   },
   {
-    "id": "ACT-012",
-    "name": "Ministry of Foreign Affairs (MFA) / 外交部",
+    "id": "mfa",
+    "layer": "ecosystem",
     "name_en": "Ministry of Foreign Affairs (MFA)",
     "name_zh": "外交部",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – International governance",
     "overview": "China's central diplomatic agency and a principal international voice on AI governance. Its AI issues page publishes the Global AI Governance Initiative, the Shanghai Declaration, the AI Capacity-Building Action Plan, and the Global AI Governance Action Plan.",
-    "stakeholder_type": "Government agency – International governance",
-    "leadership": "Wang Yi (Minister)",
+    "leadership": [
+      {
+        "name": "Wang Yi",
+        "role": "Minister"
+      }
+    ],
     "website": "https://www.mfa.gov.cn/",
     "wikipedia": "https://en.wikipedia.org/wiki/Ministry_of_Foreign_Affairs_of_the_People%27s_Republic_of_China",
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 12
+    "short_name": "MFA"
   },
   {
-    "id": "ACT-013",
-    "name": "National Data Administration (NDA) / 国家数据局",
+    "id": "nda",
+    "layer": "ecosystem",
     "name_en": "National Data Administration (NDA)",
     "name_zh": "国家数据局",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Regulator / data governance",
     "overview": "Coordinates national data infrastructure, data standards, and development of data as a production factor. Its work includes high-quality datasets for AI and data-governance arrangements that shape the safety and reliability of AI development.",
-    "stakeholder_type": "Government agency – Regulator / data governance",
-    "leadership": "Liu Liehong (Director)",
+    "leadership": [
+      {
+        "name": "Liu Liehong",
+        "role": "Director"
+      }
+    ],
     "website": "https://www.nda.gov.cn/",
     "wikipedia": "https://en.wikipedia.org/wiki/National_Data_Administration",
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 13
+    "short_name": "NDA"
   },
   {
-    "id": "ACT-014",
-    "name": "National Technical Committee 260 on Cybersecurity (TC260) / 全国网络安全标准化技术委员会",
+    "id": "tc260",
+    "layer": "ecosystem",
     "name_en": "National Technical Committee 260 on Cybersecurity (TC260)",
     "name_zh": "全国网络安全标准化技术委员会",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Standard-setter",
     "overview": "National standards body under SAC responsible for cybersecurity, data security, personal information protection, and AI security standards. Author of the AI Safety Governance Framework and the technical standards operationalizing China's generative AI regulations (e.g., GB/T security requirements for generative AI services).",
-    "stakeholder_type": "Government agency – Standard-setter",
-    "leadership": "Wang Jingtao (Chairman); Yang Xudong (Secretary-General)",
+    "leadership": [
+      {
+        "name": "Wang Jingtao",
+        "role": "Chairman"
+      },
+      {
+        "name": "Yang Xudong",
+        "role": "Secretary-General"
+      }
+    ],
     "website": "https://www.tc260.org.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 14
+    "short_name": "TC260"
   },
   {
-    "id": "ACT-015",
-    "name": "National AI Standardization General Group / 国家人工智能标准化总体组",
+    "id": "nai-std-group",
+    "layer": "ecosystem",
     "name_en": "National AI Standardization General Group",
     "name_zh": "国家人工智能标准化总体组",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Standard-setter",
     "overview": "Body established in 2018 under SAC and MIIT guidance, with CESI as group leader, to coordinate the development of China's national AI standards system, including standards relevant to AI safety, risk management, and governance.",
-    "stakeholder_type": "Government agency – Standard-setter",
-    "leadership": "Zhao Bo (Group Leader); Pan Yunhe (Expert Advisory Group Leader)",
+    "leadership": [
+      {
+        "name": "Zhao Bo",
+        "role": "Group Leader"
+      },
+      {
+        "name": "Pan Yunhe",
+        "role": "Expert Advisory Group Leader"
+      }
+    ],
     "website": "https://www.cesi.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 15
+    "short_name": "AI Std Group"
   },
   {
-    "id": "ACT-016",
-    "name": "National Science and Technology Ethics Committee / 国家科技伦理委员会",
+    "id": "st-ethics-committee",
+    "layer": "ecosystem",
     "name_en": "National Science and Technology Ethics Committee",
     "name_zh": "国家科技伦理委员会",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Expert advisory committee",
     "overview": "National expert committee under the Central Science and Technology Commission that guides and coordinates China's science and technology ethics governance system, including AI ethics; associated with the Ethical Norms for New Generation AI and ethics review requirements covering AI research.",
-    "stakeholder_type": "Government agency – Expert advisory committee",
-    "leadership": "Ding Xuexiang (director of the Central Science and Technology Commission, which houses this committee)",
+    "leadership": [
+      {
+        "name": "Ding Xuexiang",
+        "role": "director of the Central Science and Technology Commission, which houses this committee"
+      }
+    ],
     "website": "https://www.most.gov.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 16
+    "short_name": "S&T Ethics Cmte"
   },
   {
-    "id": "ACT-017",
-    "name": "National New Generation AI Governance Professional Committee / 国家新一代人工智能治理专业委员会",
+    "id": "ai-gov-committee",
+    "layer": "ecosystem",
     "name_en": "National New Generation AI Governance Professional Committee",
     "name_zh": "国家新一代人工智能治理专业委员会",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Expert advisory committee",
     "overview": "Expert advisory body under MOST's New Generation AI Development Plan Promotion Office focused on AI governance and ethics; issued the Governance Principles for New Generation AI – Developing Responsible AI (2019) and the Ethical Norms for New Generation AI (2021).",
-    "stakeholder_type": "Government agency – Expert advisory committee",
-    "leadership": "Xue Lan (Chair)",
+    "leadership": [
+      {
+        "name": "Xue Lan",
+        "role": "Chair"
+      }
+    ],
     "website": "https://www.most.gov.cn/kjbgz/202109/t20210926_177324.html",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 17
+    "short_name": "AI Gov Cmte"
   },
   {
-    "id": "ACT-018",
-    "name": "Supreme People's Court (SPC) / 最高人民法院",
+    "id": "spc",
+    "layer": "ecosystem",
     "name_en": "Supreme People's Court (SPC)",
     "name_zh": "最高人民法院",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Judiciary",
     "overview": "China's highest judicial body, responsible for adjudication, judicial interpretation, and oversight of all courts. Shapes AI governance through judicial policy — including its 2022 Opinions on regulating and strengthening the judicial application of AI, which set the principle that AI must assist rather than replace human judges — and through guidance on emerging AI-related case law.",
-    "stakeholder_type": "Government agency – Judiciary",
-    "leadership": "Zhang Jun (President & Chief Justice)",
+    "leadership": [
+      {
+        "name": "Zhang Jun",
+        "role": "President & Chief Justice"
+      }
+    ],
     "website": "https://www.court.gov.cn/",
     "wikipedia": "https://en.wikipedia.org/wiki/Supreme_People%27s_Court",
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 18
+    "short_name": "SPC"
   },
   {
-    "id": "ACT-019",
-    "name": "Internet Courts (Beijing, Hangzhou & Guangzhou) / 互联网法院",
+    "id": "internet-courts",
+    "layer": "ecosystem",
     "name_en": "Internet Courts (Beijing, Hangzhou & Guangzhou)",
     "name_zh": "互联网法院",
-    "group": "Ecosystem Actor",
+    "category": "Government agency – Judiciary",
     "overview": "Specialized courts established 2017–2018 to hear internet-related cases online. A de facto AI governance channel through precedent-setting rulings on AI-generated content — including the Beijing Internet Court's 2023 decision on copyright in AI-generated images and the Guangzhou Internet Court's 2024 ruling on generative AI platform liability — that define rules ahead of legislation.",
-    "stakeholder_type": "Government agency – Judiciary",
-    "leadership": "Jiang Ying (President, Beijing Internet Court)",
+    "leadership": [
+      {
+        "name": "Jiang Ying",
+        "role": "President, Beijing Internet Court"
+      }
+    ],
     "website": "https://www.bjinternetcourt.gov.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 19
+    "short_name": "Internet Courts"
   },
   {
-    "id": "ACT-020",
-    "name": "DeepSeek / 深度求索",
+    "id": "deepseek",
+    "layer": "ecosystem",
     "name_en": "DeepSeek",
     "name_zh": "深度求索",
-    "group": "Ecosystem Actor",
+    "category": "AI company",
     "overview": "AI company founded in 2023 and backed by hedge fund High-Flyer, developing frontier open-weight large language models (DeepSeek-V and R series) in pursuit of AGI. Its Nature-published R1 work includes detailed frontier-safety and risk-evaluation disclosures, among the most substantive published by a Chinese lab.",
-    "stakeholder_type": "AI company",
-    "leadership": "Liang Wenfeng (Founder & CEO)",
+    "leadership": [
+      {
+        "name": "Liang Wenfeng",
+        "role": "Founder & CEO"
+      }
+    ],
     "website": "https://www.deepseek.com/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 20
+    "short_name": "DeepSeek"
   },
   {
-    "id": "ACT-021",
-    "name": "Zhipu AI / 智谱AI",
+    "id": "zhipu",
+    "layer": "ecosystem",
     "name_en": "Zhipu AI",
     "name_zh": "智谱AI",
-    "group": "Ecosystem Actor",
+    "category": "AI company",
     "overview": "Tsinghua-spun AGI company founded in 2019, creator of the GLM model family. Active participant in Chinese AI safety and governance initiatives, including safety commitments and evaluation work alongside its frontier model development.",
-    "stakeholder_type": "AI company",
-    "leadership": "Zhang Peng (CEO); Tang Jie (Co-founder & Chief Scientist)",
+    "leadership": [
+      {
+        "name": "Zhang Peng",
+        "role": "CEO"
+      },
+      {
+        "name": "Tang Jie",
+        "role": "Co-founder & Chief Scientist"
+      }
+    ],
     "website": "https://www.zhipuai.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 21
+    "short_name": "Zhipu AI"
   },
   {
-    "id": "ACT-022",
-    "name": "Moonshot AI / 月之暗面",
+    "id": "moonshot",
+    "layer": "ecosystem",
     "name_en": "Moonshot AI",
     "name_zh": "月之暗面",
-    "group": "Ecosystem Actor",
+    "category": "AI company",
     "overview": "LLM startup founded in 2023 pursuing AGI, best known for its Kimi models and assistant. One of China's frontier 'AI Tiger' labs whose model releases and safety practices are closely watched in the ecosystem.",
-    "stakeholder_type": "AI company",
-    "leadership": "Yang Zhilin (Founder & CEO)",
+    "leadership": [
+      {
+        "name": "Yang Zhilin",
+        "role": "Founder & CEO"
+      }
+    ],
     "website": "https://www.moonshot.ai/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 22
+    "short_name": "Moonshot"
   },
   {
-    "id": "ACT-023",
-    "name": "MiniMax / 稀宇科技",
+    "id": "minimax",
+    "layer": "ecosystem",
     "name_en": "MiniMax",
     "name_zh": "稀宇科技",
-    "group": "Ecosystem Actor",
+    "category": "AI company",
     "overview": "AI company founded in 2022 developing proprietary multimodal foundation models (text, audio, image, video, music) that power consumer products and an open API platform; one of China's frontier model developers with in-house safety functions.",
-    "stakeholder_type": "AI company",
-    "leadership": "Yan Junjie (Co-founder & CEO)",
+    "leadership": [
+      {
+        "name": "Yan Junjie",
+        "role": "Co-founder & CEO"
+      }
+    ],
     "website": "https://www.minimax.io/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 23
+    "short_name": "MiniMax"
   },
   {
-    "id": "ACT-024",
-    "name": "StepFun / 阶跃星辰",
+    "id": "stepfun",
+    "layer": "ecosystem",
     "name_en": "StepFun",
     "name_zh": "阶跃星辰",
-    "group": "Ecosystem Actor",
+    "category": "AI company",
     "overview": "Shanghai-based AI company founded in 2023 by former Microsoft researchers, specializing in multimodal large models (Step series across text, vision, video, and audio); a frontier Chinese model developer engaged in the domestic AI ecosystem.",
-    "stakeholder_type": "AI company",
-    "leadership": "Jiang Daxin (Founder)",
+    "leadership": [
+      {
+        "name": "Jiang Daxin",
+        "role": "Founder"
+      }
+    ],
     "website": "https://stepfun.ai/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 24
+    "short_name": "StepFun"
   },
   {
-    "id": "ACT-025",
-    "name": "Alibaba / 阿里巴巴集团",
+    "id": "alibaba",
+    "layer": "ecosystem",
     "name_en": "Alibaba",
     "name_zh": "阿里巴巴集团",
-    "group": "Ecosystem Actor",
+    "category": "AI company",
     "overview": "Technology conglomerate and developer of the Qwen open-weight model family via Alibaba Cloud. A central actor in China's AI ecosystem whose model releases, safety practices, and governance participation (standards, industry alliances) carry system-wide weight.",
-    "stakeholder_type": "AI company",
-    "leadership": "Joe Tsai (Chairman); Eddie Wu (CEO)",
+    "leadership": [
+      {
+        "name": "Joe Tsai",
+        "role": "Chairman"
+      },
+      {
+        "name": "Eddie Wu",
+        "role": "CEO"
+      }
+    ],
     "website": "https://www.alibabagroup.com/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 25
+    "short_name": "Alibaba"
   },
   {
-    "id": "ACT-026",
-    "name": "Baidu / 百度",
+    "id": "baidu",
+    "layer": "ecosystem",
     "name_en": "Baidu",
     "name_zh": "百度",
-    "group": "Ecosystem Actor",
+    "category": "AI company",
     "overview": "Leading AI company with full-stack capabilities from AI chips to the ERNIE model family and applications. Long-standing participant in AI governance, ethics, and standards initiatives, with in-house safety and security functions.",
-    "stakeholder_type": "AI company",
-    "leadership": "Robin Li (Co-founder, Chairman & CEO)",
+    "leadership": [
+      {
+        "name": "Robin Li",
+        "role": "Co-founder, Chairman & CEO"
+      }
+    ],
     "website": "https://www.baidu.com/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 26
+    "short_name": "Baidu"
   },
   {
-    "id": "ACT-027",
-    "name": "Tencent / 腾讯",
+    "id": "tencent",
+    "layer": "ecosystem",
     "name_en": "Tencent",
     "name_zh": "腾讯",
-    "group": "Ecosystem Actor",
+    "category": "AI company",
     "overview": "Technology conglomerate developing the Hunyuan model family and applying AI across social, content, and gaming businesses. Maintains named security research units (e.g., Zhuque Lab) and research arms engaged in AI ethics and governance.",
-    "stakeholder_type": "AI company",
-    "leadership": "Ma Huateng (Co-founder, Chairman & CEO)",
+    "leadership": [
+      {
+        "name": "Ma Huateng",
+        "role": "Co-founder, Chairman & CEO"
+      }
+    ],
     "website": "https://www.tencent.com/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 27
+    "short_name": "Tencent"
   },
   {
-    "id": "ACT-028",
-    "name": "ByteDance / 字节跳动",
+    "id": "bytedance",
+    "layer": "ecosystem",
     "name_en": "ByteDance",
     "name_zh": "字节跳动",
-    "group": "Ecosystem Actor",
+    "category": "AI company",
     "overview": "Global technology company (Douyin/TikTok, Toutiao) and developer of the Doubao model family; operates large-scale recommendation systems and AI research teams, making its safety, alignment, and content governance practices highly consequential.",
-    "stakeholder_type": "AI company",
-    "leadership": "Liang Rubo (Chairman)",
+    "leadership": [
+      {
+        "name": "Liang Rubo",
+        "role": "Chairman"
+      }
+    ],
     "website": "https://www.bytedance.com/en/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 28
+    "short_name": "ByteDance"
   },
   {
-    "id": "ACT-029",
-    "name": "China Mobile / 中国移动",
+    "id": "china-mobile",
+    "layer": "ecosystem",
     "name_en": "China Mobile",
     "name_zh": "中国移动",
-    "group": "Ecosystem Actor",
+    "category": "AI company",
     "overview": "China's largest mobile network operator and state-owned digital infrastructure provider; develops and deploys AI at scale (including the Jiutian model series) and has published analysis on AI security risks and coping strategies.",
-    "stakeholder_type": "AI company",
-    "leadership": "Chen Zhongyue (Chairman); Chen Yangfan (CEO)",
+    "leadership": [
+      {
+        "name": "Chen Zhongyue",
+        "role": "Chairman"
+      },
+      {
+        "name": "Chen Yangfan",
+        "role": "CEO"
+      }
+    ],
     "website": "https://www.chinamobileltd.com/en/global/home.php",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 29
+    "short_name": "China Mobile"
   },
   {
-    "id": "ACT-030",
-    "name": "Ant Group / 蚂蚁集团",
+    "id": "ant-group",
+    "layer": "ecosystem",
     "name_en": "Ant Group",
     "name_zh": "蚂蚁集团",
-    "group": "Ecosystem Actor",
+    "category": "AI company",
     "overview": "Fintech and technology company (Alipay) that applies AI across finance and has published AI ethics principles to guide its use of intelligent technologies; participates in national AI governance initiatives and international AI safety dialogues.",
-    "stakeholder_type": "AI company",
-    "leadership": "Eric Jing (Chairman)",
+    "leadership": [
+      {
+        "name": "Eric Jing",
+        "role": "Chairman"
+      }
+    ],
     "website": "https://www.antgroup.com/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 30
+    "short_name": "Ant Group"
   },
   {
-    "id": "ACT-031",
-    "name": "Huawei / 华为",
+    "id": "huawei",
+    "layer": "ecosystem",
     "name_en": "Huawei",
     "name_zh": "华为",
-    "group": "Ecosystem Actor",
+    "category": "AI company",
     "overview": "A major Chinese AI infrastructure and model developer. It has published an AI Security White Paper and lifecycle-oriented guidance on security and privacy for AI systems.",
-    "stakeholder_type": "AI company",
-    "leadership": "David Wang (Rotating and Acting Chair, Apr–Sep 2026)",
+    "leadership": [
+      {
+        "name": "David Wang",
+        "role": "Rotating and Acting Chair, Apr–Sep 2026"
+      }
+    ],
     "website": "https://www.huawei.com/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 31
+    "short_name": "Huawei"
   },
   {
-    "id": "ACT-032",
-    "name": "SenseTime / 商汤科技",
+    "id": "sensetime",
+    "layer": "ecosystem",
     "name_en": "SenseTime",
     "name_zh": "商汤科技",
-    "group": "Ecosystem Actor",
+    "category": "AI company",
     "overview": "A major Chinese AI company with a Committee of AI Ethics and Governance. It has published a Code of Ethics for AI Sustainable Development and reports certification against the ISO/IEC 42001 AI management-system standard.",
-    "stakeholder_type": "AI company",
-    "leadership": "Xu Li (Co-founder, Executive Chairman & CEO)",
+    "leadership": [
+      {
+        "name": "Xu Li",
+        "role": "Co-founder, Executive Chairman & CEO"
+      }
+    ],
     "website": "https://www.sensetime.com/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 32
+    "short_name": "SenseTime"
   },
   {
-    "id": "ACT-033",
-    "name": "China Academy of Information and Communications Technology (CAICT) / 中国信息通信研究院",
+    "id": "caict",
+    "layer": "ecosystem",
     "name_en": "China Academy of Information and Communications Technology (CAICT)",
     "name_zh": "中国信息通信研究院",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Government-affiliated",
     "overview": "MIIT-affiliated national think tank and industry platform founded in 1957. A central node for AI policy support, standards, and testing/certification, including AI safety evaluation work such as the Fangsheng AI risk-testing platform, and the operational backbone of the AI Industry Alliance (AIIA).",
-    "stakeholder_type": "Research institute – Government-affiliated",
-    "leadership": "Yu Xiaohui (President)",
+    "leadership": [
+      {
+        "name": "Yu Xiaohui",
+        "role": "President"
+      }
+    ],
     "website": "http://www.caict.ac.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 33
+    "short_name": "CAICT"
   },
   {
-    "id": "ACT-034",
-    "name": "China Center for Information Industry Development (CCID) / 中国电子信息产业发展研究院",
+    "id": "ccid",
+    "layer": "ecosystem",
     "name_en": "China Center for Information Industry Development (CCID)",
     "name_zh": "中国电子信息产业发展研究院",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Government-affiliated",
     "overview": "Public institution directly under MIIT functioning as a national high-end think tank for the information technology sector, with work spanning policy research, consulting, and evaluation and certification for emerging technologies including AI. A member institution of CnAISDA.",
-    "stakeholder_type": "Research institute – Government-affiliated",
-    "leadership": "Zhang Li (President)",
+    "leadership": [
+      {
+        "name": "Zhang Li",
+        "role": "President"
+      }
+    ],
     "website": "http://www.ccidgroup.com/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 34
+    "short_name": "CCID"
   },
   {
-    "id": "ACT-035",
-    "name": "China Electronics Standardization Institute (CESI) / 中国电子技术标准化研究院",
+    "id": "cesi",
+    "layer": "ecosystem",
     "name_en": "China Electronics Standardization Institute (CESI)",
     "name_zh": "中国电子技术标准化研究院",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Government-affiliated / standard-setter",
     "overview": "A Ministry of Industry and Information Technology-affiliated institute that conducts electronics and information-technology standardization, testing, and certification. It serves standardization bodies working on AI and has published AI standardization research and guidance.",
-    "stakeholder_type": "Research institute – Government-affiliated / standard-setter",
-    "leadership": "Unknown",
+    "leadership": [],
     "website": "https://www.cesi.cn/page/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 35
+    "short_name": "CESI"
   },
   {
-    "id": "ACT-036",
-    "name": "Chinese Academy of Cyberspace Studies (CACS) / 中国网络空间研究院",
+    "id": "cacs",
+    "layer": "ecosystem",
     "name_en": "Chinese Academy of Cyberspace Studies (CACS)",
     "name_zh": "中国网络空间研究院",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Government-affiliated",
     "overview": "Think tank within China's cyberspace governance system providing research and policy support on cybersecurity, data governance, and cyberspace governance; produces the annual China Internet Development and World Internet Development reports supporting the World Internet Conference.",
-    "stakeholder_type": "Research institute – Government-affiliated",
-    "leadership": "Xia Xueping (president)",
+    "leadership": [
+      {
+        "name": "Xia Xueping",
+        "role": "president"
+      }
+    ],
     "website": "https://www.cac.gov.cn/2017-10/09/c_1121779900.htm",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 36
+    "short_name": "CACS"
   },
   {
-    "id": "ACT-037",
-    "name": "Development Research Center of the State Council (DRC) / 国务院发展研究中心",
+    "id": "drc",
+    "layer": "ecosystem",
     "name_en": "Development Research Center of the State Council (DRC)",
     "name_zh": "国务院发展研究中心",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Government-affiliated",
     "overview": "Policy research institution under the direct leadership of the State Council, providing research and consulting on economic and social development. Contributes to national AI policy thinking on development, industrial transformation, and governance implications of AI.",
-    "stakeholder_type": "Research institute – Government-affiliated",
-    "leadership": "Lu Hao (Director)",
+    "leadership": [
+      {
+        "name": "Lu Hao",
+        "role": "Director"
+      }
+    ],
     "website": "https://www.drc.gov.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 37
+    "short_name": "DRC"
   },
   {
-    "id": "ACT-038",
-    "name": "Shanghai Artificial Intelligence Laboratory / 上海人工智能实验室",
+    "id": "shlab",
+    "layer": "ecosystem",
     "name_en": "Shanghai Artificial Intelligence Laboratory",
     "name_zh": "上海人工智能实验室",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Government-affiliated",
     "overview": "National-level AI research institution unveiled at WAIC 2020 with a stated vision of open, controllable, and trustworthy AI. Alongside frontier research, it runs prominent safety-relevant efforts including the OpenCompass evaluation platform and the FLAMES and SALAD-Bench safety benchmarks, and hosts the Shanghai AI Safety and Governance Institute.",
-    "stakeholder_type": "Research institute – Government-affiliated",
-    "leadership": "Zhou Bowen (Director & Chief Scientist)",
+    "leadership": [
+      {
+        "name": "Zhou Bowen",
+        "role": "Director & Chief Scientist"
+      }
+    ],
     "website": "https://www.shlab.org.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 38
+    "short_name": "Shanghai Artif"
   },
   {
-    "id": "ACT-039",
-    "name": "Beijing Institute of AI Safety and Governance (Beijing-AISI) / 北京前瞻人工智能安全与治理研究院",
+    "id": "beijing-aisi",
+    "layer": "ecosystem",
     "name_en": "Beijing Institute of AI Safety and Governance (Beijing-AISI)",
     "name_zh": "北京前瞻人工智能安全与治理研究院",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Government-affiliated",
     "overview": "New-type R&D institution dedicated to AI safety and governance, supervised by the Beijing Municipal Bureau of Economy and Information Technology. Builds systematic safety and governance frameworks, released an AI Application Risk Assessment Tool, and works on AI ethics/safety evaluation systems and a Safe AI foundational model.",
-    "stakeholder_type": "Research institute – Government-affiliated",
-    "leadership": "Yi Zeng (Dean)",
+    "leadership": [
+      {
+        "name": "Yi Zeng",
+        "role": "Dean"
+      }
+    ],
     "website": "https://beijing-aisi.ac.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 39
+    "short_name": "Beijing-AISI"
   },
   {
-    "id": "ACT-040",
-    "name": "Beijing Key Laboratory for Safe AI and Superalignment / 北京市安全人工智能与超级对齐重点实验室",
+    "id": "bjlab-safeai",
+    "layer": "ecosystem",
     "name_en": "Beijing Key Laboratory for Safe AI and Superalignment",
     "name_zh": "北京市安全人工智能与超级对齐重点实验室",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Government-affiliated",
     "overview": "Key laboratory led by the CAS Institute of Automation, in collaboration with Peking University and Beijing Normal University, focused on safety risks of frontier AI and research breakthroughs in AI safety and superalignment.",
-    "stakeholder_type": "Research institute – Government-affiliated",
-    "leadership": null,
+    "leadership": [],
     "website": "https://brain-cog.ai/safelab",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 40
+    "short_name": "BJ Safe AI Lab"
   },
   {
-    "id": "ACT-041",
-    "name": "Beijing Academy of Artificial Intelligence (BAAI) / 北京智源人工智能研究院",
+    "id": "baai",
+    "layer": "ecosystem",
     "name_en": "Beijing Academy of Artificial Intelligence (BAAI)",
     "name_zh": "北京智源人工智能研究院",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Government-affiliated",
     "overview": "Non-profit AI research institution established in 2018 and a hub of China's AI research community. Active in AI safety and governance convening, including safety commitments and international dialogues, and a founding member of CnAISDA.",
-    "stakeholder_type": "Research institute – Government-affiliated",
-    "leadership": "Huang Tiejun (Chairman); Wang Zhongyuan (President)",
+    "leadership": [
+      {
+        "name": "Huang Tiejun",
+        "role": "Chairman"
+      },
+      {
+        "name": "Wang Zhongyuan",
+        "role": "President"
+      }
+    ],
     "website": "https://www.baai.ac.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 41
+    "short_name": "BAAI"
   },
   {
-    "id": "ACT-042",
-    "name": "Beijing Institute for General Artificial Intelligence (BIGAI) / 北京通用人工智能研究院",
+    "id": "bigai",
+    "layer": "ecosystem",
     "name_en": "Beijing Institute for General Artificial Intelligence (BIGAI)",
     "name_zh": "北京通用人工智能研究院",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Government-affiliated",
     "overview": "Non-profit research institute supported by the Beijing municipal government and MOST, in partnership with Peking and Tsinghua Universities, pursuing a unified theory of general intelligent agents; engages with AI safety and governance questions around AGI development.",
-    "stakeholder_type": "Research institute – Government-affiliated",
-    "leadership": "Zhu Songchun (Founder & Dean)",
+    "leadership": [
+      {
+        "name": "Zhu Songchun",
+        "role": "Founder & Dean"
+      }
+    ],
     "website": "https://www.bigai.ai/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 42
+    "short_name": "BIGAI"
   },
   {
-    "id": "ACT-043",
-    "name": "Research Center for AI Ethics and Governance, CAS Institute of Automation / 人工智能伦理与治理研究中心（中科院自动化所）",
+    "id": "casia-aieg",
+    "layer": "ecosystem",
     "name_en": "Research Center for AI Ethics and Governance, CAS Institute of Automation",
     "name_zh": "人工智能伦理与治理研究中心（中科院自动化所）",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Government-affiliated",
     "overview": "The CAS Institute of Automation's dedicated center for AI ethics and governance research, focusing on responsible AI models, applications, and governance for sustainable AI development.",
-    "stakeholder_type": "Research institute – Government-affiliated",
-    "leadership": "Zeng Yi (Director)",
+    "leadership": [
+      {
+        "name": "Zeng Yi",
+        "role": "Director"
+      }
+    ],
     "website": "https://www.ia.cas.cn/jgsz/kyxt/llyzl/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 43
+    "short_name": "CASIA-AIEG"
   },
   {
-    "id": "ACT-044",
-    "name": "International Research Center for AI Ethics and Governance (IRCAIEG)",
+    "id": "ircaieg",
+    "layer": "ecosystem",
     "name_en": "International Research Center for AI Ethics and Governance (IRCAIEG)",
-    "name_zh": null,
-    "group": "Ecosystem Actor",
+    "name_zh": "",
+    "category": "Research institute – Government-affiliated",
     "overview": "Cross-cultural research center at the CAS Institute of Automation. Released the Beijing AI Principles (2019), endorsed by Tsinghua, Peking University, and AITISA, and co-initiated the AGILE international AI governance evaluation index.",
-    "stakeholder_type": "Research institute – Government-affiliated",
-    "leadership": "Zeng Yi (Director)",
+    "leadership": [
+      {
+        "name": "Zeng Yi",
+        "role": "Director"
+      }
+    ],
     "website": "https://ai-ethics-and-governance.institute/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 44
+    "short_name": "IRCAIEG"
   },
   {
-    "id": "ACT-045",
-    "name": "Center for Long-term Artificial Intelligence (CLAI)",
+    "id": "clai",
+    "layer": "ecosystem",
     "name_en": "Center for Long-term Artificial Intelligence (CLAI)",
-    "name_zh": null,
-    "group": "Ecosystem Actor",
+    "name_zh": "",
+    "category": "Research institute – Government-affiliated",
     "overview": "Research center associated with the CAS Institute of Automation focused on long-term AI safety and the trajectory toward advanced AI; co-initiated the AGILE AI Governance International Evaluation Index assessing AI governance across countries.",
-    "stakeholder_type": "Research institute – Government-affiliated",
-    "leadership": "Zeng Yi (Founder)",
+    "leadership": [
+      {
+        "name": "Zeng Yi",
+        "role": "Founder"
+      }
+    ],
     "website": "https://longtermai.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 45
+    "short_name": "CLAI"
   },
   {
-    "id": "ACT-046",
-    "name": "Shanghai AI Safety and Governance Institute / 上海人工智能安全治理研究院",
+    "id": "sh-aisgi",
+    "layer": "ecosystem",
     "name_en": "Shanghai AI Safety and Governance Institute",
     "name_zh": "上海人工智能安全治理研究院",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Government-affiliated",
     "overview": "City-level public service platform for AI safety and governance unveiled at WAIC 2024, operating under the Shanghai AI Laboratory to support Shanghai's development as an AI governance hub.",
-    "stakeholder_type": "Research institute – Government-affiliated",
-    "leadership": "Unknown",
+    "leadership": [],
     "website": "https://www.shlab.org.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 46
+    "short_name": "Shanghai AISGI"
   },
   {
-    "id": "ACT-047",
-    "name": "Shanghai Qi Zhi Institute / 上海期智研究院",
+    "id": "sqz",
+    "layer": "ecosystem",
     "name_en": "Shanghai Qi Zhi Institute",
     "name_zh": "上海期智研究院",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Government-affiliated",
     "overview": "A Shanghai-supported research institute founded in 2020, with programs spanning artificial intelligence, information security, and quantum computing. It has participated in the International Dialogues on AI Safety and China's AI-safety research ecosystem.",
-    "stakeholder_type": "Research institute – Government-affiliated",
-    "leadership": "Andrew Yao / Yao Qizhi (President)",
+    "leadership": [
+      {
+        "name": "Andrew Yao / Yao Qizhi",
+        "role": "President"
+      }
+    ],
     "website": "https://www.sqz.ac.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 47
+    "short_name": "Qi Zhi Institute"
   },
   {
-    "id": "ACT-048",
-    "name": "Tsinghua University – Institute for AI International Governance (I-AIIG) / 清华大学人工智能国际治理研究院",
+    "id": "iaiig",
+    "layer": "ecosystem",
     "name_en": "Tsinghua University – Institute for AI International Governance (I-AIIG)",
     "name_zh": "清华大学人工智能国际治理研究院",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Academia",
     "overview": "University-level research institution established in 2020 focused on major theoretical and policy issues in global AI governance; provides intellectual support to China's participation in international AI governance and convenes international dialogues.",
-    "stakeholder_type": "Research institute – Academia",
-    "leadership": "Xue Lan (Dean); Liang Zheng (Vice Dean); Xiao Qian (Vice Dean)",
+    "leadership": [
+      {
+        "name": "Xue Lan",
+        "role": "Dean"
+      },
+      {
+        "name": "Liang Zheng",
+        "role": "Vice Dean"
+      },
+      {
+        "name": "Xiao Qian",
+        "role": "Vice Dean"
+      }
+    ],
     "website": "https://aiig.tsinghua.edu.cn/en/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 48
+    "short_name": "I-AIIG"
   },
   {
-    "id": "ACT-049",
-    "name": "Tsinghua University – Center for International Security and Strategy (CISS) / 清华大学战略与安全研究中心",
+    "id": "ciss",
+    "layer": "ecosystem",
     "name_en": "Tsinghua University – Center for International Security and Strategy (CISS)",
     "name_zh": "清华大学战略与安全研究中心",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Academia",
     "overview": "Policy think tank at Tsinghua University bridging government, industry, and academia on security and strategy, including Track II dialogues and policy work on AI security and international AI governance.",
-    "stakeholder_type": "Research institute – Academia",
-    "leadership": "Da Wei (Director)",
+    "leadership": [
+      {
+        "name": "Da Wei",
+        "role": "Director"
+      }
+    ],
     "website": "https://ciss.tsinghua.edu.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 49
+    "short_name": "CISS"
   },
   {
-    "id": "ACT-050",
-    "name": "Peking University – Center for AI Safety and Governance / 北京大学人工智能安全与治理中心",
+    "id": "pku-aisg",
+    "layer": "ecosystem",
     "name_en": "Peking University – Center for AI Safety and Governance",
     "name_zh": "北京大学人工智能安全与治理中心",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Academia",
     "overview": "Interdisciplinary center spanning computer science, law, and ethics with a core mission of preventing and managing risks from frontier AI; research spans AI ethics, value alignment, and safety governance.",
-    "stakeholder_type": "Research institute – Academia",
-    "leadership": "Zhang Ping (Director); Yang Yaodong (Executive Director)",
+    "leadership": [
+      {
+        "name": "Zhang Ping",
+        "role": "Director"
+      },
+      {
+        "name": "Yang Yaodong",
+        "role": "Executive Director"
+      }
+    ],
     "website": "https://www.ai.pku.edu.cn/en/Centers/Centers_for_AI_Humanities_and_Social_Sciences/Center_for_AI_Safety_and_Governance.htm",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 50
+    "short_name": "PKU-AISG"
   },
   {
-    "id": "ACT-051",
-    "name": "Fudan University – Center for Global AI Innovative Governance / 复旦大学全球人工智能创新治理中心",
+    "id": "fudan-cgaig",
+    "layer": "ecosystem",
     "name_en": "Fudan University – Center for Global AI Innovative Governance",
     "name_zh": "复旦大学全球人工智能创新治理中心",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Academia",
     "overview": "Center inaugurated at WAIC 2025 building a collaborative platform connecting Shanghai, China, and the world on AI governance, talent development, and AI for social good, with the aim of contributing to global AI governance frameworks.",
-    "stakeholder_type": "Research institute – Academia",
-    "leadership": "Unknown",
+    "leadership": [],
     "website": "https://www.fdsm.fudan.edu.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 51
+    "short_name": "Fudan CGAIG"
   },
   {
-    "id": "ACT-052",
-    "name": "SJTU Center for AI Governance and Law / 上海交通大学人工智能治理与法律研究中心",
+    "id": "sjtu-aigl",
+    "layer": "ecosystem",
     "name_en": "SJTU Center for AI Governance and Law",
     "name_zh": "上海交通大学人工智能治理与法律研究中心",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Academia",
     "overview": "Joint center of the SJTU AI Institute and the China Institute for Law and Society focusing on AI governance, AI and law, legal AI, and data governance through interdisciplinary research and policy/legal frameworks.",
-    "stakeholder_type": "Research institute – Academia",
-    "leadership": "Ji Weidong (Director)",
+    "leadership": [
+      {
+        "name": "Ji Weidong",
+        "role": "Director"
+      }
+    ],
     "website": "https://www.socio-legal.sjtu.edu.cn/gk/index.aspx",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 52
+    "short_name": "SJTU-AIGL"
   },
   {
-    "id": "ACT-053",
-    "name": "Shanghai Collaborative Innovation Center for AI Social Governance, Tongji University Law School / 上海市人工智能社会治理协同创新中心（同济大学法学院）",
+    "id": "tongji-aisg",
+    "layer": "ecosystem",
     "name_en": "Shanghai Collaborative Innovation Center for AI Social Governance, Tongji University Law School",
     "name_zh": "上海市人工智能社会治理协同创新中心（同济大学法学院）",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Academia",
     "overview": "Law school hosting the Shanghai Collaborative Innovation Center for AI Social Governance, a municipal platform for research on the social governance of AI. Co-organizes AI governance forums with the National Experimental Comprehensive Base of Intelligent Social Governance, connecting legal scholarship to Shanghai's AI governance experimentation.",
-    "stakeholder_type": "Research institute – Academia",
-    "leadership": "Xu Gang (Secretary-general)",
+    "leadership": [
+      {
+        "name": "Xu Gang",
+        "role": "Secretary-general"
+      }
+    ],
     "website": "https://aisg.tongji.edu.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 53
+    "short_name": "Tongji AISG"
   },
   {
-    "id": "ACT-054",
-    "name": "Chinese Academy of Social Sciences – Institute of Law / 中国社会科学院法学研究所",
+    "id": "cass-law",
+    "layer": "ecosystem",
     "name_en": "Chinese Academy of Social Sciences – Institute of Law",
     "name_zh": "中国社会科学院法学研究所",
-    "group": "Ecosystem Actor",
+    "category": "Research institute – Government-affiliated",
     "overview": "National-level legal research institution and government think tank; a leading academic home for AI legislation research in China, including scholar-drafted model AI law proposals and work on the rule of law for AI and data governance.",
-    "stakeholder_type": "Research institute – Government-affiliated",
-    "leadership": "Mo Jihong (Director)",
+    "leadership": [
+      {
+        "name": "Mo Jihong",
+        "role": "Director"
+      }
+    ],
     "website": "http://iolaw.cssn.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 54
+    "short_name": "CASS Law"
   },
   {
-    "id": "ACT-055",
-    "name": "RealAI / 瑞莱智慧",
+    "id": "realai",
+    "layer": "ecosystem",
     "name_en": "RealAI",
     "name_zh": "瑞莱智慧",
-    "group": "Ecosystem Actor",
+    "category": "AI safety company",
     "overview": "AI safety and security company founded in 2018 out of Tsinghua University's Institute for AI. Provides AI security platforms and solutions (adversarial robustness, deepfake detection, model safety evaluation) for sectors including finance and government, and runs its own AI governance research institute.",
-    "stakeholder_type": "AI safety company",
-    "leadership": "Tian Tian (CEO); advisors incl. Zhang Bo and Zhu Jun (Tsinghua)",
+    "leadership": [
+      {
+        "name": "Tian Tian",
+        "role": "CEO"
+      },
+      {
+        "name": "advisors incl. Zhang Bo and Zhu Jun",
+        "role": "Tsinghua"
+      }
+    ],
     "website": "https://www.realai.ai/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 55
+    "short_name": "RealAI"
   },
   {
-    "id": "ACT-056",
-    "name": "China AI Safety and Development Association (CnAISDA) / 中国人工智能发展与安全研究网络",
+    "id": "cnaisda",
+    "layer": "ecosystem",
     "name_en": "China AI Safety and Development Association (CnAISDA)",
     "name_zh": "中国人工智能发展与安全研究网络",
-    "group": "Ecosystem Actor",
+    "category": "Professional association",
     "overview": "Consortium of leading Chinese AI institutions (incl. BAAI, CAICT, CCID, CAS Institute of Automation, Peking University, Shanghai AI Lab, Shanghai Qi Zhi Institute, Tsinghua University) launched around the 2025 Paris AI Action Summit. Functions as China's counterpart in international AI safety institute dialogues, spanning AI safety research from theory to testing, audits, and governance.",
-    "stakeholder_type": "Professional association",
-    "leadership": "Convening experts incl. Andrew Yao, Fu Ying, Xue Lan, Zeng Yi",
+    "leadership": [
+      {
+        "name": "Convening experts incl. Andrew Yao, Fu Ying, Xue Lan, Zeng Yi",
+        "role": ""
+      }
+    ],
     "website": "https://cnaisi.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 56
+    "short_name": "CnAISDA"
   },
   {
-    "id": "ACT-057",
-    "name": "AI Industry Alliance of China (AIIA) / 中国人工智能产业发展联盟",
+    "id": "aiia",
+    "layer": "ecosystem",
     "name_en": "AI Industry Alliance of China (AIIA)",
     "name_zh": "中国人工智能产业发展联盟",
-    "group": "Ecosystem Actor",
+    "category": "Professional association",
     "overview": "Industry alliance launched in 2017 under the guidance of NDRC, MOST, MIIT, and CAC, led operationally by CAICT, with 250+ members across companies and universities. Conducts AI safety/trustworthiness evaluation and standards work and issued a joint self-discipline pledge for the AI industry.",
-    "stakeholder_type": "Professional association",
-    "leadership": "Pan Yunhe (Chairman); Gao Wen (Expert Committee Director)",
+    "leadership": [
+      {
+        "name": "Pan Yunhe",
+        "role": "Chairman"
+      },
+      {
+        "name": "Gao Wen",
+        "role": "Expert Committee Director"
+      }
+    ],
     "website": "https://aiiaorg.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 57
+    "short_name": "AIIA"
   },
   {
-    "id": "ACT-058",
-    "name": "Cyber Security Association of China (CSAC) / 中国网络空间安全协会",
+    "id": "csac",
+    "layer": "ecosystem",
     "name_en": "Cyber Security Association of China (CSAC)",
     "name_zh": "中国网络空间安全协会",
-    "group": "Ecosystem Actor",
+    "category": "Professional association",
     "overview": "National non-profit association established in 2016 under CAC supervision, spanning cybersecurity companies, research institutions, and experts. Serves as a bridge between industry and regulators on cybersecurity and data security governance, increasingly extending to AI security issues.",
-    "stakeholder_type": "Professional association",
-    "leadership": "Wang Xiujun (Chairman)",
+    "leadership": [
+      {
+        "name": "Wang Xiujun",
+        "role": "Chairman"
+      }
+    ],
     "website": "http://www.cybersac.cn",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 58
+    "short_name": "CSAC"
   },
   {
-    "id": "ACT-059",
-    "name": "World Artificial Intelligence Conference (WAIC) Organizing Committee / 世界人工智能大会组委会",
+    "id": "waic",
+    "layer": "ecosystem",
     "name_en": "World Artificial Intelligence Conference (WAIC) Organizing Committee",
     "name_zh": "世界人工智能大会组委会",
-    "group": "Ecosystem Actor",
+    "category": "Convening platform",
     "overview": "State Council-approved annual conference in Shanghai, co-hosted by national ministries and the Shanghai Municipal Government. The system's flagship convening for AI development and governance — the launch venue for major governance initiatives, institutions (Shanghai AI Lab, Fudan's governance center), and international governance proposals including the 2025 Global AI Governance Action Plan.",
-    "stakeholder_type": "Convening platform",
-    "leadership": "Organized by Donghao Lansheng Exhibition Group (Shanghai SOE); operated via wholly-owned subsidiary Weike Yinli",
+    "leadership": [
+      {
+        "name": "Organized by Donghao Lansheng Exhibition Group",
+        "role": "Shanghai SOE"
+      },
+      {
+        "name": "operated via wholly-owned subsidiary Weike Yinli",
+        "role": ""
+      }
+    ],
     "website": "https://www.worldaic.com.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 59
+    "short_name": "WAIC"
   },
   {
-    "id": "ACT-060",
-    "name": "Weike Yinli (WAIC operating company) / 上海东浩兰生威客引力信息科技有限公司",
+    "id": "weike-yinli",
+    "layer": "ecosystem",
     "name_en": "Weike Yinli (WAIC operating company)",
     "name_zh": "上海东浩兰生威客引力信息科技有限公司",
-    "group": "Ecosystem Actor",
+    "category": "Convening platform – Operator",
     "overview": "Wholly-owned subsidiary established in December 2024 by Donghao Lansheng Exhibition Group (Shanghai SOE, SSE 600826) to run WAIC as a standalone operation, positioned as a 'global AI ecosystem connector.' Runs the conference's year-round ecosystem sub-brands — WAIC FutureTech (startup-capital matchmaking), WAIC Connect (industry matchmaking), WAIC UP! (online journal), WAIC Young (early-career talent) — plus a membership system and the 'Hi WAIC' app, turning the annual convening into an always-on platform.",
-    "stakeholder_type": "Convening platform – Operator",
-    "leadership": "Qiu Haoming (CEO)",
+    "leadership": [
+      {
+        "name": "Qiu Haoming",
+        "role": "CEO"
+      }
+    ],
     "website": "https://www.worldaic.com.cn/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 60
+    "short_name": "Weike Yinli"
   },
   {
-    "id": "ACT-061",
-    "name": "Concordia AI / 安远AI",
+    "id": "concordia",
+    "layer": "ecosystem",
     "name_en": "Concordia AI",
     "name_zh": "安远AI",
-    "group": "Ecosystem Actor",
+    "category": "Civil society",
     "overview": "Beijing- and Singapore-based social enterprise dedicated to AI safety and governance. Advises on AI safety and governance, supports China's AI safety community, promotes international cooperation, and publishes the State of AI Safety in China reports that make the Chinese ecosystem legible internationally.",
-    "stakeholder_type": "Civil society",
-    "leadership": "Brian Tse (Founder & CEO)",
+    "leadership": [
+      {
+        "name": "Brian Tse",
+        "role": "Founder & CEO"
+      }
+    ],
     "website": "https://concordia-ai.com/",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 61
+    "short_name": "Concordia AI"
   },
   {
-    "id": "ACT-062",
-    "name": "Fungimind / 智幻时刻",
+    "id": "fungimind",
+    "layer": "ecosystem",
     "name_en": "Fungimind",
     "name_zh": "智幻时刻",
-    "group": "Ecosystem Actor",
+    "category": "Civil society – Media / podcast",
     "overview": "Chinese-language podcast at the intersection of AI and public issues — covering AI governance, safety narratives, technology law, and STS — that brings governance and safety discourse to domestic Chinese audiences. Hosted by Zhuoran Zhou, an AI governance researcher with a background in financial media and the cloud/AI industry.",
-    "stakeholder_type": "Civil society – Media / podcast",
-    "leadership": "Zhuoran Zhou (Founder & Host)",
+    "leadership": [
+      {
+        "name": "Zhuoran Zhou",
+        "role": "Founder & Host"
+      }
+    ],
     "website": "https://podcasts.apple.com/ca/podcast/%E6%99%BA%E5%B9%BB%E6%97%B6%E5%88%BBfungimind/id1802110330",
-    "wikipedia": null,
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 62
+    "short_name": "Fungimind"
   },
   {
-    "id": "ACT-063",
-    "name": "World Artificial Intelligence Cooperation Organization (WAICO) / 世界人工智能合作组织",
+    "id": "waico",
+    "layer": "ecosystem",
     "name_en": "World Artificial Intelligence Cooperation Organization (WAICO)",
     "name_zh": "世界人工智能合作组织",
-    "group": "Ecosystem Actor",
+    "category": "Intergovernmental organization (China-hosted)",
     "overview": "An intergovernmental international organization established July 16, 2026 in Shanghai on the eve of WAIC 2026, with 29 founding member countries. Following the UN Charter, WAICO's mission is to promote cooperation on global AI governance, capacity-building, and safety, with an emphasis on bridging developed and developing economies. The signing ceremony was jointly hosted by China's Ministry of Foreign Affairs, MIIT, and the Shanghai Municipal Government; Foreign Minister Wang Yi signed on China's behalf, with UN Secretary-General António Guterres in attendance. Shanghai AI Laboratory and Fudan University served as the de facto secretariat during the establishment process. First proposed by Premier Li Qiang at WAIC 2025, reiterated by President Xi Jinping at APEC 2025, and formally announced by Xi in his July 17, 2026 WAIC 2026 opening keynote titled \"Joining Hands to Build a Just and Equitable System for Global AI Governance\" (Xinhua English full text linked as reference URL; additional coverage via Xinhua Chinese, gov.cn, CGTN, and China's State Council Information Office). No standalone WAICO website has been established at time of entry.",
-    "stakeholder_type": "Intergovernmental organization (China-hosted)",
-    "leadership": null,
+    "leadership": [],
     "website": "https://english.news.cn/20260717/893fe11097db460ea31b98f131e34ef0/c.html",
     "wikipedia": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization",
-    "source_sheet": "Ecosystem Actors (China)",
-    "source_row": 63
+    "short_name": "WAICO"
   },
   {
-    "id": "BRG-002",
-    "name": "ChinAI Newsletter",
+    "id": "chinai",
+    "layer": "bridge",
     "name_en": "ChinAI Newsletter",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Newsletter / Substack",
     "overview": "Jeff Ding's weekly Substack translating writings from Chinese thinkers on China's AI landscape, including AI safety benchmarks, governance reports, and policy debates. Running since 2018 with tens of thousands of subscribers, it is the canonical translation channel between Chinese-language AI discourse and English-speaking audiences. Ding is an Assistant Professor of Political Science at George Washington University.",
-    "stakeholder_type": "Bridge – Newsletter / Substack",
-    "leadership": "Jeffrey Ding (Author; Assistant Professor, George Washington University)",
+    "leadership": [
+      {
+        "name": "Jeffrey Ding (Author",
+        "role": ""
+      },
+      {
+        "name": "Assistant Professor, George Washington University)",
+        "role": ""
+      }
+    ],
     "website": "https://chinai.substack.com/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 2
+    "short_name": "ChinAI"
   },
   {
-    "id": "BRG-003",
-    "name": "ChinaTalk",
+    "id": "chinatalk",
+    "layer": "bridge",
     "name_en": "ChinaTalk",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Podcast & newsletter",
     "overview": "Newsletter and podcast covering China, technology, and US-China relations, with deep coverage of Chinese AI labs, semiconductor policy, and AI governance through interviews with leading researchers and policymakers.",
-    "stakeholder_type": "Bridge – Podcast & newsletter",
-    "leadership": "Jordan Schneider (Founder)",
+    "leadership": [
+      {
+        "name": "Jordan Schneider",
+        "role": "Founder"
+      }
+    ],
     "website": "https://www.chinatalk.media/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 3
+    "short_name": "ChinaTalk"
   },
   {
-    "id": "BRG-004",
-    "name": "Recode China AI",
+    "id": "recode-china-ai",
+    "layer": "bridge",
     "name_en": "Recode China AI",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Newsletter / Substack",
     "overview": "Weekly newsletter tracking and decoding developments in China's AI ecosystem — model releases, AI companies, chips, and policy — written for international audiences. Author Tony Peng is a former AI reporter (Synced) and former Baidu global communications lead.",
-    "stakeholder_type": "Bridge – Newsletter / Substack",
-    "leadership": "Tony Peng (Author)",
+    "leadership": [
+      {
+        "name": "Tony Peng",
+        "role": "Author"
+      }
+    ],
     "website": "https://recodechinaai.substack.com/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 4
+    "short_name": "Recode China AI"
   },
   {
-    "id": "BRG-005",
-    "name": "AI Safety in China (Concordia AI Substack)",
+    "id": "concordia-substack",
+    "layer": "bridge",
     "name_en": "AI Safety in China (Concordia AI Substack)",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Newsletter / Substack",
     "overview": "Concordia AI's dedicated English-language publication tracking Chinese AI safety and governance developments — technical safety research, governance moves, lab practices, and expert views — the companion channel to its State of AI Safety in China reports. (Concordia AI itself appears on the Inside sheet.)",
-    "stakeholder_type": "Bridge – Newsletter / Substack",
-    "leadership": "Concordia AI team",
+    "leadership": [
+      {
+        "name": "Concordia AI team",
+        "role": ""
+      }
+    ],
     "website": "https://aisafetychina.substack.com/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 5
+    "short_name": "AI Safety in China"
   },
   {
-    "id": "BRG-006",
-    "name": "Weijin Research / 未尽研究",
+    "id": "weijin",
+    "layer": "bridge",
     "name_en": "Weijin Research",
     "name_zh": "未尽研究",
-    "group": "Bridge / Interpreter",
+    "category": "Bridge – Newsletter / Substack",
     "overview": "Shanghai-based research publication founded by media executive Zhou Jiangong, analyzing China's technology, AI, and energy transformation through industrial logic. Publishes an English-language Substack (part of the TechBuzz China content network) whose close readings of China's AI industry — DeepSeek releases, token economics, open-source dynamics — interpret the industrial layer of the ecosystem for international readers.",
-    "stakeholder_type": "Bridge – Newsletter / Substack",
-    "leadership": "Zhou Jiangong (Founder)",
+    "leadership": [
+      {
+        "name": "Zhou Jiangong",
+        "role": "Founder"
+      }
+    ],
     "website": "https://weijinresearch.substack.com/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 6
+    "short_name": "Weijin Research"
   },
   {
-    "id": "BRG-007",
-    "name": "SinoAI Insights (Tsinghua CISS podcast)",
+    "id": "sinoai-insights",
+    "layer": "bridge",
     "name_en": "SinoAI Insights (Tsinghua CISS podcast)",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Podcast",
     "overview": "English-language podcast launched in 2026 by Tsinghua University's Center for International Security and Strategy, featuring leading Chinese experts on AI competition, shared security risks, and US-China cooperation — a rare outward-facing channel conveying how Chinese strategists themselves frame AI risk. (CISS appears on the Ecosystem Actors sheet.)",
-    "stakeholder_type": "Bridge – Podcast",
-    "leadership": "Produced by Tsinghua CISS",
+    "leadership": [
+      {
+        "name": "Produced by Tsinghua CISS",
+        "role": ""
+      }
+    ],
     "website": "https://ciss.tsinghua.edu.cn/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 7
+    "short_name": "SinoAI Insights"
   },
   {
-    "id": "BRG-008",
-    "name": "Center for Security and Emerging Technology (CSET)",
+    "id": "cset",
+    "layer": "bridge",
     "name_en": "Center for Security and Emerging Technology (CSET)",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Research organization / think tank",
     "overview": "Georgetown University policy research organization producing data-driven analysis of AI and emerging technology for security policy, with a strong China focus including a program translating original Chinese AI policy and strategy documents.",
-    "stakeholder_type": "Bridge – Research organization / think tank",
-    "leadership": "Dewey Murdick (Executive Director)",
+    "leadership": [
+      {
+        "name": "Dewey Murdick",
+        "role": "Executive Director"
+      }
+    ],
     "website": "https://cset.georgetown.edu/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 8
+    "short_name": "CSET"
   },
   {
-    "id": "BRG-009",
-    "name": "DigiChina (Stanford University)",
+    "id": "digichina",
+    "layer": "bridge",
     "name_en": "DigiChina (Stanford University)",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Translation resource",
     "overview": "Stanford-based collaborative project translating and analyzing Chinese digital policy, including authoritative annotated translations and expert analysis of China's AI regulations and governance institutions.",
-    "stakeholder_type": "Bridge – Translation resource",
-    "leadership": "Graham Webster (Editor-in-Chief)",
+    "leadership": [
+      {
+        "name": "Graham Webster",
+        "role": "Editor-in-Chief"
+      }
+    ],
     "website": "https://digichina.stanford.edu/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 9
+    "short_name": "DigiChina"
   },
   {
-    "id": "BRG-010",
-    "name": "China Law Translate",
+    "id": "china-law-translate",
+    "layer": "bridge",
     "name_en": "China Law Translate",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Translation resource",
     "overview": "Translation project run by Jeremy Daum of Yale Law School's Paul Tsai China Center, providing timely English translations of Chinese laws and regulations — including the algorithm, deep synthesis, generative AI, and AI labeling rules — that international researchers rely on as primary sources.",
-    "stakeholder_type": "Bridge – Translation resource",
-    "leadership": "Jeremy Daum (Founder; Senior Fellow, Yale Law School Paul Tsai China Center)",
+    "leadership": [
+      {
+        "name": "Jeremy Daum (Founder",
+        "role": ""
+      },
+      {
+        "name": "Senior Fellow, Yale Law School Paul Tsai China Center)",
+        "role": ""
+      }
+    ],
     "website": "https://www.chinalawtranslate.com/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 10
+    "short_name": "China Law Trans."
   },
   {
-    "id": "BRG-011",
-    "name": "Interpret: China (CSIS)",
+    "id": "interpret-china",
+    "layer": "bridge",
     "name_en": "Interpret: China (CSIS)",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Translation resource",
     "overview": "CSIS project providing English translations of Chinese primary sources — policy documents, speeches, and articles — paired with expert analysis, with the stated goal of enabling a more objective understanding of China. Supported by the Carnegie Corporation of New York, with an advisory board of leading China scholars, and documented selection criteria (publisher affiliation, citation weight, official-line vs. novel argument, signaling intent). A core primary-source layer for China AI governance research.",
-    "stakeholder_type": "Bridge – Translation resource",
-    "leadership": "CSIS project; advisory board of China scholars incl. Taylor Fravel, Susan Shirk, Elsa Kania, Scott Kennedy",
+    "leadership": [
+      {
+        "name": "CSIS project",
+        "role": ""
+      },
+      {
+        "name": "advisory board of China scholars incl. Taylor Fravel, Susan Shirk, Elsa Kania, Scott Kennedy",
+        "role": ""
+      }
+    ],
     "website": "https://interpret.csis.org/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 11
+    "short_name": "Interpret: China"
   },
   {
-    "id": "BRG-012",
-    "name": "Carnegie Endowment for International Peace – Technology and International Affairs / China AI research",
-    "name_en": "Carnegie Endowment for International Peace – Technology and International Affairs / China AI research",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "id": "carnegie",
+    "layer": "bridge",
+    "name_en": "Carnegie Endowment for International Peace – Technology and International Affairs",
+    "name_zh": "China AI research",
+    "category": "Bridge – Research organization / think tank",
     "overview": "Global think tank whose AI program includes leading research on China's AI governance system and US-China AI relations, anchored by Matt Sheehan's widely cited work tracing how China's AI regulations are made.",
-    "stakeholder_type": "Bridge – Research organization / think tank",
-    "leadership": "Matt Sheehan (Senior Fellow)",
+    "leadership": [
+      {
+        "name": "Matt Sheehan",
+        "role": "Senior Fellow"
+      }
+    ],
     "website": "https://carnegieendowment.org/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 12
+    "short_name": "Carnegie"
   },
   {
-    "id": "BRG-013",
-    "name": "Trivium China",
+    "id": "trivium",
+    "layer": "bridge",
     "name_en": "Trivium China",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Research organization / think tank",
     "overview": "Beijing- and international-based policy research consultancy that monitors Chinese policymaking daily; its tech policy team provides close, practitioner-oriented tracking and interpretation of China's AI and data regulations for international audiences.",
-    "stakeholder_type": "Bridge – Research organization / think tank",
-    "leadership": "Kendra Schaefer (Head of Tech Policy)",
+    "leadership": [
+      {
+        "name": "Kendra Schaefer",
+        "role": "Head of Tech Policy"
+      }
+    ],
     "website": "https://triviumchina.com/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 13
+    "short_name": "Trivium"
   },
   {
-    "id": "BRG-014",
-    "name": "Centre for the Governance of AI (GovAI)",
+    "id": "govai",
+    "layer": "bridge",
     "name_en": "Centre for the Governance of AI (GovAI)",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Research organization / think tank",
     "overview": "Oxford-based non-profit research organization dedicated to the governance of advanced AI, founded in 2018 out of Oxford's Future of Humanity Institute. Builds the global AI governance research field through research, fellowships, and convening; its team and affiliate community span US-China relations, and it has served as an institutional home for China-focused AI governance scholars including Jeff Ding.",
-    "stakeholder_type": "Bridge – Research organization / think tank",
-    "leadership": "Ben Garfinkel (Director); Allan Dafoe (President)",
+    "leadership": [
+      {
+        "name": "Ben Garfinkel",
+        "role": "Director"
+      },
+      {
+        "name": "Allan Dafoe",
+        "role": "President"
+      }
+    ],
     "website": "https://www.governance.ai/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 14
+    "short_name": "GovAI"
   },
   {
-    "id": "BRG-015",
-    "name": "CSIS – Wadhwani AI Center",
+    "id": "csis-wadhwani",
+    "layer": "bridge",
     "name_en": "CSIS – Wadhwani AI Center",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Research organization / think tank",
     "overview": "Washington think tank center (est. 2023) researching AI policy, governance, geopolitics, and national security. Its analysis of US-China AI competition and semiconductor export controls — anchored by Gregory C. Allen's work — is among the most influential interpretation of China's AI trajectory for US and allied policymakers.",
-    "stakeholder_type": "Bridge – Research organization / think tank",
-    "leadership": "Gregory C. Allen (founding Director; Senior Adviser)",
+    "leadership": [
+      {
+        "name": "Gregory C. Allen (founding Director",
+        "role": ""
+      },
+      {
+        "name": "Senior Adviser)",
+        "role": ""
+      }
+    ],
     "website": "https://www.csis.org/programs/wadhwani-ai-center",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 15
+    "short_name": "CSIS Wadhwani"
   },
   {
-    "id": "BRG-016",
-    "name": "RAND Corporation",
+    "id": "rand",
+    "layer": "bridge",
     "name_en": "RAND Corporation",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Research organization / think tank",
     "overview": "Global policy research organization whose Global and Emerging Risks division — including the Center on AI, Security, and Technology and the Center for the Geopolitics of AGI — and China Research Center produce research on China's AI ecosystem, US-China AI market competition, China's science and technology strategy, and verification approaches for international AI agreements.",
-    "stakeholder_type": "Bridge – Research organization / think tank",
-    "leadership": "Jason Matheny (President & CEO)",
+    "leadership": [
+      {
+        "name": "Jason Matheny",
+        "role": "President & CEO"
+      }
+    ],
     "website": "https://www.rand.org/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 16
+    "short_name": "RAND"
   },
   {
-    "id": "BRG-017",
-    "name": "Center for a New American Security (CNAS)",
+    "id": "cnas",
+    "layer": "bridge",
     "name_en": "Center for a New American Security (CNAS)",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Research organization / think tank",
     "overview": "Washington national security think tank whose Technology and National Security program analyzes US-China AI competition, military AI, and China's AI safety and governance discourse for US policy audiences.",
-    "stakeholder_type": "Bridge – Research organization / think tank",
-    "leadership": "Paul Scharre (Executive Vice President)",
+    "leadership": [
+      {
+        "name": "Paul Scharre",
+        "role": "Executive Vice President"
+      }
+    ],
     "website": "https://www.cnas.org/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 17
+    "short_name": "CNAS"
   },
   {
-    "id": "BRG-018",
-    "name": "Brookings Institution – John L. Thornton China Center & AI work",
+    "id": "brookings",
+    "layer": "bridge",
     "name_en": "Brookings Institution – John L. Thornton China Center & AI work",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Research organization / think tank",
     "overview": "Major US think tank whose China Center and AI governance research interpret China's technology policy for policy audiences; co-organized with Tsinghua University's CISS a sustained US-China Track II dialogue on AI, one of the principal bilateral channels on AI governance.",
-    "stakeholder_type": "Bridge – Research organization / think tank",
-    "leadership": "Ryan Hass (Director, John L. Thornton China Center)",
+    "leadership": [
+      {
+        "name": "Ryan Hass",
+        "role": "Director, John L. Thornton China Center"
+      }
+    ],
     "website": "https://www.brookings.edu/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 18
+    "short_name": "Brookings"
   },
   {
-    "id": "BRG-019",
-    "name": "Paul Triolo",
+    "id": "paul-triolo",
+    "layer": "bridge",
     "name_en": "Paul Triolo",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Individual analyst",
     "overview": "Partner and China/technology policy lead at DGA-Albright Stonebridge Group and honorary senior fellow at the Asia Society Policy Institute. Veteran interpreter of China's AI, semiconductor, and technology policy for international audiences, with 25+ years of prior US government experience and participation in Track II dialogues with China on AI and data governance.",
-    "stakeholder_type": "Bridge – Individual analyst",
-    "leadership": "N/A",
+    "leadership": [
+      {
+        "name": "N/A",
+        "role": ""
+      }
+    ],
     "website": "https://asiasociety.org/policy-institute/paul-triolo",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 19
+    "short_name": "Paul Triolo"
   },
   {
-    "id": "BRG-020",
-    "name": "Angela Huyue Zhang",
+    "id": "angela-zhang",
+    "layer": "bridge",
     "name_en": "Angela Huyue Zhang",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Individual analyst",
     "overview": "Professor of Law at the USC Gould School of Law and a leading authority on Chinese tech regulation. Her scholarship and commentary on how China regulates its technology sector, including AI, shape international understanding of Chinese digital governance.",
-    "stakeholder_type": "Bridge – Individual analyst",
-    "leadership": "N/A",
+    "leadership": [
+      {
+        "name": "N/A",
+        "role": ""
+      }
+    ],
     "website": "https://gould.usc.edu/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 20
+    "short_name": "Angela Zhang"
   },
   {
-    "id": "BRG-021",
-    "name": "Samm Sacks",
+    "id": "samm-sacks",
+    "layer": "bridge",
     "name_en": "Samm Sacks",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Individual analyst",
     "overview": "Research Scholar in Law and Senior Fellow at Yale Law School's Paul Tsai China Center, focused on China's cybersecurity legal system, data governance, and the US-China technology relationship — foundational context for China's AI regulatory regime.",
-    "stakeholder_type": "Bridge – Individual analyst",
-    "leadership": "N/A",
+    "leadership": [
+      {
+        "name": "N/A",
+        "role": ""
+      }
+    ],
     "website": "https://law.yale.edu/samm-sacks",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 21
+    "short_name": "Samm Sacks"
   },
   {
-    "id": "BRG-022",
-    "name": "Selina Xu",
+    "id": "selina-xu",
+    "layer": "bridge",
     "name_en": "Selina Xu",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Individual analyst",
     "overview": "Head of China, AI Research and Strategic Initiatives in the Office of Eric Schmidt, and former Bloomberg News China reporter. Writes on China's AI trajectory and US-China technology competition for major outlets including co-authored New York Times essays with Eric Schmidt that have shaped elite US understanding of China's AI momentum.",
-    "stakeholder_type": "Bridge – Individual analyst",
-    "leadership": "N/A",
+    "leadership": [
+      {
+        "name": "N/A",
+        "role": ""
+      }
+    ],
     "website": "https://selinaxu.com/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 22
+    "short_name": "Selina Xu"
   },
   {
-    "id": "BRG-023",
-    "name": "China AI Bulletin",
+    "id": "china-ai-bulletin",
+    "layer": "bridge",
     "name_en": "China AI Bulletin",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Newsletter / Substack",
     "overview": "A fortnightly newsletter that tracks AI development, governance, and safety in China by monitoring and contextualizing Chinese-language primary sources. It is maintained by the Safe AI Forum.",
-    "stakeholder_type": "Bridge – Newsletter / Substack",
-    "leadership": "Emmie Hine (Author)",
+    "leadership": [
+      {
+        "name": "Emmie Hine",
+        "role": "Author"
+      }
+    ],
     "website": "https://chinaaibulletin.substack.com/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 23
+    "short_name": "China AI Bulletin"
   },
   {
-    "id": "BRG-024",
-    "name": "Oxford China Policy Lab",
+    "id": "oxford-cpl",
+    "layer": "bridge",
     "name_en": "Oxford China Policy Lab",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Research organization / policy lab",
     "overview": "An Oxford-based nonprofit research group focused on China, emerging technology, and policy. Its work examines how US–China competition—especially around AI and other emerging technologies—can generate global risks and how policy can mitigate them.",
-    "stakeholder_type": "Bridge – Research organization / policy lab",
-    "leadership": "Scott Singer (Co-founder; Strategic Advisor)",
+    "leadership": [
+      {
+        "name": "Scott Singer (Co-founder",
+        "role": ""
+      },
+      {
+        "name": "Strategic Advisor)",
+        "role": ""
+      }
+    ],
     "website": "https://oxfordchinapolicylab.org/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 24
+    "short_name": "Oxford CPL"
   },
   {
-    "id": "BRG-025",
-    "name": "Institute for AI Policy and Strategy (IAPS)",
+    "id": "iaps",
+    "layer": "bridge",
     "name_en": "Institute for AI Policy and Strategy (IAPS)",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Research organization / think tank",
     "overview": "A nonpartisan AI policy think tank. Its International Governance & China research includes Chinese AI-safety institutions, comparisons of US and Chinese approaches to general-purpose AI governance, and prospects for bilateral or multilateral safety dialogue.",
-    "stakeholder_type": "Bridge – Research organization / think tank",
-    "leadership": "Jennifer Marron (Executive Director)",
+    "leadership": [
+      {
+        "name": "Jennifer Marron",
+        "role": "Executive Director"
+      }
+    ],
     "website": "https://www.iaps.ai/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 25
+    "short_name": "IAPS"
   },
   {
-    "id": "BRG-026",
-    "name": "Safe AI Forum (SAIF)",
+    "id": "saif",
+    "layer": "bridge",
     "name_en": "Safe AI Forum (SAIF)",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Research / convening organization",
     "overview": "A US 501(c)(3) nonprofit working on global coordination around extreme AI risks. It maintains China AI Bulletin and co-convenes the International Dialogues on AI Safety with Chinese research partners.",
-    "stakeholder_type": "Bridge – Research / convening organization",
-    "leadership": "Fynn Heide (Executive Director)",
+    "leadership": [
+      {
+        "name": "Fynn Heide",
+        "role": "Executive Director"
+      }
+    ],
     "website": "https://saif.org/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 26
+    "short_name": "SAIF"
   },
   {
-    "id": "BRG-027",
-    "name": "Emmie Hine",
+    "id": "emmie-hine",
+    "layer": "bridge",
     "name_en": "Emmie Hine",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Individual researcher / newsletter author",
     "overview": "A researcher focused on the Chinese AI governance ecosystem and broader questions of technology governance. She writes China AI Bulletin and has published research and commentary that interprets Chinese AI policy for English-speaking audiences.",
-    "stakeholder_type": "Bridge – Individual researcher / newsletter author",
-    "leadership": "N/A",
+    "leadership": [
+      {
+        "name": "N/A",
+        "role": ""
+      }
+    ],
     "website": "https://emmiehine.com/",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 27
+    "short_name": "Emmie Hine"
   },
   {
-    "id": "BRG-028",
-    "name": "Scott Singer",
+    "id": "scott-singer",
+    "layer": "bridge",
     "name_en": "Scott Singer",
-    "name_zh": null,
-    "group": "Bridge / Interpreter",
+    "name_zh": "",
+    "category": "Bridge – Individual researcher",
     "overview": "A researcher working on global AI development and governance with a focus on China. He co-founded the Oxford China Policy Lab and is a fellow at the Carnegie Endowment for International Peace.",
-    "stakeholder_type": "Bridge – Individual researcher",
-    "leadership": "N/A",
+    "leadership": [
+      {
+        "name": "N/A",
+        "role": ""
+      }
+    ],
     "website": "https://carnegieendowment.org/people/scott-singer",
-    "wikipedia": null,
-    "source_sheet": "Bridges & Interpreters",
-    "source_row": 28
+    "short_name": "Scott Singer"
   }
 ]
