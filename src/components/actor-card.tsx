@@ -16,8 +16,21 @@ export function ActorCard({ actor }: { actor: Actor }) {
       style={{ backgroundColor: bg }}
       className="group relative flex flex-col gap-3 rounded-lg border border-border p-6 transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-sm"
     >
-      <div className="absolute right-4 top-4">
+      <div className="absolute right-4 top-4 flex flex-col items-center gap-2">
         <LayerGlyph layer={actor.layer} className="h-5 w-5" />
+        {actor.wikipedia && (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              window.open(actor.wikipedia, "_blank", "noopener,noreferrer");
+            }}
+            aria-label="Wikipedia"
+            className="flex h-5 w-5 items-center justify-center rounded-full border border-border bg-background/70 text-[10px] font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+          >
+            W
+          </button>
+        )}
       </div>
       <div className="pr-8">
         <h3 className="font-serif text-lg leading-tight text-foreground group-hover:text-primary">
