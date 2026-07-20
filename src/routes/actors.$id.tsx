@@ -129,6 +129,19 @@ function Profile() {
         </Section>
       )}
 
+      {actor.wikipedia && (
+        <Section title="Wikipedia">
+          <a
+            href={actor.wikipedia}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary underline underline-offset-4 hover:no-underline"
+          >
+            {actor.wikipedia}
+          </a>
+        </Section>
+      )}
+
       {docs.length > 0 && (
         <Section title={t("issued_documents")}>
           <ul className="divide-y divide-border rounded-md border border-border">
