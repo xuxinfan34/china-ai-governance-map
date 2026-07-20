@@ -1,4 +1,4 @@
-import { actors as RAW_ACTORS } from "../data/actors";
+import RAW_ACTORS from "../data/actors.json";
 import { relationships as RAW_RELATIONSHIPS } from "../data/relationships";
 import { documents as RAW_DOCUMENTS } from "../data/documents";
 
@@ -52,6 +52,7 @@ export interface Actor {
   overview: string;
   leadership: { name: string; role: string }[];
   website: string;
+  wikipedia?: string;
   related?: string[];
 }
 
@@ -120,6 +121,7 @@ export const ACTORS: Actor[] = RAW_ACTORS.map((a): Actor => ({
   overview: a.overview,
   leadership: a.leadership ? a.leadership.map((l) => ({ name: l.name, role: l.role })) : [],
   website: a.website ?? "",
+  wikipedia: a.wikipedia ?? undefined,
 }));
 
 export const RELATIONSHIPS: Relationship[] = RAW_RELATIONSHIPS.map((r): Relationship => ({
