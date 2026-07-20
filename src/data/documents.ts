@@ -1,5 +1,5 @@
 // Auto-generated from China_AI_Risk_Actors_with_relationships.xlsx
-// 36 items | Regenerated: 2026-07-15
+// 36 items | Regenerated: 2026-07-20
 // Do not edit by hand.
 
 export type GovernanceDocument = {
@@ -16,7 +16,7 @@ export type GovernanceDocument = {
   translation_url: string;
 };
 
-export const documents = [
+export const documents: GovernanceDocument[] = [
   {
     "id": "cybersecurity-law-of-the-people-s-republic-of-china",
     "title_en": "Cybersecurity Law of the People's Republic of China",

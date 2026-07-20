@@ -1,5 +1,5 @@
 // Auto-generated from China_AI_Risk_Actors_with_relationships.xlsx
-// 126 items | Regenerated: 2026-07-15
+// 128 items | Regenerated: 2026-07-20
 // Do not edit by hand.
 
 export type Relationship = {
@@ -22,16 +22,16 @@ export type Relationship = {
   notes: string;
 };
 
-export const relationships = [
+export const relationships: Relationship[] = [
   {
     "id": "REL-001",
     "source": "samr",
     "target": "sac",
-    "type": "Administrative relationship",
+    "type": "One institution, two names",
     "category": "Institutional relationship",
-    "basis": "Structural",
+    "basis": "One institution, two nameplates (一个机构两块牌子)",
     "direction": "directed",
-    "summary": "SAMR retains the Standardization Administration of China nameplate and exercises the national standardization functions assigned to SAC.",
+    "summary": "Since the 2018 State Council institutional reform, SAMR and SAC operate under the 'one institution, two nameplates' (一个机构两块牌子) principle: one legal institution with one staff roster and budget, using two official names in different contexts. SAC is the 'external name' used for standards work and international standards representation (ISO, IEC); SAMR is the primary name for market regulation. In practice, national standards work — including AI standards drafted via TC260 — is attributed to SAC as the standards authority.",
     "instrument": "2018 State Council institutional reform",
     "evidence_date": "2018-09-10",
     "status": "Current",
@@ -43,7 +43,7 @@ export const relationships = [
       "type": "Official government page",
       "published": "2018-09-10"
     },
-    "notes": "Formal administrative placement; SAC operates as a nameplate within SAMR."
+    "notes": "Dual-name arrangement documented on SAC's own About page (https://www.sac.gov.cn/AboutSAC/Whoweare/index.html) and mirrored in SAMR's structure. This is a general Chinese administrative pattern (also seen: CAC / Office of Central Cyberspace Affairs Commission). Modeled as undirected because neither name subordinates the other — they are two identities of one entity used in different contexts."
   },
   {
     "id": "REL-002",
@@ -2794,5 +2794,49 @@ export const relationships = [
       "published": "2026-03-18"
     },
     "notes": "Personnel bridge illustrating academia-industry flow; Tang Jie's mentoring of Yang Zhilin (Moonshot founder) creates further indirect ties."
+  },
+  {
+    "id": "REL-127",
+    "source": "concordia",
+    "target": "aiia",
+    "type": "Committee member unit",
+    "category": "Membership",
+    "basis": "Unit member (单位委员) of the AIIA Safety Governance Committee",
+    "direction": "directed",
+    "summary": "Concordia AI (legal entity: Beijing Mouyuan Consulting Co., Ltd. / 北京谋远咨询有限公司) is a member unit (单位委员) of the AI Safety Governance Committee (安全治理委员会) under the AI Industry Alliance of China (AIIA). Confirmed present on the committee's official member listing on the AIIA working-group page.",
+    "instrument": "AIIA Safety Governance Committee membership",
+    "evidence_date": "2023-12",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://aihub.caict.ac.cn/aiia_wgs/36",
+      "title": "AIIA安全治理委员会介绍 (AIIA Safety Governance Committee introduction)",
+      "lang": "Chinese",
+      "type": "Official committee page",
+      "published": "Unknown"
+    },
+    "notes": "User confirmed 2026-07-20 that the primary committee page (aiia_wgs/36) reflects Concordia AI's member-unit status. The page is JS-rendered and robots-disallowed to automated fetching, so it was verified by the user in-browser rather than by tool fetch. Supporting (non-primary) corroboration: a WeChat media report (https://mp.weixin.qq.com/s/Yc9-uY06_3mn1Js8cLwgsw) and Concordia's policy page (https://concordia-ai.com/policy/)."
+  },
+  {
+    "id": "REL-128",
+    "source": "concordia",
+    "target": "aiia",
+    "type": "Expert committee seat (专家委委员)",
+    "category": "Personnel bridge",
+    "basis": "Named individual on the committee expert panel",
+    "direction": "directed",
+    "summary": "Concordia AI holds a seat on the Expert Committee (专家委) of the AIIA Safety Governance Committee via Fang Liang (方亮), identified as an AIIA Safety Governance Committee expert (安全治理委员会专家). This ties Concordia AI to the committee through a named individual role.",
+    "instrument": "AIIA Safety Governance Committee Expert Committee",
+    "evidence_date": "2026",
+    "status": "Current",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://concordia-ai.com/zh-hans/about-us/our-team/",
+      "title": "Concordia AI team page (方亮); AIIA安全治理委员会介绍",
+      "lang": "Chinese / English",
+      "type": "Official organization page + committee page",
+      "published": "Unknown"
+    },
+    "notes": "User confirmed 2026-07-20 the primary committee page reflects the membership. Fang Liang's expert role is stated on Concordia's own team page (https://concordia-ai.com/zh-hans/our-team/) as \"AIIA安全治理委员会专家\"; modeled as a personnel bridge because expert-panel seats are personal appointments. Brian Tse (谢旻希) is separately described as a committee expert in BAAI 2025/2026 speaker bios."
   }
 ] as const;

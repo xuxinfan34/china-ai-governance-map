@@ -1,5 +1,5 @@
 // Auto-generated from China_AI_Risk_Actors_with_relationships.xlsx
-// 88 items | Regenerated: 2026-07-15
+// 89 items | Regenerated: 2026-07-20
 // Do not edit by hand.
 
 export type Actor = {
@@ -7,15 +7,15 @@ export type Actor = {
   layer: 'ecosystem' | 'bridge';
   name_en: string;
   name_zh: string;
-  short_name: string;
   category: string;
   overview: string;
   leadership: { name: string; role: string }[];
   website: string;
   wikipedia?: string;
+  short_name: string;
 };
 
-export const actors = [
+export const actors: Actor[] = [
   {
     "id": "npc",
     "layer": "ecosystem",
@@ -30,6 +30,7 @@ export const actors = [
       }
     ],
     "website": "http://www.npc.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/National_People%27s_Congress",
     "short_name": "NPC"
   },
   {
@@ -46,6 +47,7 @@ export const actors = [
       }
     ],
     "website": "http://www.cac.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Cyberspace_Administration_of_China",
     "short_name": "CAC"
   },
   {
@@ -62,6 +64,7 @@ export const actors = [
       }
     ],
     "website": "https://www.miit.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ministry_of_Industry_and_Information_Technology",
     "short_name": "MIIT"
   },
   {
@@ -78,6 +81,7 @@ export const actors = [
       }
     ],
     "website": "https://www.most.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ministry_of_Science_and_Technology_(China)",
     "short_name": "MOST"
   },
   {
@@ -94,6 +98,7 @@ export const actors = [
       }
     ],
     "website": "https://www.ndrc.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/National_Development_and_Reform_Commission",
     "short_name": "NDRC"
   },
   {
@@ -110,6 +115,7 @@ export const actors = [
       }
     ],
     "website": "https://www.mps.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ministry_of_Public_Security_(China)",
     "short_name": "MPS"
   },
   {
@@ -126,6 +132,7 @@ export const actors = [
       }
     ],
     "website": "https://www.nrta.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/National_Radio_and_Television_Administration",
     "short_name": "NRTA"
   },
   {
@@ -142,6 +149,7 @@ export const actors = [
       }
     ],
     "website": "https://www.samr.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/State_Administration_for_Market_Regulation",
     "short_name": "SAMR"
   },
   {
@@ -157,7 +165,8 @@ export const actors = [
         "role": "Director"
       }
     ],
-    "website": "http://www.sac.gov.cn/",
+    "website": "https://www.sac.gov.cn/AboutSAC/Whoweare/index.html",
+    "wikipedia": "https://en.wikipedia.org/wiki/National_Standardization_Administration",
     "short_name": "SAC"
   },
   {
@@ -174,6 +183,7 @@ export const actors = [
       }
     ],
     "website": "http://www.moe.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ministry_of_Education_of_the_People%27s_Republic_of_China",
     "short_name": "MOE"
   },
   {
@@ -190,6 +200,7 @@ export const actors = [
       }
     ],
     "website": "https://www.mfa.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ministry_of_Foreign_Affairs_of_the_People%27s_Republic_of_China",
     "short_name": "MFA"
   },
   {
@@ -206,6 +217,7 @@ export const actors = [
       }
     ],
     "website": "https://www.nda.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/National_Data_Administration",
     "short_name": "NDA"
   },
   {
@@ -294,6 +306,7 @@ export const actors = [
       }
     ],
     "website": "https://www.court.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Supreme_People%27s_Court",
     "short_name": "SPC"
   },
   {
@@ -1019,6 +1032,18 @@ export const actors = [
     ],
     "website": "https://podcasts.apple.com/ca/podcast/%E6%99%BA%E5%B9%BB%E6%97%B6%E5%88%BBfungimind/id1802110330",
     "short_name": "Fungimind"
+  },
+  {
+    "id": "waico",
+    "layer": "ecosystem",
+    "name_en": "World Artificial Intelligence Cooperation Organization (WAICO)",
+    "name_zh": "世界人工智能合作组织",
+    "category": "Intergovernmental organization (China-hosted)",
+    "overview": "An intergovernmental international organization established July 16, 2026 in Shanghai on the eve of WAIC 2026, with 29 founding member countries. Following the UN Charter, WAICO's mission is to promote cooperation on global AI governance, capacity-building, and safety, with an emphasis on bridging developed and developing economies. The signing ceremony was jointly hosted by China's Ministry of Foreign Affairs, MIIT, and the Shanghai Municipal Government; Foreign Minister Wang Yi signed on China's behalf, with UN Secretary-General António Guterres in attendance. Shanghai AI Laboratory and Fudan University served as the de facto secretariat during the establishment process. First proposed by Premier Li Qiang at WAIC 2025, reiterated by President Xi Jinping at APEC 2025, and formally announced by Xi in his July 17, 2026 WAIC 2026 opening keynote titled \"Joining Hands to Build a Just and Equitable System for Global AI Governance\" (Xinhua English full text linked as reference URL; additional coverage via Xinhua Chinese, gov.cn, CGTN, and China's State Council Information Office). No standalone WAICO website has been established at time of entry.",
+    "leadership": [],
+    "website": "https://english.news.cn/20260717/893fe11097db460ea31b98f131e34ef0/c.html",
+    "wikipedia": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization",
+    "short_name": "WAICO"
   },
   {
     "id": "chinai",
