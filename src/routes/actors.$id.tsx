@@ -75,7 +75,12 @@ function Profile() {
         style={{ backgroundColor: bg }}
       >
         <div className="absolute right-6 top-6">
-          <LayerGlyph layer={actor.layer} className="h-7 w-7" />
+          <span
+            className="rounded-full border border-border/60 bg-background/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide"
+            style={{ color: actor.layer === "ecosystem" ? "#9E2B25" : "#2A2A2A" }}
+          >
+            {actor.layer === "ecosystem" ? t("badge_ecosystem") : t("badge_bridge")}
+          </span>
         </div>
         <div className="flex flex-wrap items-center gap-2 pr-10">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background/70 px-2 py-0.5 text-xs font-medium text-foreground/80">
