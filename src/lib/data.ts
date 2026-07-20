@@ -121,6 +121,7 @@ export const ACTORS: Actor[] = RAW_ACTORS.map((a): Actor => ({
   overview: a.overview,
   leadership: a.leadership ? a.leadership.map((l) => ({ name: l.name, role: l.role })) : [],
   website: a.website ?? "",
+  wikipedia: (a as any).wikipedia ?? undefined,
 }));
 
 export const RELATIONSHIPS: Relationship[] = RAW_RELATIONSHIPS.map((r): Relationship => ({
