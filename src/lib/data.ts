@@ -1,4 +1,4 @@
-import { actors as RAW_ACTORS } from "../data/actors";
+import RAW_ACTORS from "../data/actors.json";
 import { relationships as RAW_RELATIONSHIPS } from "../data/relationships";
 import { documents as RAW_DOCUMENTS } from "../data/documents";
 
