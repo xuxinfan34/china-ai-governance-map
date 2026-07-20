@@ -3,11 +3,11 @@
     "id": "REL-001",
     "source": "samr",
     "target": "sac",
-    "type": "Administrative relationship",
+    "type": "One institution, two names",
     "category": "Institutional relationship",
-    "basis": "Structural",
+    "basis": "One institution, two nameplates (一个机构两块牌子)",
     "direction": "directed",
-    "summary": "SAMR retains the Standardization Administration of China nameplate and exercises the national standardization functions assigned to SAC.",
+    "summary": "Since the 2018 State Council institutional reform, SAMR and SAC operate under the 'one institution, two nameplates' (一个机构两块牌子) principle: one legal institution with one staff roster and budget, using two official names in different contexts. SAC is the 'external name' used for standards work and international standards representation (ISO, IEC); SAMR is the primary name for market regulation. In practice, national standards work — including AI standards drafted via TC260 — is attributed to SAC as the standards authority.",
     "instrument": "2018 State Council institutional reform",
     "evidence_date": "2018-09-10",
     "status": "Current",
@@ -19,7 +19,7 @@
       "type": "Official government page",
       "published": "2018-09-10"
     },
-    "notes": "Formal administrative placement; SAC operates as a nameplate within SAMR."
+    "notes": "Dual-name arrangement documented on SAC's own About page (https://www.sac.gov.cn/AboutSAC/Whoweare/index.html) and mirrored in SAMR's structure. This is a general Chinese administrative pattern (also seen: CAC / Office of Central Cyberspace Affairs Commission). Modeled as undirected because neither name subordinates the other — they are two identities of one entity used in different contexts."
   },
   {
     "id": "REL-002",

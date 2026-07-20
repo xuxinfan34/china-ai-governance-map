@@ -13,6 +13,7 @@
       }
     ],
     "website": "http://www.npc.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/National_People%27s_Congress",
     "short_name": "NPC"
   },
   {
@@ -29,6 +30,7 @@
       }
     ],
     "website": "http://www.cac.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Cyberspace_Administration_of_China",
     "short_name": "CAC"
   },
   {
@@ -45,6 +47,7 @@
       }
     ],
     "website": "https://www.miit.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ministry_of_Industry_and_Information_Technology",
     "short_name": "MIIT"
   },
   {
@@ -61,6 +64,7 @@
       }
     ],
     "website": "https://www.most.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ministry_of_Science_and_Technology_(China)",
     "short_name": "MOST"
   },
   {
@@ -77,6 +81,7 @@
       }
     ],
     "website": "https://www.ndrc.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/National_Development_and_Reform_Commission",
     "short_name": "NDRC"
   },
   {
@@ -93,6 +98,7 @@
       }
     ],
     "website": "https://www.mps.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ministry_of_Public_Security_(China)",
     "short_name": "MPS"
   },
   {
@@ -109,6 +115,7 @@
       }
     ],
     "website": "https://www.nrta.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/National_Radio_and_Television_Administration",
     "short_name": "NRTA"
   },
   {
@@ -125,6 +132,7 @@
       }
     ],
     "website": "https://www.samr.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/State_Administration_for_Market_Regulation",
     "short_name": "SAMR"
   },
   {
@@ -140,7 +148,8 @@
         "role": "Director"
       }
     ],
-    "website": "http://www.sac.gov.cn/",
+    "website": "https://www.sac.gov.cn/AboutSAC/Whoweare/index.html",
+    "wikipedia": "https://en.wikipedia.org/wiki/National_Standardization_Administration",
     "short_name": "SAC"
   },
   {
@@ -157,6 +166,7 @@
       }
     ],
     "website": "http://www.moe.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ministry_of_Education_of_the_People%27s_Republic_of_China",
     "short_name": "MOE"
   },
   {
@@ -173,6 +183,7 @@
       }
     ],
     "website": "https://www.mfa.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ministry_of_Foreign_Affairs_of_the_People%27s_Republic_of_China",
     "short_name": "MFA"
   },
   {
@@ -189,6 +200,7 @@
       }
     ],
     "website": "https://www.nda.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/National_Data_Administration",
     "short_name": "NDA"
   },
   {
@@ -277,6 +289,7 @@
       }
     ],
     "website": "https://www.court.gov.cn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Supreme_People%27s_Court",
     "short_name": "SPC"
   },
   {
