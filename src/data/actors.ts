@@ -12,6 +12,7 @@ export type Actor = {
   overview: string;
   leadership: { name: string; role: string }[];
   website: string;
+  wikipedia?: string;
 };
 
 export const actors = [
