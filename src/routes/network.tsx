@@ -578,13 +578,28 @@ function NetworkPage() {
                 <p className="mt-3 text-sm leading-relaxed text-foreground/85 line-clamp-4">
                   {selectedActor.overview}
                 </p>
-                <Link
-                  to="/actors/$id"
-                  params={{ id: selectedActor.id }}
-                  className="mt-4 inline-block text-sm font-medium text-primary hover:underline"
-                >
-                  {t("see_profile")} →
-                </Link>
+                <div className="mt-4 flex flex-wrap items-center gap-4">
+                  <Link
+                    to="/actors/$id"
+                    params={{ id: selectedActor.id }}
+                    className="text-sm font-medium text-primary hover:underline"
+                  >
+                    {t("see_profile")} →
+                  </Link>
+                  {selectedActor.wikipedia && (
+                    <a
+                      href={selectedActor.wikipedia}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+                    >
+                      Wikipedia
+                      <span className="rounded border border-border bg-background px-1 text-[10px] uppercase tracking-wider text-muted-foreground">
+                        EN
+                      </span>
+                    </a>
+                  )}
+                </div>
               </div>
             )}
           </>
