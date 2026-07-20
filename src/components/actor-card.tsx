@@ -1,14 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import type { Actor } from "../lib/data";
 import { STAKEHOLDER_COLORS, STAKEHOLDER_LABEL } from "../lib/data";
-import { LayerGlyph } from "./glyphs";
 import { useLang } from "../lib/i18n";
 
 export function ActorCard({ actor }: { actor: Actor }) {
-  const { lang } = useLang();
+  const { lang, t } = useLang();
   const bg = actor.layer === "ecosystem" ? "var(--color-ecosystem-bg)" : "var(--color-bridge-bg)";
   const dot = STAKEHOLDER_COLORS[actor.stakeholder_type];
   const typeLabel = STAKEHOLDER_LABEL[actor.stakeholder_type][lang];
+  const isEcosystem = actor.layer === "ecosystem";
   return (
     <Link
       to="/actors/$id"
@@ -16,8 +16,13 @@ export function ActorCard({ actor }: { actor: Actor }) {
       style={{ backgroundColor: bg }}
       className="group relative flex flex-col gap-3 rounded-lg border border-border p-6 transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-sm"
     >
-      <div className="absolute right-4 top-4 flex flex-col items-center gap-2">
-        <LayerGlyph layer={actor.layer} className="h-5 w-5" />
+      <div className="absolute right-4 top-4 flex flex-col items-end gap-2">
+        <span
+          className="rounded-full border border-border/60 bg-background/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide"
+          style={{ color: isEcosystem ? "#9E2B25" : "#2A2A2A" }}
+        >
+          {isEcosystem ? t("badge_ecosystem") : t("badge_bridge")}
+        </span>
         {actor.wikipedia && (
           <button
             type="button"
