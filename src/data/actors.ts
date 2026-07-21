@@ -634,7 +634,7 @@ export const actors: Actor[] = [
       }
     ],
     "website": "https://www.shlab.org.cn/",
-    "short_name": "Shanghai Artif"
+    "short_name": "Shanghai AI Lab"
   },
   {
     "id": "beijing-aisi",
