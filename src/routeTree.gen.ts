@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WeeklyRouteImport } from './routes/weekly'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as NetworkRouteImport } from './routes/network'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
@@ -17,6 +18,11 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ActorsIdRouteImport } from './routes/actors.$id'
 
+const WeeklyRoute = WeeklyRouteImport.update({
+  id: '/weekly',
+  path: '/weekly',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/ecosystem': typeof EcosystemRoute
   '/network': typeof NetworkRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/weekly': typeof WeeklyRoute
   '/actors/$id': typeof ActorsIdRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/ecosystem': typeof EcosystemRoute
   '/network': typeof NetworkRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/weekly': typeof WeeklyRoute
   '/actors/$id': typeof ActorsIdRoute
 }
 export interface FileRoutesById {
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/ecosystem': typeof EcosystemRoute
   '/network': typeof NetworkRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/weekly': typeof WeeklyRoute
   '/actors/$id': typeof ActorsIdRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/network'
     | '/sitemap.xml'
+    | '/weekly'
     | '/actors/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/network'
     | '/sitemap.xml'
+    | '/weekly'
     | '/actors/$id'
   id:
     | '__root__'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/network'
     | '/sitemap.xml'
+    | '/weekly'
     | '/actors/$id'
   fileRoutesById: FileRoutesById
 }
@@ -118,11 +130,19 @@ export interface RootRouteChildren {
   EcosystemRoute: typeof EcosystemRoute
   NetworkRoute: typeof NetworkRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  WeeklyRoute: typeof WeeklyRoute
   ActorsIdRoute: typeof ActorsIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/weekly': {
+      id: '/weekly'
+      path: '/weekly'
+      fullPath: '/weekly'
+      preLoaderRoute: typeof WeeklyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -182,18 +202,9 @@ const rootRouteChildren: RootRouteChildren = {
   EcosystemRoute: EcosystemRoute,
   NetworkRoute: NetworkRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  WeeklyRoute: WeeklyRoute,
   ActorsIdRoute: ActorsIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
