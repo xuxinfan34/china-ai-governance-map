@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { useLang } from "../lib/i18n";
 
 export function SiteNav() {
-  const { t, lang, setLang } = useLang();
+  const { t } = useLang();
   return (
     <header className="border-b border-border bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-5">
@@ -22,13 +22,6 @@ export function SiteNav() {
           <NavLink to="/weekly">{t("nav_weekly")}</NavLink>
           <NavLink to="/about">{t("nav_about")}</NavLink>
         </nav>
-        <button
-          onClick={() => setLang(lang === "en" ? "zh" : "en")}
-          className="rounded-full border border-border px-3 py-1 text-xs font-medium tracking-wide text-foreground transition-colors hover:border-primary hover:text-primary"
-          aria-label="Toggle language"
-        >
-          {t("lang_toggle")}
-        </button>
       </div>
       <nav className="mx-auto flex max-w-6xl items-center gap-5 overflow-x-auto px-6 pb-3 text-sm text-muted-foreground md:hidden">
         <NavLink to="/ecosystem">{t("nav_ecosystem")}</NavLink>
