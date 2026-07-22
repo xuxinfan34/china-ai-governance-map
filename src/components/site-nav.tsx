@@ -19,6 +19,7 @@ export function SiteNav() {
           <NavLink to="/ecosystem">{t("nav_ecosystem")}</NavLink>
           <NavLink to="/bridges">{t("nav_bridges")}</NavLink>
           <NavLink to="/network">{t("nav_network")}</NavLink>
+          <NavLink to="/weekly">{t("nav_weekly")}</NavLink>
           <NavLink to="/about">{t("nav_about")}</NavLink>
         </nav>
         <button
@@ -33,6 +34,7 @@ export function SiteNav() {
         <NavLink to="/ecosystem">{t("nav_ecosystem")}</NavLink>
         <NavLink to="/bridges">{t("nav_bridges")}</NavLink>
         <NavLink to="/network">{t("nav_network")}</NavLink>
+        <NavLink to="/weekly">{t("nav_weekly")}</NavLink>
         <NavLink to="/about">{t("nav_about")}</NavLink>
       </nav>
     </header>
