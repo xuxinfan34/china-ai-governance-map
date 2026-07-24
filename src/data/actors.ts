@@ -1,5 +1,5 @@
 // Auto-generated from China_AI_Risk_Actors_with_relationships.xlsx
-// 89 items | Regenerated: 2026-07-20
+// 91 items | Regenerated: 2026-07-21
 // Do not edit by hand.
 
 export type Actor = {
@@ -634,7 +634,7 @@ export const actors: Actor[] = [
       }
     ],
     "website": "https://www.shlab.org.cn/",
-    "short_name": "Shanghai AI Lab"
+    "short_name": "Shanghai Artif"
   },
   {
     "id": "beijing-aisi",
@@ -1044,6 +1044,22 @@ export const actors: Actor[] = [
     "website": "https://english.news.cn/20260717/893fe11097db460ea31b98f131e34ef0/c.html",
     "wikipedia": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization",
     "short_name": "WAICO"
+  },
+  {
+    "id": "ocasc",
+    "layer": "ecosystem",
+    "name_en": "Open Community for AI Safety China (OCASC)",
+    "name_zh": "AI安全开放社区",
+    "category": "Community / civil society",
+    "overview": "The largest open AI safety community on the Chinese-language internet, centered on WeChat groups with presence on Bilibili, Zhihu, LinkedIn, and GitHub. An IASEAI (International Association for Safe and Ethical AI) affiliate. Focuses on AI risks, AI safety techniques, and AI safety governance, bridging international AI safety discourse into Chinese through curriculum translation (notably bringing BlueDot Impact's AI safety course into Chinese) and regular seminars. Partners include Fungimind, Tsinghua University Press, and According.Work.",
+    "leadership": [
+      {
+        "name": "Sarah Sun",
+        "role": "Contact"
+      }
+    ],
+    "website": "https://aisafety-cn.com/",
+    "short_name": "OCASC"
   },
   {
     "id": "chinai",
@@ -1474,7 +1490,7 @@ export const actors: Actor[] = [
     "layer": "bridge",
     "name_en": "Emmie Hine",
     "name_zh": "",
-    "category": "Bridge – Individual researcher",
+    "category": "Bridge – Individual researcher / newsletter author",
     "overview": "A researcher focused on the Chinese AI governance ecosystem and broader questions of technology governance. She writes China AI Bulletin and has published research and commentary that interprets Chinese AI policy for English-speaking audiences.",
     "leadership": [
       {
@@ -1500,5 +1516,16 @@ export const actors: Actor[] = [
     ],
     "website": "https://carnegieendowment.org/people/scott-singer",
     "short_name": "Scott Singer"
+  },
+  {
+    "id": "matt-sheehan",
+    "layer": "bridge",
+    "name_en": "Matt Sheehan",
+    "name_zh": "",
+    "category": "Individual analyst",
+    "overview": "Senior Fellow at the Carnegie Endowment for International Peace, where his research covers AI development and policy with a focus on China. His work explores China's AI policy ecosystem, the role of technology in China's political economy, and U.S.-China competition in AI. Key analyses include 'Tracing the Roots of China's AI Regulations' (2024), 'How China Views AI Risks and What to Do About Them' (2025, on TC260's AI Safety Governance Framework 2.0), and 'China is Worried About AI Companions' (2026, on the Anthropomorphic AI regulation). Previously a fellow at the Paulson Institute's MacroPolo think tank leading research on Chinese technology issues. Author of 'The Transpacific Experiment' (Counterpoint Press, 2019). Lived in China 2010–2016; reads, writes, and speaks Mandarin Chinese.",
+    "leadership": [],
+    "website": "https://mattsheehanwork.github.io/",
+    "short_name": "Matt Sheehan"
   }
 ] as const;

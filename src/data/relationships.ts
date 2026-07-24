@@ -1,5 +1,5 @@
 // Auto-generated from China_AI_Risk_Actors_with_relationships.xlsx
-// 128 items | Regenerated: 2026-07-20
+// 128 items | Regenerated: 2026-07-21
 // Do not edit by hand.
 
 export type Relationship = {
