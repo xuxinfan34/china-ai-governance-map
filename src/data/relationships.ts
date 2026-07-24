@@ -1,24 +1,12 @@
-// Auto-generated from China_AI_Risk_Actors_with_relationships.xlsx
-// 128 items | Regenerated: 2026-07-21
+// Auto-generated | 130 items | 2026-07-23
 // Do not edit by hand.
 
 export type Relationship = {
-  id: string;
-  source: string;
-  target: string;
-  type: string;
-  category: string;
-  basis: string;
-  direction: 'directed' | 'undirected' | string;
-  summary: string;
-  instrument: string;
-  evidence_date: string;
-  status: string;
+  id: string; source: string; target: string; type: string; category: string;
+  basis: string; direction: 'directed' | 'undirected' | string; summary: string;
+  instrument: string; evidence_date: string; status: string;
   confidence: 'High' | 'Medium' | 'Low' | string;
-  evidence: {
-    url: string; title: string; lang: string;
-    type: string; published: string;
-  };
+  evidence: { url: string; title: string; lang: string; type: string; published: string; };
   notes: string;
 };
 
@@ -2838,5 +2826,49 @@ export const relationships: Relationship[] = [
       "published": "Unknown"
     },
     "notes": "User confirmed 2026-07-20 the primary committee page reflects the membership. Fang Liang's expert role is stated on Concordia's own team page (https://concordia-ai.com/zh-hans/our-team/) as \"AIIA安全治理委员会专家\"; modeled as a personnel bridge because expert-panel seats are personal appointments. Brian Tse (谢旻希) is separately described as a committee expert in BAAI 2025/2026 speaker bios."
+  },
+  {
+    "id": "REL-129",
+    "source": "matt-sheehan",
+    "target": "carnegie",
+    "type": "Senior Fellow",
+    "category": "Personnel bridge",
+    "basis": "Institutional affiliation",
+    "direction": "directed",
+    "summary": "Matt Sheehan is a Senior Fellow at the Carnegie Endowment for International Peace, where his research covers AI development and policy with a focus on China. His key analyses on Chinese AI governance — including work on TC260's AI Safety Governance Framework and CAC's algorithm regulations — are published through Carnegie's Technology & International Affairs program.",
+    "instrument": "Carnegie Technology & International Affairs program",
+    "evidence_date": "",
+    "status": "Active",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://mattsheehanwork.github.io/",
+      "title": "Matt Sheehan — About",
+      "lang": "English",
+      "type": "personal site",
+      "published": ""
+    },
+    "notes": ""
+  },
+  {
+    "id": "REL-130",
+    "source": "fungimind",
+    "target": "ocasc",
+    "type": "Community partner",
+    "category": "Collaboration",
+    "basis": "Partnership",
+    "direction": "undirected",
+    "summary": "Fungimind is listed as an official partner of the Open Community for AI Safety China (OCASC), displayed prominently in OCASC's site footer alongside Tsinghua University Press and According.Work.",
+    "instrument": "OCASC partnership program",
+    "evidence_date": "",
+    "status": "Active",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://aisafety-cn.com/",
+      "title": "OCASC — Partners section",
+      "lang": "English",
+      "type": "official site",
+      "published": ""
+    },
+    "notes": ""
   }
 ] as const;

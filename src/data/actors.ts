@@ -1,18 +1,10 @@
-// Auto-generated from China_AI_Risk_Actors_with_relationships.xlsx
-// 91 items | Regenerated: 2026-07-21
+// Auto-generated | 91 items | 2026-07-23
 // Do not edit by hand.
 
 export type Actor = {
-  id: string;
-  layer: 'ecosystem' | 'bridge';
-  name_en: string;
-  name_zh: string;
-  category: string;
-  overview: string;
-  leadership: { name: string; role: string }[];
-  website: string;
-  wikipedia?: string;
-  short_name: string;
+  id: string; layer: 'ecosystem' | 'bridge'; name_en: string; name_zh: string;
+  category: string; overview: string; leadership: { name: string; role: string }[];
+  website: string; wikipedia?: string; short_name: string;
 };
 
 export const actors: Actor[] = [
@@ -1054,8 +1046,20 @@ export const actors: Actor[] = [
     "overview": "The largest open AI safety community on the Chinese-language internet, centered on WeChat groups with presence on Bilibili, Zhihu, LinkedIn, and GitHub. An IASEAI (International Association for Safe and Ethical AI) affiliate. Focuses on AI risks, AI safety techniques, and AI safety governance, bridging international AI safety discourse into Chinese through curriculum translation (notably bringing BlueDot Impact's AI safety course into Chinese) and regular seminars. Partners include Fungimind, Tsinghua University Press, and According.Work.",
     "leadership": [
       {
-        "name": "Sarah Sun",
-        "role": "Contact"
+        "name": "Jinge Wang",
+        "role": "Co-founder"
+      },
+      {
+        "name": "Yuanyuan Sun",
+        "role": "Co-founder"
+      },
+      {
+        "name": "Wei Wang",
+        "role": "Co-founder"
+      },
+      {
+        "name": "Jing Liu",
+        "role": "Co-founder"
       }
     ],
     "website": "https://aisafety-cn.com/",
