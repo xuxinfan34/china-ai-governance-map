@@ -1037,8 +1037,20 @@
     "overview": "The largest open AI safety community on the Chinese-language internet, centered on WeChat groups with presence on Bilibili, Zhihu, LinkedIn, and GitHub. An IASEAI (International Association for Safe and Ethical AI) affiliate. Focuses on AI risks, AI safety techniques, and AI safety governance, bridging international AI safety discourse into Chinese through curriculum translation (notably bringing BlueDot Impact's AI safety course into Chinese) and regular seminars. Partners include Fungimind, Tsinghua University Press, and According.Work.",
     "leadership": [
       {
-        "name": "Sarah Sun",
-        "role": "Contact"
+        "name": "Jinge Wang",
+        "role": "Co-founder"
+      },
+      {
+        "name": "Yuanyuan Sun",
+        "role": "Co-founder"
+      },
+      {
+        "name": "Wei Wang",
+        "role": "Co-founder"
+      },
+      {
+        "name": "Jing Liu",
+        "role": "Co-founder"
       }
     ],
     "website": "https://aisafety-cn.com/",
