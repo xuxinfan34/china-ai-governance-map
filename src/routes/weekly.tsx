@@ -107,8 +107,9 @@ function WeeklyFeed() {
         <p className="mt-6 text-sm leading-relaxed text-foreground/80">
           Many actors in China's AI governance ecosystem publish primarily on WeChat, in
           Chinese. This feed makes a curated selection of their weekly output accessible to
-          English-speaking analysts. Sources so far: CAC, CAICT, Tsinghua I-AIIG, NDRC, and
-          Science and Technology Daily.
+          English-speaking analysts. Sources include: NDRC, CAC, Science and Technology Daily,
+          CAICT, CAICT Trustworthy AI Safety Governance, SAC, AIIA, Tsinghua CISS, Tsinghua AIR,
+          Tsinghua I-AIIG, Peking Institute for AI, Beijing AISI, Concordia AI, and Fungimind.
         </p>
       </header>
 
