@@ -1,19 +1,10 @@
-// Auto-generated from China_AI_Risk_Actors_with_relationships.xlsx
-// 36 items | Regenerated: 2026-07-21
+// Auto-generated | 36 items | 2026-07-23
 // Do not edit by hand.
 
 export type GovernanceDocument = {
-  id: string;
-  title_en: string;
-  title_zh: string;
-  doc_type: string;
-  issuers_raw: string;
-  issuers: { name: string; id: string | null }[];
-  issued: string;
-  status: string;
-  relevance: string;
-  official_url: string;
-  translation_url: string;
+  id: string; title_en: string; title_zh: string; doc_type: string; issuers_raw: string;
+  issuers: { name: string; id: string | null }[]; issued: string; status: string;
+  relevance: string; official_url: string; translation_url: string;
 };
 
 export const documents: GovernanceDocument[] = [

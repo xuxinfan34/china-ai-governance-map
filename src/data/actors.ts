@@ -1,4 +1,4 @@
-// Auto-generated | 91 items | 2026-07-23
+// Auto-generated | 93 items | 2026-07-23
 // Do not edit by hand.
 
 export type Actor = {
@@ -1531,5 +1531,27 @@ export const actors: Actor[] = [
     "leadership": [],
     "website": "https://mattsheehanwork.github.io/",
     "short_name": "Matt Sheehan"
+  },
+  {
+    "id": "yan-zhu",
+    "layer": "bridge",
+    "name_en": "Yan Zhu (朱燕)",
+    "name_zh": "",
+    "category": "Individual analyst",
+    "overview": "AI governance researcher and entrepreneur based at UC Berkeley. MPP from UC Berkeley Goldman School of Public Policy with an AI governance specialization; Berkeley AI Safety Fellow; Co-Founder of AI Safety Sandbox, an AI governance startup incubating at Berkeley SkyDeck Pad13. Collaborator at MIT's AI Risk Repository (airisk.mit.edu). Consulting background spanning both U.S. and Chinese government agencies — including the U.S. Department of Energy, WWF, the Pacific Economic Cooperation Council (PECC), China's Cyberspace Administration (CAC), and the Shanghai City Government. Contributed to PECC conference recommendations as a partner event to the 2025 Paris AI Summit. Active on Xiaohongshu (小红书) covering AI governance and China tech policy discourse: https://xhslink.cn/m/52DWYMaOBtb",
+    "leadership": [],
+    "website": "https://www.linkedin.com/in/yan-zhu-lucky/",
+    "short_name": "Yan Zhu"
+  },
+  {
+    "id": "zilan-qian",
+    "layer": "bridge",
+    "name_en": "Zilan Qian (钱子兰)",
+    "name_zh": "",
+    "category": "Individual analyst",
+    "overview": "Programme Associate (Research) at the Oxford China Policy Lab, researching China's AI governance and development and the broader socioeconomic implications of AI. Holds a Master's in Social Science of the Internet from the Oxford Internet Institute, University of Oxford. Concordia AI affiliate. Notable published work includes analysis of China's AI registry system and the AIGC algorithm filing dataset for ChinaTalk ('China's AI Landscape: a free-for-all, not a central plan', 2026), and investigation of China's proxy economy for accessing Western AI models ('How to Buy Cheap Claude Tokens in China', ChinaTalk 2026). Research supported by the Tarbell Center for AI Journalism. Previously covered China's humanoid robot policies and Singapore's role in the US-China AI competition.",
+    "leadership": [],
+    "website": "https://www.linkedin.com/in/zilan-qian/",
+    "short_name": "Zilan Qian"
   }
 ] as const;

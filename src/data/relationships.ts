@@ -1,4 +1,4 @@
-// Auto-generated | 130 items | 2026-07-23
+// Auto-generated | 133 items | 2026-07-23
 // Do not edit by hand.
 
 export type Relationship = {
@@ -2865,6 +2865,72 @@ export const relationships: Relationship[] = [
     "evidence": {
       "url": "https://aisafety-cn.com/",
       "title": "OCASC — Partners section",
+      "lang": "English",
+      "type": "official site",
+      "published": ""
+    },
+    "notes": ""
+  },
+  {
+    "id": "REL-131",
+    "source": "yan-zhu",
+    "target": "ocasc",
+    "type": "AI governance course facilitator",
+    "category": "Collaboration",
+    "basis": "Course facilitation",
+    "direction": "directed",
+    "summary": "Yan Zhu serves as an AI governance course facilitator for the Open Community for AI Safety China (OCASC), contributing to the community's educational programming on AI governance topics.",
+    "instrument": "OCASC AI governance course",
+    "evidence_date": "",
+    "status": "Active",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://aisafety-cn.com/",
+      "title": "OCASC — Team / Facilitators",
+      "lang": "English",
+      "type": "official site",
+      "published": ""
+    },
+    "notes": ""
+  },
+  {
+    "id": "REL-132",
+    "source": "zilan-qian",
+    "target": "oxford-cpl",
+    "type": "Programme Associate (Research)",
+    "category": "Personnel bridge",
+    "basis": "Institutional affiliation",
+    "direction": "directed",
+    "summary": "Zilan Qian is a Programme Associate (Research) at the Oxford China Policy Lab, where her research examines China's AI governance and development and the broader socioeconomic implications of AI.",
+    "instrument": "Oxford China Policy Lab research programme",
+    "evidence_date": "",
+    "status": "Active",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://oxfordchinapolicylab.org/collection/2025%20Fellows/zilan-qian",
+      "title": "Oxford China Policy Lab — 2025 Fellows",
+      "lang": "English",
+      "type": "official site",
+      "published": ""
+    },
+    "notes": ""
+  },
+  {
+    "id": "REL-133",
+    "source": "zilan-qian",
+    "target": "concordia",
+    "type": "Affiliate",
+    "category": "Membership",
+    "basis": "Affiliates Program membership",
+    "direction": "directed",
+    "summary": "Zilan Qian is a current affiliate in Concordia AI's Affiliates Program, a global network of 100+ fellows from leading AI research groups collaborating across working groups on AI safety and governance.",
+    "instrument": "Concordia AI Affiliates Program",
+    "evidence_date": "",
+    "status": "Active",
+    "confidence": "High",
+    "evidence": {
+      "url": "https://concordia-ai.com/about-us/our-team/",
+      "title": "Concordia AI — Our Team",
       "lang": "English",
       "type": "official site",
       "published": ""
