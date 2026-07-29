@@ -1353,7 +1353,7 @@
     "layer": "bridge",
     "name_en": "Paul Triolo",
     "name_zh": "",
-    "category": "Bridge – Individual analyst",
+    "category": "Individual",
     "overview": "Partner and China/technology policy lead at DGA-Albright Stonebridge Group and honorary senior fellow at the Asia Society Policy Institute. Veteran interpreter of China's AI, semiconductor, and technology policy for international audiences, with 25+ years of prior US government experience and participation in Track II dialogues with China on AI and data governance.",
     "leadership": [
       {
@@ -1369,7 +1369,7 @@
     "layer": "bridge",
     "name_en": "Angela Huyue Zhang",
     "name_zh": "",
-    "category": "Bridge – Individual analyst",
+    "category": "Individual",
     "overview": "Professor of Law at the USC Gould School of Law and a leading authority on Chinese tech regulation. Her scholarship and commentary on how China regulates its technology sector, including AI, shape international understanding of Chinese digital governance.",
     "leadership": [
       {
@@ -1385,7 +1385,7 @@
     "layer": "bridge",
     "name_en": "Samm Sacks",
     "name_zh": "",
-    "category": "Bridge – Individual analyst",
+    "category": "Individual",
     "overview": "Research Scholar in Law and Senior Fellow at Yale Law School's Paul Tsai China Center, focused on China's cybersecurity legal system, data governance, and the US-China technology relationship — foundational context for China's AI regulatory regime.",
     "leadership": [
       {
@@ -1401,7 +1401,7 @@
     "layer": "bridge",
     "name_en": "Selina Xu",
     "name_zh": "",
-    "category": "Bridge – Individual analyst",
+    "category": "Individual",
     "overview": "Head of China, AI Research and Strategic Initiatives in the Office of Eric Schmidt, and former Bloomberg News China reporter. Writes on China's AI trajectory and US-China technology competition for major outlets including co-authored New York Times essays with Eric Schmidt that have shaped elite US understanding of China's AI momentum.",
     "leadership": [
       {
@@ -1485,7 +1485,7 @@
     "layer": "bridge",
     "name_en": "Emmie Hine",
     "name_zh": "",
-    "category": "Bridge – Individual researcher / newsletter author",
+    "category": "Individual",
     "overview": "A researcher focused on the Chinese AI governance ecosystem and broader questions of technology governance. She writes China AI Bulletin and has published research and commentary that interprets Chinese AI policy for English-speaking audiences.",
     "leadership": [
       {
@@ -1501,7 +1501,7 @@
     "layer": "bridge",
     "name_en": "Scott Singer",
     "name_zh": "",
-    "category": "Bridge – Individual researcher",
+    "category": "Individual",
     "overview": "A researcher working on global AI development and governance with a focus on China. He co-founded the Oxford China Policy Lab and is a fellow at the Carnegie Endowment for International Peace.",
     "leadership": [
       {
@@ -1517,7 +1517,7 @@
     "layer": "bridge",
     "name_en": "Matt Sheehan",
     "name_zh": "",
-    "category": "Individual analyst",
+    "category": "Individual",
     "overview": "Senior Fellow at the Carnegie Endowment for International Peace, where his research covers AI development and policy with a focus on China. His work explores China's AI policy ecosystem, the role of technology in China's political economy, and U.S.-China competition in AI. Key analyses include 'Tracing the Roots of China's AI Regulations' (2024), 'How China Views AI Risks and What to Do About Them' (2025, on TC260's AI Safety Governance Framework 2.0), and 'China is Worried About AI Companions' (2026, on the Anthropomorphic AI regulation). Previously a fellow at the Paulson Institute's MacroPolo think tank leading research on Chinese technology issues. Author of 'The Transpacific Experiment' (Counterpoint Press, 2019). Lived in China 2010–2016; reads, writes, and speaks Mandarin Chinese.",
     "leadership": [],
     "website": "https://mattsheehanwork.github.io/",
@@ -1526,9 +1526,9 @@
   {
     "id": "yan-zhu",
     "layer": "bridge",
-    "name_en": "Yan Zhu (朱燕)",
+    "name_en": "Yan Zhu",
     "name_zh": "",
-    "category": "Individual analyst",
+    "category": "Individual",
     "overview": "AI governance researcher and entrepreneur based at UC Berkeley. MPP from UC Berkeley Goldman School of Public Policy with an AI governance specialization; Berkeley AI Safety Fellow; Co-Founder of AI Safety Sandbox, an AI governance startup incubating at Berkeley SkyDeck Pad13. Collaborator at MIT's AI Risk Repository (airisk.mit.edu). Consulting background spanning both U.S. and Chinese government agencies — including the U.S. Department of Energy, WWF, the Pacific Economic Cooperation Council (PECC), China's Cyberspace Administration (CAC), and the Shanghai City Government. Contributed to PECC conference recommendations as a partner event to the 2025 Paris AI Summit. Active on Xiaohongshu (小红书) covering AI governance and China tech policy discourse: https://xhslink.cn/m/52DWYMaOBtb",
     "leadership": [],
     "website": "https://www.linkedin.com/in/yan-zhu-lucky/",
@@ -1537,12 +1537,23 @@
   {
     "id": "zilan-qian",
     "layer": "bridge",
-    "name_en": "Zilan Qian (钱子兰)",
+    "name_en": "Zilan Qian",
     "name_zh": "",
-    "category": "Individual analyst",
+    "category": "Individual",
     "overview": "Programme Associate (Research) at the Oxford China Policy Lab, researching China's AI governance and development and the broader socioeconomic implications of AI. Holds a Master's in Social Science of the Internet from the Oxford Internet Institute, University of Oxford. Concordia AI affiliate. Notable published work includes analysis of China's AI registry system and the AIGC algorithm filing dataset for ChinaTalk ('China's AI Landscape: a free-for-all, not a central plan', 2026), and investigation of China's proxy economy for accessing Western AI models ('How to Buy Cheap Claude Tokens in China', ChinaTalk 2026). Research supported by the Tarbell Center for AI Journalism. Previously covered China's humanoid robot policies and Singapore's role in the US-China AI competition.",
     "leadership": [],
     "website": "https://www.linkedin.com/in/zilan-qian/",
     "short_name": "Zilan Qian"
+  },
+  {
+    "id": "wire-china",
+    "layer": "bridge",
+    "name_en": "The Wire China",
+    "name_zh": "",
+    "category": "Bridge – Publication / media",
+    "overview": "An independent digital publication focused on business, economic, and policy coverage of China for a Western readership. Notable for its 'Who's Who' series profiling key figures across Chinese industries — including a comprehensive directory of 52 entrepreneurs, scientists, and policymakers shaping China's AI ecosystem, compiled from corporate documents, government statements, scholarly articles, and media reports. Also operates WireScreen, an AI-powered research platform for China corporate intelligence. The Who's Who AI directory covers leaders at DeepSeek, Zhipu AI, Moonshot, MiniMax, Baidu, Tencent, ByteDance, SenseTime, Huawei, and government officials including at MOST and CAS.",
+    "leadership": [],
+    "website": "https://www.thewirechina.com/",
+    "short_name": "The Wire China"
   }
 ]
