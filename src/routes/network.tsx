@@ -120,7 +120,12 @@ function NetworkPage() {
     {
       key: "bridge",
       label: "Bridge / interpreter",
-      match: (a) => a.layer === "bridge",
+      match: (a) => a.layer === "bridge" && a.bridge_type !== "individual",
+    },
+    {
+      key: "individual",
+      label: "Individual",
+      match: (a) => a.layer === "bridge" && a.bridge_type === "individual",
     },
   ];
 
@@ -216,6 +221,8 @@ function NetworkPage() {
     Collaboration: "#5A7A4A",
     "Publication / production": "#8A3F4B",
   };
+
+  const INDIVIDUAL_COLOR = "#7A4E9C";
 
   function hexToRgba(hex: string, alpha: number) {
     const h = hex.replace("#", "");
@@ -351,6 +358,10 @@ function NetworkPage() {
                     <span>{STAKEHOLDER_LABEL[k][lang]}</span>
                   </li>
                 ))}
+                <li className="flex items-center gap-2">
+                  <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ backgroundColor: INDIVIDUAL_COLOR }} />
+                  <span>Individual</span>
+                </li>
               </ul>
             </div>
 
@@ -366,7 +377,10 @@ function NetworkPage() {
                 nodeRelSize={6}
                 nodeCanvasObject={(node: any, ctx: any, globalScale: number) => {
                   const a: Actor = node.actor;
-                  const color = STAKEHOLDER_COLORS[a.stakeholder_type];
+                  const color =
+                    a.layer === "bridge" && a.bridge_type === "individual"
+                      ? INDIVIDUAL_COLOR
+                      : STAKEHOLDER_COLORS[a.stakeholder_type];
                   const dim = connectedIds && !connectedIds.has(a.id);
                   ctx.globalAlpha = dim ? 0.15 : 1;
                   ctx.fillStyle = color;
@@ -573,7 +587,12 @@ function NetworkPage() {
                 <p className="mt-2 flex items-center gap-2 text-xs">
                   <span
                     className="inline-block h-2 w-2 rounded-full"
-                    style={{ backgroundColor: STAKEHOLDER_COLORS[selectedActor.stakeholder_type] }}
+                    style={{
+                      backgroundColor:
+                        selectedActor.layer === "bridge" && selectedActor.bridge_type === "individual"
+                          ? INDIVIDUAL_COLOR
+                          : STAKEHOLDER_COLORS[selectedActor.stakeholder_type],
+                    }}
                   />
                   {STAKEHOLDER_LABEL[selectedActor.stakeholder_type][lang]}
                   {selectedActor.location && (
