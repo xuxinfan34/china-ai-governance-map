@@ -233,6 +233,42 @@ function Profile() {
           </div>
         </Section>
       )}
+
+      {rels.length > 0 && (
+        <Section title={t("connections")}>
+          <ul className="divide-y divide-border rounded-md border border-border">
+            {[...rels]
+              .sort((a, b) => a.category.localeCompare(b.category))
+              .map((r) => {
+                const otherId = r.source === actor.id ? r.target : r.source;
+                const other = ACTORS.find((a) => a.id === otherId);
+                if (!other) return null;
+                return (
+                  <li key={r.id} className="flex flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <Link
+                        to="/actors/$id"
+                        params={{ id: other.id }}
+                        className="font-serif text-foreground hover:text-primary"
+                      >
+                        {other.name_en}
+                      </Link>
+                      {other.name_zh && (
+                        <span className="font-zh text-xs text-muted-foreground">{other.name_zh}</span>
+                      )}
+                      <span className="rounded-sm bg-secondary px-2 py-0.5 text-xs text-secondary-foreground">
+                        {r.type}
+                      </span>
+                    </div>
+                    <span className="shrink-0 rounded-full border border-border bg-background px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+                      {r.category}
+                    </span>
+                  </li>
+                );
+              })}
+          </ul>
+        </Section>
+      )}
     </article>
   );
 }
