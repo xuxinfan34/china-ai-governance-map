@@ -124,7 +124,7 @@ export const strings = {
     no_results: "没有条目符合当前筛选。",
     network_title: "关系网络",
     network_sub: "中国生态参与者之间已核实的机构关系。",
-    network_notice: "本图呈现 126 条已核实的机构关系,覆盖中国人工智能治理生态及其跨境解读网络。桥梁参与者(方形)与中国境内生态参与者(圆形)并列显示。",
+    network_notice: "本图呈现 133 条已核实的机构关系，覆盖中国人工智能治理生态及其跨境解读网络。桥梁参与者（方形）与中国境内生态参与者（圆形）并列显示。",
     network_mobile: "网络视图仅在桌面端可用。请在参与者页面以列表方式浏览。",
     conf_high_only: "仅高置信",
     conf_high_medium: "高 + 中",
