@@ -233,11 +233,18 @@ function NetworkPage() {
   }
 
   const graphData = useMemo(
-    () => ({
-      nodes: visibleActors.map((a) => ({ id: a.id, actor: a })) as GraphNode[],
-      links: filteredRels.map((r) => ({ source: r.source, target: r.target, rel: r })) as GraphLink[],
-    }),
-    [visibleActors, filteredRels],
+    () => {
+      const links = selected
+        ? filteredRels
+            .filter((r) => r.source === selected || r.target === selected)
+            .map((r) => ({ source: r.source, target: r.target, rel: r })) as GraphLink[]
+        : ([] as GraphLink[]);
+      return {
+        nodes: visibleActors.map((a) => ({ id: a.id, actor: a })) as GraphNode[],
+        links,
+      };
+    },
+    [visibleActors, filteredRels, selected],
   );
 
   // Smoothly reheat simulation when filters change
