@@ -587,7 +587,12 @@ function NetworkPage() {
                 <p className="mt-2 flex items-center gap-2 text-xs">
                   <span
                     className="inline-block h-2 w-2 rounded-full"
-                    style={{ backgroundColor: STAKEHOLDER_COLORS[selectedActor.stakeholder_type] }}
+                    style={{
+                      backgroundColor:
+                        selectedActor.layer === "bridge" && selectedActor.bridge_type === "individual"
+                          ? INDIVIDUAL_COLOR
+                          : STAKEHOLDER_COLORS[selectedActor.stakeholder_type],
+                    }}
                   />
                   {STAKEHOLDER_LABEL[selectedActor.stakeholder_type][lang]}
                   {selectedActor.location && (
