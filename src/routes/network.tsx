@@ -120,7 +120,12 @@ function NetworkPage() {
     {
       key: "bridge",
       label: "Bridge / interpreter",
-      match: (a) => a.layer === "bridge",
+      match: (a) => a.layer === "bridge" && a.bridge_type !== "individual",
+    },
+    {
+      key: "individual",
+      label: "Individual",
+      match: (a) => a.layer === "bridge" && a.bridge_type === "individual",
     },
   ];
 
@@ -351,6 +356,10 @@ function NetworkPage() {
                     <span>{STAKEHOLDER_LABEL[k][lang]}</span>
                   </li>
                 ))}
+                <li className="flex items-center gap-2">
+                  <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ backgroundColor: INDIVIDUAL_COLOR }} />
+                  <span>Individual</span>
+                </li>
               </ul>
             </div>
 
@@ -366,7 +375,10 @@ function NetworkPage() {
                 nodeRelSize={6}
                 nodeCanvasObject={(node: any, ctx: any, globalScale: number) => {
                   const a: Actor = node.actor;
-                  const color = STAKEHOLDER_COLORS[a.stakeholder_type];
+                  const color =
+                    a.layer === "bridge" && a.bridge_type === "individual"
+                      ? INDIVIDUAL_COLOR
+                      : STAKEHOLDER_COLORS[a.stakeholder_type];
                   const dim = connectedIds && !connectedIds.has(a.id);
                   ctx.globalAlpha = dim ? 0.15 : 1;
                   ctx.fillStyle = color;
