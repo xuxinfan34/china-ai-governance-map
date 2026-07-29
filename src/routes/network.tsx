@@ -233,18 +233,11 @@ function NetworkPage() {
   }
 
   const graphData = useMemo(
-    () => {
-      const links = selected
-        ? filteredRels
-            .filter((r) => r.source === selected || r.target === selected)
-            .map((r) => ({ source: r.source, target: r.target, rel: r })) as GraphLink[]
-        : ([] as GraphLink[]);
-      return {
-        nodes: visibleActors.map((a) => ({ id: a.id, actor: a })) as GraphNode[],
-        links,
-      };
-    },
-    [visibleActors, filteredRels, selected],
+    () => ({
+      nodes: visibleActors.map((a) => ({ id: a.id, actor: a })) as GraphNode[],
+      links: filteredRels.map((r) => ({ source: r.source, target: r.target, rel: r })) as GraphLink[],
+    }),
+    [visibleActors, filteredRels],
   );
 
   // Smoothly reheat simulation when filters change
@@ -389,7 +382,7 @@ function NetworkPage() {
                       ? INDIVIDUAL_COLOR
                       : STAKEHOLDER_COLORS[a.stakeholder_type];
                   const dim = connectedIds && !connectedIds.has(a.id);
-                  ctx.globalAlpha = dim ? 0.15 : 1;
+                  ctx.globalAlpha = dim ? 0.25 : 1;
                   ctx.fillStyle = color;
                   const r = nodeRadius(a.id);
                   if (a.layer === "bridge") {
@@ -416,7 +409,7 @@ function NetworkPage() {
                   ctx.textAlign = "center";
                   ctx.textBaseline = "top";
                   const focused = hoverNode === a.id || selected === a.id;
-                  const labelAlpha = dim ? 0.15 : focused ? 1 : 0.75;
+                  const labelAlpha = dim ? 0.25 : focused ? 1 : 0.75;
                   ctx.globalAlpha = labelAlpha;
                   ctx.fillStyle = "#1a1a1a";
                   ctx.fillText(label, node.x, node.y + r + 3);
@@ -426,19 +419,19 @@ function NetworkPage() {
                   const base = REL_COLORS[l.rel.category] ?? "#666";
                   const s = typeof l.source === "object" ? l.source.id : l.source;
                   const tgt = typeof l.target === "object" ? l.target.id : l.target;
-                  const highlighted =
-                    hoverLink === l ||
-                    (connectedIds && connectedIds.has(s) && connectedIds.has(tgt));
-                  if (highlighted) return hexToRgba(base, 1);
-                  if (connectedIds) return hexToRgba(base, 0.1);
-                  return hexToRgba(base, 0.32);
+                  const incidentToSelected = selected && (s === selected || tgt === selected);
+                  if (hoverLink === l || incidentToSelected) {
+                    return hexToRgba(base, 1);
+                  }
+                  if (selected) return hexToRgba("#CCCCCC", 0.03);
+                  return hexToRgba("#CCCCCC", 0.1);
                 }}
                 linkWidth={(l: any) => {
                   if (hoverLink === l) return 2.5;
-                  if (!connectedIds) return 1;
                   const s = typeof l.source === "object" ? l.source.id : l.source;
                   const tgt = typeof l.target === "object" ? l.target.id : l.target;
-                  return connectedIds.has(s) && connectedIds.has(tgt) ? 2 : 1;
+                  if (selected && (s === selected || tgt === selected)) return 2;
+                  return 1;
                 }}
                 linkDirectionalArrowLength={(l: any) => (l.rel.direction === "directed" ? 5 : 0)}
                 linkDirectionalArrowRelPos={1}
