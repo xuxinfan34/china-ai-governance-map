@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "sdk_version": "0.25.0",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "china-ai-governance-map-mcp",
+      "version": "0.1.0",
+      "title": "China AI Governance Map"
+    },
+    "tools": [
+      {
+        "name": "list_actors",
+        "title": "List actors",
+        "description": "List actors in China's AI governance ecosystem. Optionally filter by layer (ecosystem = China-based actors; bridge = cross-border interpreters) or stakeholder type.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "layer": {
+              "description": "Filter by layer.",
+              "type": "string",
+              "enum": [
+                "ecosystem",
+                "bridge"
+              ]
+            },
+            "stakeholder_type": {
+              "description": "Filter by stakeholder type.",
+              "type": "string",
+              "enum": [
+                "government",
+                "research",
+                "company",
+                "civil"
+              ]
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_actor",
+        "title": "Get actor",
+        "description": "Get the full profile for a single actor by id, including leadership, relationships (with evidence), and issued governance documents.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Actor id, e.g. 'cac', 'shlab'."
+            }
+          },
+          "required": [
+            "id"
+          ]
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_relationships",
+        "title": "List relationships",
+        "description": "List relationships between actors. Optionally filter by category or by actor id (matches either source or target).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "category": {
+              "description": "Relationship category.",
+              "type": "string",
+              "enum": [
+                "Joint rulemaking",
+                "Institutional relationship",
+                "Personnel bridge",
+                "Membership",
+                "Collaboration",
+                "Publication / production"
+              ]
+            },
+            "actor_id": {
+              "description": "Filter to relationships touching this actor id.",
+              "type": "string"
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_documents",
+        "title": "List governance documents",
+        "description": "List Chinese AI governance documents (laws, regulations, standards, guidelines) tracked by the map. Optionally filter by issuer actor id.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "issuer_id": {
+              "description": "Filter to documents issued by this actor id.",
+              "type": "string"
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_weekly_feed",
+        "title": "List Ecosystem Weekly Feed",
+        "description": "Return the current curated Ecosystem Weekly Feed: translated highlights from Chinese AI governance WeChat sources, with English + Chinese titles, summary, key term (when present), and source URL.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
