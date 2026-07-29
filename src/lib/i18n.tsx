@@ -62,7 +62,7 @@ export const strings = {
     no_results: "No entries match these filters.",
     network_title: "Network",
     network_sub: "Verified institutional relationships among China-based ecosystem actors.",
-    network_notice: "This network shows 126 verified institutional relationships across China's AI governance ecosystem and its cross-border interpretive network. Bridge actors (squares) sit alongside China-based ecosystem actors (circles).",
+    network_notice: "This network shows 133 verified institutional relationships across China's AI governance ecosystem and its cross-border interpretive network. Bridge actors (squares) sit alongside China-based ecosystem actors (circles).",,
     network_mobile: "Network view is available on desktop. Explore actors as a list on the Actors page.",
     conf_high_only: "High only",
     conf_high_medium: "High + Medium",
