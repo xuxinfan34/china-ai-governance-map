@@ -14,6 +14,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as NetworkRouteImport } from './routes/network'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
+import { Route as DocumentsRouteImport } from './routes/documents'
 import { Route as BridgesRouteImport } from './routes/bridges'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -45,6 +46,11 @@ const McpRoute = McpRouteImport.update({
 const EcosystemRoute = EcosystemRouteImport.update({
   id: '/ecosystem',
   path: '/ecosystem',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocumentsRoute = DocumentsRouteImport.update({
+  id: '/documents',
+  path: '/documents',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BridgesRoute = BridgesRouteImport.update({
@@ -90,6 +96,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/bridges': typeof BridgesRoute
+  '/documents': typeof DocumentsRoute
   '/ecosystem': typeof EcosystemRoute
   '/mcp': typeof McpRoute
   '/network': typeof NetworkRoute
@@ -104,6 +111,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/bridges': typeof BridgesRoute
+  '/documents': typeof DocumentsRoute
   '/ecosystem': typeof EcosystemRoute
   '/mcp': typeof McpRoute
   '/network': typeof NetworkRoute
@@ -119,6 +127,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/bridges': typeof BridgesRoute
+  '/documents': typeof DocumentsRoute
   '/ecosystem': typeof EcosystemRoute
   '/mcp': typeof McpRoute
   '/network': typeof NetworkRoute
@@ -135,6 +144,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/bridges'
+    | '/documents'
     | '/ecosystem'
     | '/mcp'
     | '/network'
@@ -149,6 +159,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/bridges'
+    | '/documents'
     | '/ecosystem'
     | '/mcp'
     | '/network'
@@ -163,6 +174,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/bridges'
+    | '/documents'
     | '/ecosystem'
     | '/mcp'
     | '/network'
@@ -178,6 +190,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   BridgesRoute: typeof BridgesRoute
+  DocumentsRoute: typeof DocumentsRoute
   EcosystemRoute: typeof EcosystemRoute
   McpRoute: typeof McpRoute
   NetworkRoute: typeof NetworkRoute
@@ -224,6 +237,13 @@ declare module '@tanstack/react-router' {
       path: '/ecosystem'
       fullPath: '/ecosystem'
       preLoaderRoute: typeof EcosystemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/documents': {
+      id: '/documents'
+      path: '/documents'
+      fullPath: '/documents'
+      preLoaderRoute: typeof DocumentsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/bridges': {
@@ -282,6 +302,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BridgesRoute: BridgesRoute,
+  DocumentsRoute: DocumentsRoute,
   EcosystemRoute: EcosystemRoute,
   McpRoute: McpRoute,
   NetworkRoute: NetworkRoute,
