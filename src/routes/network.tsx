@@ -125,7 +125,9 @@ function NetworkPage() {
     {
       key: "individual",
       label: "Individual",
-      match: (a) => a.layer === "bridge" && a.bridge_type === "individual",
+      match: (a) =>
+        a.layer === "bridge" &&
+        (a.bridge_type === "individual" || a.category.toLowerCase() === "individual"),
     },
   ];
 
