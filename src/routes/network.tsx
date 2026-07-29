@@ -222,6 +222,8 @@ function NetworkPage() {
     "Publication / production": "#8A3F4B",
   };
 
+  const INDIVIDUAL_COLOR = "#7A4E9C";
+
   function hexToRgba(hex: string, alpha: number) {
     const h = hex.replace("#", "");
     const r = parseInt(h.slice(0, 2), 16);
