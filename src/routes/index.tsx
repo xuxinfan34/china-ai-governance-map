@@ -14,9 +14,26 @@ function Index() {
       <section className="max-w-3xl">
         <p className="mb-4 font-serif text-sm tracking-wider text-primary">China AI Governance Map · Sinograph AI</p>
         <h1 className="font-serif text-5xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-6xl">
-
           {t("tagline")}
         </h1>
+
+        <div className="mt-8 flex flex-wrap items-baseline gap-8 sm:gap-12">
+          <div>
+            <p className="font-serif text-3xl font-semibold text-primary sm:text-4xl">94</p>
+            <p className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">actors</p>
+          </div>
+          <div>
+            <p className="font-serif text-3xl font-semibold text-primary sm:text-4xl">133</p>
+            <p className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">verified relationships</p>
+          </div>
+          <div>
+            <p className="font-serif text-3xl font-semibold text-primary sm:text-4xl">36</p>
+            <p className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">governance documents</p>
+          </div>
+        </div>
+
+        <p className="mt-4 text-sm text-muted-foreground">Last updated: July 2026</p>
+
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
           {t("home_intro")}
         </p>
