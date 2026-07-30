@@ -64,7 +64,8 @@ function Profile() {
   return (
     <article className="mx-auto max-w-3xl px-6 py-14">
       <Link
-        to={actor.layer === "bridge" ? "/bridges" : "/ecosystem"}
+        to="/directory"
+        search={{ layer: actor.layer === "bridge" ? "bridge" : "ecosystem" }}
         className="text-sm text-muted-foreground hover:text-primary"
       >
         ← {t("back")}
@@ -296,7 +297,7 @@ function NotFoundView() {
     <div className="mx-auto max-w-xl px-6 py-24 text-center">
       <h1 className="font-serif text-4xl">Actor not found</h1>
       <p className="mt-3 text-muted-foreground">This entry doesn't exist yet.</p>
-      <Link to="/ecosystem" className="mt-6 inline-block text-primary underline">
+      <Link to="/directory" className="mt-6 inline-block text-primary underline">
         Browse the directory
       </Link>
     </div>
