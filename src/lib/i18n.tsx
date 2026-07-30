@@ -14,6 +14,7 @@ export const strings = {
     tagline: "A tool to navigate China AI Governance",
 
     nav_home: "Home",
+    nav_directory: "Directory",
     nav_ecosystem: "Ecosystem Actors",
     nav_bridges: "Bridges & Interpreters",
     nav_network: "Network",
@@ -24,6 +25,10 @@ export const strings = {
     badge_ecosystem: "Ecosystem",
     badge_bridge: "Bridge",
     lang_toggle: "中文",
+    directory_title: "Directory",
+    directory_sub:
+      "Every actor in the map — China-based ecosystem institutions and the cross-border bridges that interpret them.",
+    filter_all_layers: "All",
     ecosystem_title: "Ecosystem Actors",
     ecosystem_sub: "Regulators, research institutes, standards bodies, and firms shaping AI governance in China.",
     bridges_title: "Bridges & Interpreters",
@@ -77,6 +82,7 @@ export const strings = {
     tagline: "中国人工智能治理导航工具",
 
     nav_home: "首页",
+    nav_directory: "名录",
     nav_ecosystem: "生态参与者",
     nav_bridges: "桥梁与解读者",
     nav_network: "关系网络",
@@ -87,6 +93,9 @@ export const strings = {
     badge_ecosystem: "生态",
     badge_bridge: "桥梁",
     lang_toggle: "EN",
+    directory_title: "名录",
+    directory_sub: "地图中的全部参与者——中国本土生态机构与跨境解读桥梁。",
+    filter_all_layers: "全部",
     ecosystem_title: "生态参与者",
     ecosystem_sub: "塑造中国人工智能治理的监管机构、研究院所、标准组织与企业。",
     bridges_title: "桥梁与解读者",

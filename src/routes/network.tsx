@@ -323,8 +323,8 @@ function NetworkPage() {
         {isMobile ? (
           <div className="flex h-full flex-col items-center justify-center px-8 text-center">
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">{t("network_mobile")}</p>
-            <Link to="/ecosystem" className="mt-5 text-sm text-primary underline underline-offset-4">
-              {t("nav_ecosystem")} →
+            <Link to="/directory" className="mt-5 text-sm text-primary underline underline-offset-4">
+              {t("nav_directory")} →
             </Link>
           </div>
         ) : (

@@ -41,7 +41,7 @@ function Index() {
 
       <section className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
         <EntryCard
-          to="/ecosystem"
+          to="/directory"
           eyebrow="I."
           title={t("nav_ecosystem")}
           zh="生态参与者"
@@ -49,7 +49,7 @@ function Index() {
           cta={t("enter")}
         />
         <EntryCard
-          to="/bridges"
+          to="/directory"
           eyebrow="II."
           title={t("nav_bridges")}
           zh="桥梁与解读者"

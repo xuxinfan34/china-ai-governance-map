@@ -12,13 +12,16 @@ import {
 import { ActorCard } from "./actor-card";
 import { useLang } from "../lib/i18n";
 
+export type LayerFilter = Layer | "all";
+
 interface Props {
-  layer: Layer;
+  layer: LayerFilter;
+  onLayerChange: (l: LayerFilter) => void;
   title: string;
   subtitle: string;
 }
 
-export function Directory({ layer, title, subtitle }: Props) {
+export function Directory({ layer, onLayerChange, title, subtitle }: Props) {
   const { t, lang } = useLang();
   const [q, setQ] = useState("");
   const [stakeholder, setStakeholder] = useState<string>("all");
@@ -27,7 +30,27 @@ export function Directory({ layer, title, subtitle }: Props) {
   const [tab, setTab] = useState<"directory" | "map">("directory");
   const [filtersOpen, setFiltersOpen] = useState(false);
 
-  const pool = useMemo(() => ACTORS.filter((a) => a.layer === layer), [layer]);
+  const layerOrder: Record<Layer, number> = { ecosystem: 0, bridge: 1 };
+  const sorted = useMemo(
+    () =>
+      [...ACTORS].sort(
+        (a, b) =>
+          layerOrder[a.layer] - layerOrder[b.layer] || a.name_en.localeCompare(b.name_en),
+      ),
+    [],
+  );
+  const counts = useMemo(
+    () => ({
+      all: sorted.length,
+      ecosystem: sorted.filter((a) => a.layer === "ecosystem").length,
+      bridge: sorted.filter((a) => a.layer === "bridge").length,
+    }),
+    [sorted],
+  );
+  const pool = useMemo(
+    () => (layer === "all" ? sorted : sorted.filter((a) => a.layer === layer)),
+    [layer, sorted],
+  );
 
   const fuse = useMemo(
     () =>
@@ -73,6 +96,18 @@ export function Directory({ layer, title, subtitle }: Props) {
         <TabBtn active={tab === "map"} onClick={() => setTab("map")}>
           {t("map_soon")}
         </TabBtn>
+      </div>
+
+      <div className="mb-6 flex flex-wrap gap-2">
+        <Chip active={layer === "all"} onClick={() => onLayerChange("all")}>
+          {t("filter_all_layers")} ({counts.all})
+        </Chip>
+        <Chip active={layer === "ecosystem"} onClick={() => onLayerChange("ecosystem")}>
+          {t("ecosystem_title")} ({counts.ecosystem})
+        </Chip>
+        <Chip active={layer === "bridge"} onClick={() => onLayerChange("bridge")}>
+          {t("bridges_title")} ({counts.bridge})
+        </Chip>
       </div>
 
       {tab === "map" ? (
