@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WeeklyRouteImport } from './routes/weekly'
+import { Route as VoicesRouteImport } from './routes/voices'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as NetworkRouteImport } from './routes/network'
 import { Route as McpRouteImport } from './routes/mcp'
@@ -26,6 +27,11 @@ import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[
 const WeeklyRoute = WeeklyRouteImport.update({
   id: '/weekly',
   path: '/weekly',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VoicesRoute = VoicesRouteImport.update({
+  id: '/voices',
+  path: '/voices',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -101,6 +107,7 @@ export interface FileRoutesByFullPath {
   '/mcp': typeof McpRoute
   '/network': typeof NetworkRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/voices': typeof VoicesRoute
   '/weekly': typeof WeeklyRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -116,6 +123,7 @@ export interface FileRoutesByTo {
   '/mcp': typeof McpRoute
   '/network': typeof NetworkRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/voices': typeof VoicesRoute
   '/weekly': typeof WeeklyRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -132,6 +140,7 @@ export interface FileRoutesById {
   '/mcp': typeof McpRoute
   '/network': typeof NetworkRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/voices': typeof VoicesRoute
   '/weekly': typeof WeeklyRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -149,6 +158,7 @@ export interface FileRouteTypes {
     | '/mcp'
     | '/network'
     | '/sitemap.xml'
+    | '/voices'
     | '/weekly'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
@@ -164,6 +174,7 @@ export interface FileRouteTypes {
     | '/mcp'
     | '/network'
     | '/sitemap.xml'
+    | '/voices'
     | '/weekly'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
@@ -179,6 +190,7 @@ export interface FileRouteTypes {
     | '/mcp'
     | '/network'
     | '/sitemap.xml'
+    | '/voices'
     | '/weekly'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
@@ -195,6 +207,7 @@ export interface RootRouteChildren {
   McpRoute: typeof McpRoute
   NetworkRoute: typeof NetworkRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  VoicesRoute: typeof VoicesRoute
   WeeklyRoute: typeof WeeklyRoute
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -209,6 +222,13 @@ declare module '@tanstack/react-router' {
       path: '/weekly'
       fullPath: '/weekly'
       preLoaderRoute: typeof WeeklyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/voices': {
+      id: '/voices'
+      path: '/voices'
+      fullPath: '/voices'
+      preLoaderRoute: typeof VoicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -307,6 +327,7 @@ const rootRouteChildren: RootRouteChildren = {
   McpRoute: McpRoute,
   NetworkRoute: NetworkRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  VoicesRoute: VoicesRoute,
   WeeklyRoute: WeeklyRoute,
   Char91DotmcpChar93ListToolsRoute: Char91DotmcpChar93ListToolsRoute,
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
