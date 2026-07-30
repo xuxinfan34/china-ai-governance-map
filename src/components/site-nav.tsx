@@ -16,8 +16,7 @@ export function SiteNav() {
           </span>
         </Link>
         <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
-          <NavLink to="/ecosystem">{t("nav_ecosystem")}</NavLink>
-          <NavLink to="/bridges">{t("nav_bridges")}</NavLink>
+          <NavLink to="/directory">{t("nav_directory")}</NavLink>
           <NavLink to="/network">{t("nav_network")}</NavLink>
           <NavLink to="/weekly">{t("nav_weekly")}</NavLink>
           <NavLink to="/documents">{t("nav_documents")}</NavLink>
@@ -26,8 +25,7 @@ export function SiteNav() {
         </nav>
       </div>
       <nav className="mx-auto flex max-w-6xl items-center gap-5 overflow-x-auto px-6 pb-3 text-sm text-muted-foreground md:hidden">
-        <NavLink to="/ecosystem">{t("nav_ecosystem")}</NavLink>
-        <NavLink to="/bridges">{t("nav_bridges")}</NavLink>
+        <NavLink to="/directory">{t("nav_directory")}</NavLink>
         <NavLink to="/network">{t("nav_network")}</NavLink>
         <NavLink to="/weekly">{t("nav_weekly")}</NavLink>
         <NavLink to="/documents">{t("nav_documents")}</NavLink>
