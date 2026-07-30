@@ -21,6 +21,7 @@ export function SiteNav() {
           <NavLink to="/network">{t("nav_network")}</NavLink>
           <NavLink to="/weekly">{t("nav_weekly")}</NavLink>
           <NavLink to="/documents">{t("nav_documents")}</NavLink>
+          <NavLink to="/voices">{t("nav_voices")}</NavLink>
           <NavLink to="/about">{t("nav_about")}</NavLink>
         </nav>
       </div>
@@ -30,6 +31,7 @@ export function SiteNav() {
         <NavLink to="/network">{t("nav_network")}</NavLink>
         <NavLink to="/weekly">{t("nav_weekly")}</NavLink>
         <NavLink to="/documents">{t("nav_documents")}</NavLink>
+        <NavLink to="/voices">{t("nav_voices")}</NavLink>
         <NavLink to="/about">{t("nav_about")}</NavLink>
       </nav>
     </header>
