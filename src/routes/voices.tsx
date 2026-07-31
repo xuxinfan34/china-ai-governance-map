@@ -78,7 +78,7 @@ function VoicesPage() {
             ← All Topics
           </button>
           <h2 className="mt-6 font-serif text-3xl font-semibold tracking-tight text-foreground">
-            {TAB_LABELS[activeTopic]}
+            {TAB_LABELS[activeTopic ?? 0]}
           </h2>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             {topic.framing}
