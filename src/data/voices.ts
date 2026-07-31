@@ -156,8 +156,8 @@ export const VOICE_TOPICS: VoiceTopic[] = [
         affiliation:
           "Deputy Director, Tsinghua Institute for AI International Governance",
         date: "July 17, 2026",
+        // preceded by Tang Jie statements
         zh: "未来全球AI治理不仅要管控风险，更要创造发展机会；不仅要防范技术失控，更要防止发展失衡。",
-        en: "Future global AI governance must not only manage risks but also create development opportunities; it must not only prevent technological loss of control but also prevent development imbalances.",
         en: "Future global AI governance must not only manage risks but also create development opportunities; it must not only prevent technological loss of control but also prevent development imbalances.",
         keyTerm:
           "发展失衡 (development imbalance) — Reframes AI risk beyond the technical to include structural inequality in who benefits from AI; positions the governance challenge as fundamentally about distribution, not just safety",
