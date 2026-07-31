@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { VOICE_TOPICS, type Quote } from "../data/voices";
 
 export const Route = createFileRoute("/voices")({
@@ -23,7 +24,12 @@ export const Route = createFileRoute("/voices")({
 
 const CJK_STACK = '"PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
 
+const TAB_LABELS = ["International AI Cooperation", "AI Risk Governance", "Open-Source AI", "Defining AGI"];
+
 function VoicesPage() {
+  const [activeTopic, setActiveTopic] = useState(0);
+  const topic = VOICE_TOPICS[activeTopic];
+
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 sm:py-20">
       <header className="max-w-2xl">
@@ -46,21 +52,34 @@ function VoicesPage() {
         </p>
       </header>
 
-      {VOICE_TOPICS.map((topic) => (
-        <section key={topic.title} className="mt-16">
-          <h2 className="font-serif text-3xl font-semibold tracking-tight text-foreground">
-            {topic.title}
-          </h2>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            {topic.framing}
-          </p>
-          <div className="mt-8 flex flex-col gap-6">
-            {topic.quotes.map((quote, i) => (
-              <QuoteCard key={`${topic.title}-${i}`} quote={quote} />
-            ))}
-          </div>
-        </section>
-      ))}
+      <div className="mt-10 -mx-6 px-6 sm:mx-0 sm:px-0">
+        <div className="flex gap-2 overflow-x-auto pb-2">
+          {TAB_LABELS.map((label, i) => (
+            <button
+              key={label}
+              onClick={() => setActiveTopic(i)}
+              className={`shrink-0 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+                i === activeTopic
+                  ? "border-[#9E2B25] bg-[#9E2B25] text-white"
+                  : "border-border bg-background text-foreground/80 hover:bg-[#9E2B25]/10"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <section className="mt-6">
+        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          {topic.framing}
+        </p>
+        <div className="mt-8 flex flex-col gap-6">
+          {topic.quotes.map((quote, i) => (
+            <QuoteCard key={`${topic.title}-${i}`} quote={quote} />
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
