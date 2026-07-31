@@ -58,12 +58,12 @@ function VoicesPage() {
             <button
               key={t.title}
               onClick={() => setActiveTopic(i)}
-              className="flex h-[200px] flex-col items-center justify-center rounded-2xl border border-border bg-card px-6 text-center shadow-sm transition-all duration-200 hover:scale-[1.03] hover:shadow-lg"
+              className="flex h-[200px] flex-col items-center justify-center rounded-2xl border border-transparent bg-[#9E2B25] px-6 text-center shadow-sm transition-all duration-200 hover:scale-[1.03] hover:bg-[#B33A33] hover:shadow-lg"
             >
-              <span className="font-serif text-2xl font-semibold leading-snug text-foreground">
+              <span className="font-serif text-2xl font-semibold leading-snug text-white">
                 {TAB_LABELS[i]}
               </span>
-              <span className="mt-3 text-xs text-muted-foreground">
+              <span className="mt-3 text-xs text-white/90">
                 {t.quotes.length} voices
               </span>
             </button>
