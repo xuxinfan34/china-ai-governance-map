@@ -23,6 +23,9 @@ export const Route = createFileRoute("/voices")({
 });
 
 const CJK_STACK = '"PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
+const ZH_STACK = '"Noto Serif SC", "Songti SC", "SimSun", serif';
+
+const WATERMARKS = ["合", "治", "开", "智"];
 
 const TAB_LABELS = ["International AI Cooperation", "AI Risk Governance", "Open-Source AI", "Defining AGI"];
 
