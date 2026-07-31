@@ -152,11 +152,34 @@ export const VOICE_TOPICS: VoiceTopic[] = [
         url: "https://mp.weixin.qq.com/s/D78fQiJlZrFBVK6GsNxr_A",
       },
       {
+        speaker: "Tang Jie (唐杰)",
+        affiliation: "Founder, Zhipu AI",
+        date: "July 2026",
+        zh: "当海外最前沿的顶级模型因风险考量而暂缓全面公开发布，其企业负责人公开警示AI的深远影响将深刻重塑全球力量格局时，我们更应清醒：超级智能的实现与超级对齐的研究，必须同步推进。",
+        en: "When the most advanced frontier models overseas are delayed from full public release due to risk considerations, and their leaders publicly warn that AI's profound impact will reshape global power structures, we should be even more clear-headed: the pursuit of superintelligence and the research on superalignment must advance in lockstep.",
+        keyTerm:
+          "超级对齐 (superalignment) — Adopts the frontier-lab vocabulary of aligning superhuman systems, signalling that Chinese labs track the same safety agenda as their Western counterparts",
+        sourceTitle: "晚点独家｜唐杰内部信 (LatePost)",
+        sourceType: "Internal letter",
+        url: "https://mp.weixin.qq.com/s/3CQSkf_kBnXiCDgS4L-Cgg",
+      },
+      {
+        speaker: "Tang Jie (唐杰)",
+        affiliation: "Founder, Zhipu AI",
+        date: "July 2026",
+        zh: "能力越强大，安全约束机制也必须越稳固。智谱创立伊始即确立准则：AI必须服务于人类福祉，服务于国家战略。公司摒弃外挂式安全补丁，坚持将人类伦理、社会规范及国家法律法规作为底层公理写入模型价值函数；计划投入百亿级资源攻坚“机械可解释性”。",
+        en: "The more powerful the capability, the more robust the safety constraints must be. From its founding, Zhipu established a principle: AI must serve human welfare and national strategy. The company rejects bolt-on safety patches, instead writing human ethics, social norms, and national laws into the model's value function as foundational axioms. Zhipu plans to invest tens of billions in mechanistic interpretability research.",
+        keyTerm:
+          "机械可解释性 (mechanistic interpretability) — A concrete, technical research commitment that maps directly onto an active Western safety agenda, making it one of the clearest areas for substantive cooperation",
+        sourceTitle: "晚点独家｜唐杰内部信 (LatePost)",
+        sourceType: "Internal letter",
+        url: "https://mp.weixin.qq.com/s/3CQSkf_kBnXiCDgS4L-Cgg",
+      },
+      {
         speaker: "Xiao Qian (肖茜)",
         affiliation:
           "Deputy Director, Tsinghua Institute for AI International Governance",
         date: "July 17, 2026",
-        // preceded by Tang Jie statements
         zh: "未来全球AI治理不仅要管控风险，更要创造发展机会；不仅要防范技术失控，更要防止发展失衡。",
         en: "Future global AI governance must not only manage risks but also create development opportunities; it must not only prevent technological loss of control but also prevent development imbalances.",
         keyTerm:
