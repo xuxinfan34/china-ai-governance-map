@@ -96,7 +96,7 @@ export const VOICE_TOPICS: VoiceTopic[] = [
   {
     title: "AI Risk Governance & Agent Liability",
     framing:
-      "As AI systems move from passive tools to autonomous agents, how should risk be categorized and responsibility allocated? Chinese scholars and regulators are developing distinctive frameworks — including a three-tier risk taxonomy, 'agile governance' through rapid regulatory iteration, and granular authorization models for AI agents. These framings directly shape what cooperation on AI safety is possible.",
+      "As AI systems move from passive tools to autonomous agents, how should risk be categorized and responsibility allocated? Chinese scholars and regulators are developing distinctive frameworks — including a three-tier risk taxonomy, 'agile governance' through rapid regulatory iteration, granular authorization models for AI agents, and investments in mechanistic interpretability. These framings directly shape what cooperation on AI safety is possible.",
     quotes: [
       {
         speaker: "Liang Zheng (梁正)",
@@ -157,6 +157,7 @@ export const VOICE_TOPICS: VoiceTopic[] = [
           "Deputy Director, Tsinghua Institute for AI International Governance",
         date: "July 17, 2026",
         zh: "未来全球AI治理不仅要管控风险，更要创造发展机会；不仅要防范技术失控，更要防止发展失衡。",
+        en: "Future global AI governance must not only manage risks but also create development opportunities; it must not only prevent technological loss of control but also prevent development imbalances.",
         en: "Future global AI governance must not only manage risks but also create development opportunities; it must not only prevent technological loss of control but also prevent development imbalances.",
         keyTerm:
           "发展失衡 (development imbalance) — Reframes AI risk beyond the technical to include structural inequality in who benefits from AI; positions the governance challenge as fundamentally about distribution, not just safety",
