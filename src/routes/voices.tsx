@@ -27,8 +27,8 @@ const CJK_STACK = '"PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-se
 const TAB_LABELS = ["International AI Cooperation", "AI Risk Governance", "Open-Source AI", "Defining AGI"];
 
 function VoicesPage() {
-  const [activeTopic, setActiveTopic] = useState(0);
-  const topic = VOICE_TOPICS[activeTopic];
+  const [activeTopic, setActiveTopic] = useState<number | null>(null);
+  const topic = activeTopic === null ? null : VOICE_TOPICS[activeTopic];
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 sm:py-20">
@@ -52,34 +52,44 @@ function VoicesPage() {
         </p>
       </header>
 
-      <div className="mt-10 -mx-6 px-6 sm:mx-0 sm:px-0">
-        <div className="flex gap-2 overflow-x-auto pb-2">
-          {TAB_LABELS.map((label, i) => (
+      {topic === null ? (
+        <section className="mt-10 grid animate-fade-in grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {VOICE_TOPICS.map((t, i) => (
             <button
-              key={label}
+              key={t.title}
               onClick={() => setActiveTopic(i)}
-              className={`shrink-0 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
-                i === activeTopic
-                  ? "border-[#9E2B25] bg-[#9E2B25] text-white"
-                  : "border-border bg-background text-foreground/80 hover:bg-[#9E2B25]/10"
-              }`}
+              className="flex h-[200px] flex-col items-center justify-center rounded-2xl border border-border bg-card px-6 text-center shadow-sm transition-all duration-200 hover:scale-[1.03] hover:shadow-lg"
             >
-              {label}
+              <span className="font-serif text-2xl font-semibold leading-snug text-foreground">
+                {TAB_LABELS[i]}
+              </span>
+              <span className="mt-3 text-xs text-muted-foreground">
+                {t.quotes.length} voices
+              </span>
             </button>
           ))}
-        </div>
-      </div>
-
-      <section className="mt-6">
-        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          {topic.framing}
-        </p>
-        <div className="mt-8 flex flex-col gap-6">
-          {topic.quotes.map((quote, i) => (
-            <QuoteCard key={`${topic.title}-${i}`} quote={quote} />
-          ))}
-        </div>
-      </section>
+        </section>
+      ) : (
+        <section className="mt-10 animate-fade-in">
+          <button
+            onClick={() => setActiveTopic(null)}
+            className="text-sm font-medium text-[#9E2B25] underline-offset-4 hover:underline"
+          >
+            ← All Topics
+          </button>
+          <h2 className="mt-6 font-serif text-3xl font-semibold tracking-tight text-foreground">
+            {TAB_LABELS[activeTopic ?? 0]}
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            {topic.framing}
+          </p>
+          <div className="mt-8 flex flex-col gap-6">
+            {topic.quotes.map((quote, i) => (
+              <QuoteCard key={`${topic.title}-${i}`} quote={quote} />
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }
