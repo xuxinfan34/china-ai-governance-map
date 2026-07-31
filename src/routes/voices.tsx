@@ -88,11 +88,6 @@ function QuoteCard({ quote }: { quote: Quote }) {
       <p className="mt-5 text-xs italic text-muted-foreground">Translation:</p>
       <p className="mt-1 text-sm leading-relaxed text-foreground/90">{quote.en}</p>
 
-      {quote.keyTerm ? (
-        <p className="mt-4 text-xs italic leading-relaxed text-muted-foreground">
-          Key term: {quote.keyTerm}
-        </p>
-      ) : null}
 
       <p className="mt-5 border-t border-border/60 pt-4 text-xs text-muted-foreground">
         {quote.url ? (
