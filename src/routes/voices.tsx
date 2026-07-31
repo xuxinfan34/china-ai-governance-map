@@ -23,6 +23,9 @@ export const Route = createFileRoute("/voices")({
 });
 
 const CJK_STACK = '"PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
+const ZH_STACK = '"Noto Serif SC", "Songti SC", "SimSun", serif';
+
+const WATERMARKS = ["合", "治", "开", "智"];
 
 const TAB_LABELS = ["International AI Cooperation", "AI Risk Governance", "Open-Source AI", "Defining AGI"];
 
@@ -58,12 +61,19 @@ function VoicesPage() {
             <button
               key={t.title}
               onClick={() => setActiveTopic(i)}
-              className="flex h-[200px] flex-col items-center justify-center rounded-2xl border border-transparent bg-[#9E2B25] px-6 text-center shadow-sm transition-all duration-200 hover:scale-[1.03] hover:bg-[#B33A33] hover:shadow-lg"
+              className="group relative flex h-[220px] flex-col items-center justify-center overflow-hidden rounded-2xl border-t-[3px] border-t-[#C4443D] bg-gradient-to-b from-[#9E2B25] to-[#7A2220] px-6 text-center shadow-sm transition-all duration-200 hover:scale-[1.03] hover:shadow-lg"
             >
-              <span className="font-serif text-2xl font-semibold leading-snug text-white">
+              <span
+                className="pointer-events-none absolute bottom-1 right-2 select-none text-[120px] leading-none text-white opacity-[0.12] transition-all duration-200 group-hover:scale-110 group-hover:opacity-20"
+                style={{ fontFamily: ZH_STACK }}
+              >
+                {WATERMARKS[i]}
+              </span>
+              <span className="relative z-10 font-serif text-2xl font-semibold leading-snug text-white">
                 {TAB_LABELS[i]}
               </span>
-              <span className="mt-3 text-xs text-white/90">
+              <div className="relative z-10 mt-4 h-px w-10 bg-white/30" />
+              <span className="relative z-10 mt-4 text-xs text-white/90">
                 {t.quotes.length} voices
               </span>
             </button>
