@@ -96,7 +96,7 @@ export const VOICE_TOPICS: VoiceTopic[] = [
   {
     title: "AI Risk Governance & Agent Liability",
     framing:
-      "As AI systems move from passive tools to autonomous agents, how should risk be categorized and responsibility allocated? Chinese scholars and regulators are developing distinctive frameworks — including a three-tier risk taxonomy, 'agile governance' through rapid regulatory iteration, and granular authorization models for AI agents. These framings directly shape what cooperation on AI safety is possible.",
+      "As AI systems move from passive tools to autonomous agents, how should risk be categorized and responsibility allocated? Chinese scholars and regulators are developing distinctive frameworks — including a three-tier risk taxonomy, 'agile governance' through rapid regulatory iteration, granular authorization models for AI agents, and investments in mechanistic interpretability. These framings directly shape what cooperation on AI safety is possible.",
     quotes: [
       {
         speaker: "Liang Zheng (梁正)",
@@ -152,6 +152,30 @@ export const VOICE_TOPICS: VoiceTopic[] = [
         url: "https://mp.weixin.qq.com/s/D78fQiJlZrFBVK6GsNxr_A",
       },
       {
+        speaker: "Tang Jie (唐杰)",
+        affiliation: "Founder, Zhipu AI",
+        date: "July 2026",
+        zh: "当海外最前沿的顶级模型因风险考量而暂缓全面公开发布，其企业负责人公开警示AI的深远影响将深刻重塑全球力量格局时，我们更应清醒：超级智能的实现与超级对齐的研究，必须同步推进。",
+        en: "When the most advanced frontier models overseas are delayed from full public release due to risk considerations, and their leaders publicly warn that AI's profound impact will reshape global power structures, we should be even more clear-headed: the pursuit of superintelligence and the research on superalignment must advance in lockstep.",
+        keyTerm:
+          "超级对齐 (superalignment) — Adopts the frontier-lab vocabulary of aligning superhuman systems, signalling that Chinese labs track the same safety agenda as their Western counterparts",
+        sourceTitle: "晚点独家｜唐杰内部信 (LatePost)",
+        sourceType: "Internal letter",
+        url: "https://mp.weixin.qq.com/s/3CQSkf_kBnXiCDgS4L-Cgg",
+      },
+      {
+        speaker: "Tang Jie (唐杰)",
+        affiliation: "Founder, Zhipu AI",
+        date: "July 2026",
+        zh: "能力越强大，安全约束机制也必须越稳固。智谱创立伊始即确立准则：AI必须服务于人类福祉，服务于国家战略。公司摒弃外挂式安全补丁，坚持将人类伦理、社会规范及国家法律法规作为底层公理写入模型价值函数；计划投入百亿级资源攻坚“机械可解释性”。",
+        en: "The more powerful the capability, the more robust the safety constraints must be. From its founding, Zhipu established a principle: AI must serve human welfare and national strategy. The company rejects bolt-on safety patches, instead writing human ethics, social norms, and national laws into the model's value function as foundational axioms. Zhipu plans to invest tens of billions in mechanistic interpretability research.",
+        keyTerm:
+          "机械可解释性 (mechanistic interpretability) — A concrete, technical research commitment that maps directly onto an active Western safety agenda, making it one of the clearest areas for substantive cooperation",
+        sourceTitle: "晚点独家｜唐杰内部信 (LatePost)",
+        sourceType: "Internal letter",
+        url: "https://mp.weixin.qq.com/s/3CQSkf_kBnXiCDgS4L-Cgg",
+      },
+      {
         speaker: "Xiao Qian (肖茜)",
         affiliation:
           "Deputy Director, Tsinghua Institute for AI International Governance",
@@ -183,7 +207,7 @@ export const VOICE_TOPICS: VoiceTopic[] = [
   {
     title: "Open-Source AI",
     framing:
-      "China's leading AI companies have embraced open-source as a core strategy — but what does that mean in practice, and how does it reshape the governance landscape? These statements from DeepSeek's founder and Shanghai AI Laboratory reveal a positioning that Western observers may find surprising: open-source as a value proposition, not a concession, and transparency as a competitive advantage rather than a vulnerability.",
+      "China's leading AI companies have embraced open-source as a core strategy — but what does that mean in practice? These statements from DeepSeek, Zhipu AI, MiniMax, and Shanghai AI Laboratory reveal a positioning that Western observers may find surprising: open-source as a values proposition rather than a concession, transparency as competitive advantage, and safety through openness rather than through restriction.",
     quotes: [
       {
         speaker: "Liang Wenfeng (梁文锋)",
@@ -222,16 +246,29 @@ export const VOICE_TOPICS: VoiceTopic[] = [
         url: "https://github.com/0xtresser/Transcript-of-Liang-Wenfengs-DeepSeek-Founder-4-Hour-Investor-Meeting",
       },
       {
-        speaker: "Liang Wenfeng (梁文锋)",
-        affiliation: "Founder, DeepSeek",
+        speaker: "Tang Jie (唐杰)",
+        affiliation: "Founder, Zhipu AI",
         date: "July 2026",
-        zh: "我们是怀着一个对这个世界非常大的善意来做这个事情，我们觉得这是对人类有用的，这是一个金钱以外的事情。我们出发的初衷、我们的愿景，以及我们保持到现在的这个愿景，不是按照一个商业利益最大化的方式来做的。",
-        en: "We are doing this with enormous goodwill toward the world. We believe this is useful to humanity — it's something beyond money. Our original intention, our vision, and the vision we have maintained to this day, is not built on maximizing commercial profit.",
+        zh: "我们坚信，真正的安全并非建立在技术封闭与壁垒之上，而是源于阳光下广泛的共建、共享与监督。近日，我们发布了迄今能力最强的开源模型GLM-5.2，它支持真正可用的百万（1M）上下文，面向全量用户开放，并将以最宽松的MIT协议正式开源——任何人都可以下载、部署、商用，没有主体界别。",
+        en: "We firmly believe that true safety is not built on technological closure and barriers, but emerges from broad co-construction, sharing, and oversight in the open. We recently released GLM-5.2, our most capable open-source model to date, supporting truly usable million-token context. It is open to all users and will be formally open-sourced under the most permissive MIT license — anyone can download, deploy, and commercialize it, with no restrictions on any entity.",
         keyTerm:
-          "金钱以外的事情 (something beyond money) — Positions DeepSeek's open-source strategy as values-driven rather than commercially calculated; whether this framing is fully credible is for the reader to assess, but it is the founder's stated positioning",
-        sourceTitle: "梁文锋四小时投资人会议实录 (GitHub public archive)",
-        sourceType: "Investor meeting transcript",
-        url: "https://github.com/0xtresser/Transcript-of-Liang-Wenfengs-DeepSeek-Founder-4-Hour-Investor-Meeting",
+          "阳光下的共建、共享与监督 (co-construction, sharing and oversight in the open) — Inverts the closure-equals-safety assumption: openness is presented as the mechanism that produces safety, not a risk to be mitigated",
+        sourceTitle: "晚点独家｜唐杰内部信 (LatePost)",
+        sourceType: "Internal letter",
+        url: "https://mp.weixin.qq.com/s/3CQSkf_kBnXiCDgS4L-Cgg",
+      },
+      {
+        speaker: "Yan Junjie (闫俊杰)",
+        affiliation: "Founder and CEO, MiniMax",
+        date: "July 10, 2026",
+        zh: "未来四年，我将拿出个人名下相当于公司总股本4%的股份，激励那些长期与公司并肩作战、共同创造价值的团队成员；同时，会拿出1%的股份设立专项基金，持续支持相关开源社区的发展。",
+        en: "Over the next four years, I will contribute shares equivalent to 4% of the company's total equity to incentivize team members who create long-term value alongside the company. At the same time, I will contribute 1% of shares to establish a dedicated fund for ongoing support of relevant open-source communities.",
+        keyTerm:
+          "专项基金支持开源社区 (dedicated fund for open-source communities) — Signals open-source as a funded institutional commitment rather than a release policy, tying founder equity to ecosystem maintenance",
+        sourceTitle:
+          "港股大模型MiniMax股价暴跌，创始人称将不再从公司领取任何薪酬 (Observer Network)",
+        sourceType: "Internal letter",
+        url: "https://mp.weixin.qq.com/s/CiZAWHdw-o-5RlxCrljkSg",
       },
       {
         speaker: "Zhou Bowen (周伯文)",
