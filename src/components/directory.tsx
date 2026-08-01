@@ -204,11 +204,10 @@ export function Directory({ layer, onLayerChange, title, subtitle }: Props) {
               </div>
             </div>
           )}
-        </>
-      )}
-    </div>
-  );
+        </div>
+      );
 }
+
 
 function TabBtn({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
   return (
