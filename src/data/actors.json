@@ -276,39 +276,6 @@
     "short_name": "AI Gov Cmte"
   },
   {
-    "id": "spc",
-    "layer": "ecosystem",
-    "name_en": "Supreme People's Court (SPC)",
-    "name_zh": "最高人民法院",
-    "category": "Government agency – Judiciary",
-    "overview": "China's highest judicial body, responsible for adjudication, judicial interpretation, and oversight of all courts. Shapes AI governance through judicial policy — including its 2022 Opinions on regulating and strengthening the judicial application of AI, which set the principle that AI must assist rather than replace human judges — and through guidance on emerging AI-related case law.",
-    "leadership": [
-      {
-        "name": "Zhang Jun",
-        "role": "President & Chief Justice"
-      }
-    ],
-    "website": "https://www.court.gov.cn/",
-    "wikipedia": "https://en.wikipedia.org/wiki/Supreme_People%27s_Court",
-    "short_name": "SPC"
-  },
-  {
-    "id": "internet-courts",
-    "layer": "ecosystem",
-    "name_en": "Internet Courts (Beijing, Hangzhou & Guangzhou)",
-    "name_zh": "互联网法院",
-    "category": "Government agency – Judiciary",
-    "overview": "Specialized courts established 2017–2018 to hear internet-related cases online. A de facto AI governance channel through precedent-setting rulings on AI-generated content — including the Beijing Internet Court's 2023 decision on copyright in AI-generated images and the Guangzhou Internet Court's 2024 ruling on generative AI platform liability — that define rules ahead of legislation.",
-    "leadership": [
-      {
-        "name": "Jiang Ying",
-        "role": "President, Beijing Internet Court"
-      }
-    ],
-    "website": "https://www.bjinternetcourt.gov.cn/",
-    "short_name": "Internet Courts"
-  },
-  {
     "id": "deepseek",
     "layer": "ecosystem",
     "name_en": "DeepSeek",
@@ -947,42 +914,6 @@
     ],
     "website": "http://www.cybersac.cn",
     "short_name": "CSAC"
-  },
-  {
-    "id": "waic",
-    "layer": "ecosystem",
-    "name_en": "World Artificial Intelligence Conference (WAIC) Organizing Committee",
-    "name_zh": "世界人工智能大会组委会",
-    "category": "Convening platform",
-    "overview": "State Council-approved annual conference in Shanghai, co-hosted by national ministries and the Shanghai Municipal Government. The system's flagship convening for AI development and governance — the launch venue for major governance initiatives, institutions (Shanghai AI Lab, Fudan's governance center), and international governance proposals including the 2025 Global AI Governance Action Plan.",
-    "leadership": [
-      {
-        "name": "Organized by Donghao Lansheng Exhibition Group",
-        "role": "Shanghai SOE"
-      },
-      {
-        "name": "operated via wholly-owned subsidiary Weike Yinli",
-        "role": ""
-      }
-    ],
-    "website": "https://www.worldaic.com.cn/",
-    "short_name": "WAIC"
-  },
-  {
-    "id": "weike-yinli",
-    "layer": "ecosystem",
-    "name_en": "Weike Yinli (WAIC operating company)",
-    "name_zh": "上海东浩兰生威客引力信息科技有限公司",
-    "category": "Convening platform – Operator",
-    "overview": "Wholly-owned subsidiary established in December 2024 by Donghao Lansheng Exhibition Group (Shanghai SOE, SSE 600826) to run WAIC as a standalone operation, positioned as a 'global AI ecosystem connector.' Runs the conference's year-round ecosystem sub-brands — WAIC FutureTech (startup-capital matchmaking), WAIC Connect (industry matchmaking), WAIC UP! (online journal), WAIC Young (early-career talent) — plus a membership system and the 'Hi WAIC' app, turning the annual convening into an always-on platform.",
-    "leadership": [
-      {
-        "name": "Qiu Haoming",
-        "role": "CEO"
-      }
-    ],
-    "website": "https://www.worldaic.com.cn/",
-    "short_name": "Weike Yinli"
   },
   {
     "id": "concordia",

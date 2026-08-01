@@ -1,4 +1,4 @@
-// Auto-generated | 36 items | 2026-07-23
+// Auto-generated | 36 items | 2026-07-31
 // Do not edit by hand.
 
 export type GovernanceDocument = {
