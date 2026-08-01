@@ -211,19 +211,6 @@ export function Directory({ layer, onLayerChange, title, subtitle }: Props) {
 
 
 
-function TabBtn({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
-  return (
-    <button
-      onClick={onClick}
-      className={`-mb-px border-b-2 px-1 pb-3 text-sm transition-colors ${
-        active ? "border-primary text-foreground" : "border-transparent text-muted-foreground hover:text-foreground"
-      }`}
-    >
-      {children}
-    </button>
-  );
-}
-
 function ChipGroup({
   label,
   value,
