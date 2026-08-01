@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { WEEKLY_ITEMS, type WeeklySourceKind } from "../data/weekly";
+import { useState } from "react";
+import { WEEKLY_ITEMS, type WeeklyFeedItem, type WeeklySourceKind } from "../data/weekly";
+
+
 
 export const Route = createFileRoute("/weekly")({
   head: () => ({
@@ -26,6 +29,15 @@ function sourceColor(kind: WeeklySourceKind): string {
 }
 
 function WeeklyFeed() {
+  const [activeWeek, setActiveWeek] = useState<number | null>(null);
+
+  const weeks = [
+    {
+      label: "Week of July 19–26, 2026",
+      items: WEEKLY_ITEMS,
+    },
+  ];
+
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 sm:py-20">
       <header className="max-w-2xl">
@@ -44,54 +56,89 @@ function WeeklyFeed() {
         </p>
       </header>
 
-      <h2 className="mt-12 text-sm font-medium uppercase tracking-wider text-muted-foreground">
-        Week of July 19–26, 2026
-      </h2>
-
-      <div className="mt-6 flex flex-col gap-8">
-        {WEEKLY_ITEMS.map((item) => (
-          <article
-            key={item.url}
-            className="rounded-xl border border-border bg-card p-6 sm:p-8"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <span
-                className="rounded-full border border-border/60 bg-background/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider"
-                style={{ color: sourceColor(item.kind) }}
+      <div className="mt-12 flex flex-col gap-4">
+        {weeks.map((week, i) => {
+          const isOpen = activeWeek === i;
+          return (
+            <section key={week.label} className="">
+              <button
+                onClick={() => setActiveWeek(isOpen ? null : i)}
+                className="flex w-full items-center justify-between rounded-xl border border-border bg-card px-6 py-4 text-left shadow-sm transition-all duration-200 hover:bg-muted/50 hover:shadow-md"
+                aria-expanded={isOpen}
               >
-                {item.source}
-              </span>
-              <span className="text-xs text-muted-foreground">{item.date}</span>
-            </div>
+                <span className="font-serif text-xl font-semibold tracking-tight text-foreground">
+                  {week.label}
+                </span>
+                <div className="flex items-center gap-4">
+                  <span className="text-sm text-muted-foreground">
+                    {week.items.length} articles
+                  </span>
+                  <span
+                    className="text-sm text-muted-foreground transition-transform duration-200"
+                    aria-hidden="true"
+                  >
+                    {isOpen ? "▾" : "▸"}
+                  </span>
+                </div>
+              </button>
 
-            <h3 className="mt-4 font-serif text-2xl font-semibold leading-snug text-foreground">
-              {item.titleEn}
-            </h3>
-            <p className="mt-1 text-sm text-muted-foreground">{item.titleZh}</p>
-
-            <p className="mt-4 text-base leading-relaxed text-foreground/85">
-              {item.summary}
-            </p>
-
-            {item.keyTerm && (
-              <p className="mt-4 text-sm italic text-muted-foreground">
-                Key term preserved: {item.keyTerm}
-              </p>
-            )}
-
-            <div className="mt-6">
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-medium text-primary hover:underline"
+              <div
+                className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                  isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                }`}
               >
-                Read original on WeChat →
-              </a>
-            </div>
-          </article>
-        ))}
+                <div className="overflow-hidden">
+                  <div className="mt-4 flex flex-col gap-8">
+                    {week.items.map((item) => (
+                      <WeeklyCard key={item.url} item={item} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+          );
+        })}
       </div>
     </div>
+  );
+}
+
+function WeeklyCard({ item }: { item: WeeklyFeedItem }) {
+  return (
+    <article className="rounded-xl border border-border bg-card p-6 sm:p-8">
+      <div className="flex items-start justify-between gap-4">
+        <span
+          className="rounded-full border border-border/60 bg-background/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider"
+          style={{ color: sourceColor(item.kind) }}
+        >
+          {item.source}
+        </span>
+        <span className="text-xs text-muted-foreground">{item.date}</span>
+      </div>
+
+      <h3 className="mt-4 font-serif text-2xl font-semibold leading-snug text-foreground">
+        {item.titleEn}
+      </h3>
+      <p className="mt-1 text-sm text-muted-foreground">{item.titleZh}</p>
+
+      <p className="mt-4 text-base leading-relaxed text-foreground/85">{item.summary}</p>
+
+      {item.keyTerm && (
+        <p className="mt-4 text-sm italic text-muted-foreground">
+          Key term preserved: {item.keyTerm}
+        </p>
+      )}
+
+      <div className="mt-6">
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm font-medium text-primary hover:underline"
+        >
+          Read original on WeChat →
+        </a>
+      </div>
+    </article>
   );
 }
