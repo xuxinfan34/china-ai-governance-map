@@ -89,15 +89,6 @@ export function Directory({ layer, onLayerChange, title, subtitle }: Props) {
         </p>
       </header>
 
-      <div className="mb-6 flex items-center gap-6 border-b border-border">
-        <TabBtn active={tab === "directory"} onClick={() => setTab("directory")}>
-          {t("map_tab")}
-        </TabBtn>
-        <TabBtn active={tab === "map"} onClick={() => setTab("map")}>
-          {t("map_soon")}
-        </TabBtn>
-      </div>
-
       <div className="mb-6 flex flex-wrap gap-2">
         <Chip active={layer === "all"} onClick={() => onLayerChange("all")}>
           {t("filter_all_layers")} ({counts.all})
@@ -110,13 +101,9 @@ export function Directory({ layer, onLayerChange, title, subtitle }: Props) {
         </Chip>
       </div>
 
-      {tab === "map" ? (
-        <div className="rounded-lg border border-dashed border-border bg-muted/40 py-24 text-center">
-          <p className="font-serif text-xl italic text-muted-foreground">{t("map_soon")}</p>
-        </div>
-      ) : (
-        <>
-          <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+      <>
+        <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
