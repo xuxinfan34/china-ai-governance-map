@@ -63,10 +63,12 @@ function WeeklyFeed() {
             <section key={week.label} className="">
               <button
                 onClick={() => setActiveWeek(isOpen ? null : i)}
-                className="flex w-full items-center justify-between rounded-xl border border-border bg-card px-6 py-4 text-left shadow-sm transition-all duration-200 hover:bg-muted/50 hover:shadow-md"
+                className={`flex w-full items-center justify-between rounded-r-xl border border-l-[#9E2B25] border-border bg-[#FDFBF7] px-6 py-4 text-left shadow-sm transition-all duration-200 hover:bg-[#F5F0E8] hover:shadow-md ${
+                  isOpen ? "border-l-[6px] bg-[#F5F0E8]" : "border-l-4"
+                }`}
                 aria-expanded={isOpen}
               >
-                <span className="font-serif text-xl font-semibold tracking-tight text-foreground">
+                <span className="font-serif text-xl font-semibold tracking-tight text-[#2A2A2A]">
                   {week.label}
                 </span>
                 <div className="flex items-center gap-4">
