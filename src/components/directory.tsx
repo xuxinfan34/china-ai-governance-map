@@ -27,8 +27,8 @@ export function Directory({ layer, onLayerChange, title, subtitle }: Props) {
   const [stakeholder, setStakeholder] = useState<string>("all");
   const [bridgeType, setBridgeType] = useState<string>("all");
   const [loc, setLoc] = useState<string>("all");
-  const [tab, setTab] = useState<"directory" | "map">("directory");
   const [filtersOpen, setFiltersOpen] = useState(false);
+
 
   const layerOrder: Record<Layer, number> = { ecosystem: 0, bridge: 1 };
   const sorted = useMemo(
