@@ -668,26 +668,3 @@ function DrawerCrossLinks({ actor }: { actor: Actor }) {
     </div>
   );
 }
-
-function PanelChipLegacy({
-  active,
-  onClick,
-  children,
-}: {
-  active: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className={`rounded-full border px-2.5 py-0.5 text-[11px] transition-colors ${
-        active
-          ? "border-[#9E2B25] bg-[#9E2B25] text-white"
-          : "border-[#9E2B25] bg-transparent text-neutral-600 hover:bg-[#9E2B25]/10"
-      }`}
-    >
-      {children}
-    </button>
-  );
-}
