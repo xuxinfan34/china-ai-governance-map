@@ -12,6 +12,7 @@ import {
 } from "../lib/data";
 import { LayerGlyph } from "../components/glyphs";
 import { useLang } from "../lib/i18n";
+import { quotesForActor, weeklyItemsForActor } from "../lib/crosslinks";
 
 export const Route = createFileRoute("/actors/$id")({
   loader: ({ params }) => {
@@ -57,6 +58,8 @@ function Profile() {
     return acc;
   }, {});
   const docs = documentsForActor(actor.id);
+  const voiceRefs = quotesForActor(actor);
+  const feedItems = weeklyItemsForActor(actor);
   const bg = actor.layer === "ecosystem" ? "var(--color-ecosystem-bg)" : "var(--color-bridge-bg)";
   const dot = STAKEHOLDER_COLORS[actor.stakeholder_type];
   const typeLabel = STAKEHOLDER_LABEL[actor.stakeholder_type][lang];
