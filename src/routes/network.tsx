@@ -10,6 +10,7 @@ import {
   type Relationship,
 } from "../lib/data";
 import { useLang } from "../lib/i18n";
+import { quotesForActor, weeklyItemsForActor } from "../lib/crosslinks";
 
 
 export const Route = createFileRoute("/network")({
@@ -622,6 +623,14 @@ function NetworkPage() {
 }
 
 function PanelChip({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
   active,
   onClick,
   children,
