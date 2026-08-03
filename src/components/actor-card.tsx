@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import type { Actor } from "../lib/data";
 import { STAKEHOLDER_COLORS, STAKEHOLDER_LABEL } from "../lib/data";
+import { ACTORS_WITH_QUOTES } from "../lib/crosslinks";
 import { useLang } from "../lib/i18n";
 
 export function ActorCard({ actor }: { actor: Actor }) {
@@ -9,6 +10,7 @@ export function ActorCard({ actor }: { actor: Actor }) {
   const dot = STAKEHOLDER_COLORS[actor.stakeholder_type];
   const typeLabel = STAKEHOLDER_LABEL[actor.stakeholder_type][lang];
   const isEcosystem = actor.layer === "ecosystem";
+  const hasVoices = ACTORS_WITH_QUOTES.has(actor.id);
   return (
     <Link
       to="/actors/$id"
@@ -54,6 +56,11 @@ export function ActorCard({ actor }: { actor: Actor }) {
         </span>
         <span className="text-xs text-muted-foreground">· {actor.category}</span>
       </div>
+      {hasVoices && (
+        <span className="inline-flex w-fit items-center gap-1 rounded-full border border-border/60 bg-background/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+          <span aria-hidden>💬</span> Voices
+        </span>
+      )}
       <p className="text-sm leading-relaxed text-foreground/80 line-clamp-3">
         {actor.overview}
       </p>

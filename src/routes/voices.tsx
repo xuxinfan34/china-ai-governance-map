@@ -1,8 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { VOICE_TOPICS, type Quote } from "../data/voices";
+import { findActorByName } from "../lib/crosslinks";
 
 export const Route = createFileRoute("/voices")({
+  validateSearch: (search: Record<string, unknown>): { topic?: number } => {
+    const t = Number(search.topic);
+    return Number.isInteger(t) && t >= 0 && t < 4 ? { topic: t } : {};
+  },
   head: () => ({
     meta: [
       { title: "Voices — China AI Governance Map" },
@@ -30,7 +35,8 @@ const WATERMARKS = ["合", "治", "开", "智"];
 const TAB_LABELS = ["International AI Cooperation", "AI Risk Governance", "Open-Source AI", "Defining AGI"];
 
 function VoicesPage() {
-  const [activeTopic, setActiveTopic] = useState<number | null>(null);
+  const { topic: topicParam } = Route.useSearch();
+  const [activeTopic, setActiveTopic] = useState<number | null>(topicParam ?? null);
   const topic = activeTopic === null ? null : VOICE_TOPICS[activeTopic];
 
   return (
@@ -111,7 +117,7 @@ function QuoteCard({ quote }: { quote: Quote }) {
         <div>
           <p className="font-semibold leading-tight text-foreground">{quote.speaker}</p>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-            {quote.affiliation}
+            <AffiliationLinks affiliation={quote.affiliation} />
           </p>
         </div>
         <p className="shrink-0 text-xs text-muted-foreground">{quote.date}</p>
@@ -144,5 +150,32 @@ function QuoteCard({ quote }: { quote: Quote }) {
         <span> · {quote.sourceType}</span>
       </p>
     </article>
+  );
+}
+
+function AffiliationLinks({ affiliation }: { affiliation: string }) {
+  const parts = affiliation.split(";");
+  return (
+    <>
+      {parts.map((part, i) => {
+        const actor = findActorByName(part.trim());
+        return (
+          <span key={i}>
+            {i > 0 && "; "}
+            {actor ? (
+              <Link
+                to="/actors/$id"
+                params={{ id: actor.id }}
+                className="underline decoration-dotted underline-offset-2 hover:text-primary"
+              >
+                {part.trim()}
+              </Link>
+            ) : (
+              part.trim()
+            )}
+          </span>
+        );
+      })}
+    </>
   );
 }

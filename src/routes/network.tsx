@@ -10,6 +10,7 @@ import {
   type Relationship,
 } from "../lib/data";
 import { useLang } from "../lib/i18n";
+import { quotesForActor, weeklyItemsForActor } from "../lib/crosslinks";
 
 
 export const Route = createFileRoute("/network")({
@@ -611,6 +612,7 @@ function NetworkPage() {
                 >
                   {t("see_profile")} →
                 </Link>
+                <DrawerCrossLinks actor={selectedActor} />
               </div>
             )}
           </>
@@ -640,5 +642,29 @@ function PanelChip({
     >
       {children}
     </button>
+  );
+}
+
+function DrawerCrossLinks({ actor }: { actor: Actor }) {
+  const quotes = quotesForActor(actor);
+  const feed = weeklyItemsForActor(actor);
+  if (quotes.length === 0 && feed.length === 0) return null;
+  return (
+    <div className="mt-4 flex flex-col gap-1.5 border-t border-border pt-3">
+      {quotes.length > 0 && (
+        <Link
+          to="/voices"
+          search={{ topic: quotes[0].topicIndex }}
+          className="text-xs font-medium text-primary hover:underline"
+        >
+          {quotes.length} {quotes.length === 1 ? "quote" : "quotes"} in Voices →
+        </Link>
+      )}
+      {feed.length > 0 && (
+        <Link to="/weekly" className="text-xs font-medium text-primary hover:underline">
+          Mentioned in Weekly Feed →
+        </Link>
+      )}
+    </div>
   );
 }
