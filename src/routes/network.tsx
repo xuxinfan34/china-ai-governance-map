@@ -611,6 +611,7 @@ function NetworkPage() {
                 >
                   {t("see_profile")} →
                 </Link>
+                <DrawerCrossLinks actor={selectedActor} />
               </div>
             )}
           </>
