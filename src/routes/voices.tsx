@@ -117,7 +117,7 @@ function QuoteCard({ quote }: { quote: Quote }) {
         <div>
           <p className="font-semibold leading-tight text-foreground">{quote.speaker}</p>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-            {quote.affiliation}
+            <AffiliationLinks affiliation={quote.affiliation} />
           </p>
         </div>
         <p className="shrink-0 text-xs text-muted-foreground">{quote.date}</p>
@@ -150,5 +150,32 @@ function QuoteCard({ quote }: { quote: Quote }) {
         <span> · {quote.sourceType}</span>
       </p>
     </article>
+  );
+}
+
+function AffiliationLinks({ affiliation }: { affiliation: string }) {
+  const parts = affiliation.split(";");
+  return (
+    <>
+      {parts.map((part, i) => {
+        const actor = findActorByName(part.trim());
+        return (
+          <span key={i}>
+            {i > 0 && "; "}
+            {actor ? (
+              <Link
+                to="/actors/$id"
+                params={{ id: actor.id }}
+                className="underline decoration-dotted underline-offset-2 hover:text-primary"
+              >
+                {part.trim()}
+              </Link>
+            ) : (
+              part.trim()
+            )}
+          </span>
+        );
+      })}
+    </>
   );
 }
