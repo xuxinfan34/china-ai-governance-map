@@ -644,3 +644,50 @@ function PanelChip({
     </button>
   );
 }
+
+function DrawerCrossLinks({ actor }: { actor: Actor }) {
+  const quotes = quotesForActor(actor);
+  const feed = weeklyItemsForActor(actor);
+  if (quotes.length === 0 && feed.length === 0) return null;
+  return (
+    <div className="mt-4 flex flex-col gap-1.5 border-t border-border pt-3">
+      {quotes.length > 0 && (
+        <Link
+          to="/voices"
+          search={{ topic: quotes[0].topicIndex }}
+          className="text-xs font-medium text-primary hover:underline"
+        >
+          {quotes.length} {quotes.length === 1 ? "quote" : "quotes"} in Voices →
+        </Link>
+      )}
+      {feed.length > 0 && (
+        <Link to="/weekly" className="text-xs font-medium text-primary hover:underline">
+          Mentioned in Weekly Feed →
+        </Link>
+      )}
+    </div>
+  );
+}
+
+function PanelChipLegacy({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={`rounded-full border px-2.5 py-0.5 text-[11px] transition-colors ${
+        active
+          ? "border-[#9E2B25] bg-[#9E2B25] text-white"
+          : "border-[#9E2B25] bg-transparent text-neutral-600 hover:bg-[#9E2B25]/10"
+      }`}
+    >
+      {children}
+    </button>
+  );
+}
