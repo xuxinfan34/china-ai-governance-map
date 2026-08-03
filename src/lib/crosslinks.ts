@@ -33,6 +33,13 @@ export function findActorByName(raw: string | undefined | null): Actor | null {
       }
     }
   }
+  if (!best && raw.includes(",")) {
+    // strip role prefixes like "Deputy Director, X" and try each chunk
+    for (const chunk of raw.split(",")) {
+      const m = findActorByName(chunk.trim());
+      if (m) return m;
+    }
+  }
   return best;
 }
 
