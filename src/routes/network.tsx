@@ -631,14 +631,6 @@ function PanelChip({
   onClick: () => void;
   children: React.ReactNode;
 }) {
-  active,
-  onClick,
-  children,
-}: {
-  active: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-}) {
   return (
     <button
       onClick={onClick}
