@@ -273,6 +273,51 @@ function Profile() {
           </ul>
         </Section>
       )}
+
+      {voiceRefs.length > 0 && (
+        <Section title="Quoted in Voices">
+          <ul className="flex flex-col gap-3">
+            {voiceRefs.map(({ quote, topicIndex, topicTitle }, i) => (
+              <li key={`${topicIndex}-${i}`} className="rounded-md border border-border bg-card p-4">
+                <p className="text-xs font-medium uppercase tracking-wider text-primary">
+                  {topicTitle}
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-foreground/85 line-clamp-2">
+                  “{quote.en}”
+                </p>
+                <div className="mt-2 flex items-center justify-between gap-3">
+                  <span className="text-xs text-muted-foreground">
+                    {quote.speaker} · {quote.date}
+                  </span>
+                  <Link
+                    to="/voices"
+                    search={{ topic: topicIndex }}
+                    className="shrink-0 text-xs font-medium text-primary hover:underline"
+                  >
+                    Read full quote →
+                  </Link>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
+
+      {feedItems.length > 0 && (
+        <Section title="In the Weekly Feed">
+          <div className="rounded-md border border-border bg-card p-4">
+            <p className="font-serif text-base leading-snug text-foreground">
+              {feedItems[0].titleEn}
+            </p>
+            <div className="mt-2 flex items-center justify-between gap-3">
+              <span className="text-xs text-muted-foreground">{feedItems[0].date}</span>
+              <Link to="/weekly" className="shrink-0 text-xs font-medium text-primary hover:underline">
+                Read in Weekly Feed →
+              </Link>
+            </div>
+          </div>
+        </Section>
+      )}
     </article>
   );
 }
