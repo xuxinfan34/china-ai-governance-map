@@ -26,6 +26,11 @@ export function findActorByName(raw: string | undefined | null): Actor | null {
         best = a;
         bestLen = cn.length;
       }
+      // reverse: the actor's full name contains the queried phrase
+      if (nBare.length >= 12 && cn.includes(nBare) && nBare.length > bestLen) {
+        best = a;
+        bestLen = nBare.length;
+      }
     }
   }
   return best;
