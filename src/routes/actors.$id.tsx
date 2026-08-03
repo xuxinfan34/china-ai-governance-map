@@ -48,15 +48,7 @@ function Profile() {
   const { actor } = Route.useLoaderData() as { actor: Actor };
   const { t, lang } = useLang();
 
-  const related = (actor.related ?? [])
-    .map((id: string) => ACTORS.find((a) => a.id === id))
-    .filter((a): a is Actor => Boolean(a));
-
   const rels = relationshipsForActor(actor.id);
-  const relsByType = rels.reduce<Record<string, Relationship[]>>((acc, r) => {
-    (acc[r.type] ||= []).push(r);
-    return acc;
-  }, {});
   const docs = documentsForActor(actor.id);
   const voiceRefs = quotesForActor(actor);
   const feedItems = weeklyItemsForActor(actor);
