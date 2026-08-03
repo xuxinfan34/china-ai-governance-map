@@ -161,75 +161,6 @@ function Profile() {
         </Section>
       )}
 
-      {Object.keys(relsByType).length > 0 && (
-        <Section title={t("related")}>
-          <div className="space-y-6">
-            {Object.entries(relsByType).map(([type, list]) => (
-              <div key={type}>
-                <h3 className="mb-2 font-serif text-sm font-medium text-foreground">{type}</h3>
-                <ul className="space-y-2">
-                  {list.map((r) => {
-                    const otherId = r.source === actor.id ? r.target : r.source;
-                    const other = ACTORS.find((a) => a.id === otherId);
-                    if (!other) return null;
-                    const otherBg = other.layer === "ecosystem" ? "var(--color-ecosystem-bg)" : "var(--color-bridge-bg)";
-                    return (
-                      <li
-                        key={r.id}
-                        className="flex flex-wrap items-center gap-2 rounded-md border border-border p-3"
-                        style={{ backgroundColor: otherBg }}
-                      >
-                        <LayerGlyph layer={other.layer} className="h-4 w-4 shrink-0" />
-                        <Link
-                          to="/actors/$id"
-                          params={{ id: other.id }}
-                          className="font-serif text-foreground hover:text-primary"
-                        >
-                          {other.name_en}
-                        </Link>
-                        {other.name_zh && (
-                          <span className="font-zh text-xs text-muted-foreground">{other.name_zh}</span>
-                        )}
-                        <ConfidenceBadge c={r.confidence} />
-                        <span className="text-xs text-muted-foreground">· {r.status}</span>
-                        <a
-                          href={r.evidence_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="ml-auto inline-flex items-center gap-1 text-xs text-primary hover:underline"
-                        >
-                          {t("evidence")}
-                          <span className="rounded border border-border bg-background px-1 text-[10px] uppercase tracking-wider text-muted-foreground">
-                            {r.evidence_lang === "Chinese" ? "ZH" : "EN"}
-                          </span>
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </Section>
-      )}
-
-      {related.length > 0 && Object.keys(relsByType).length === 0 && (
-        <Section title={t("related")}>
-          <div className="flex flex-wrap gap-2">
-            {related.map((r: Actor) => (
-              <Link
-                key={r.id}
-                to="/actors/$id"
-                params={{ id: r.id }}
-                className="rounded-full border border-border bg-card px-3 py-1 text-sm text-foreground transition-colors hover:border-primary hover:text-primary"
-              >
-                {r.name_en}
-              </Link>
-            ))}
-          </div>
-        </Section>
-      )}
-
       {rels.length > 0 && (
         <Section title={t("connections")}>
           <ul className="divide-y divide-border rounded-md border border-border">
@@ -255,10 +186,26 @@ function Profile() {
                       <span className="rounded-sm bg-secondary px-2 py-0.5 text-xs text-secondary-foreground">
                         {r.type}
                       </span>
+                      <ConfidenceBadge c={r.confidence} />
                     </div>
-                    <span className="shrink-0 rounded-full border border-border bg-background px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
-                      {r.category}
-                    </span>
+                    <div className="flex shrink-0 items-center gap-3">
+                      <span className="rounded-full border border-border bg-background px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+                        {r.category}
+                      </span>
+                      {r.evidence_url && (
+                        <a
+                          href={r.evidence_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
+                        >
+                          {t("evidence")}
+                          <span className="rounded border border-border bg-background px-1 text-[10px] uppercase tracking-wider text-muted-foreground">
+                            {r.evidence_lang === "Chinese" ? "ZH" : "EN"}
+                          </span>
+                        </a>
+                      )}
+                    </div>
                   </li>
                 );
               })}
