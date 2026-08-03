@@ -8,9 +8,7 @@ import {
   STAKEHOLDER_COLORS,
   STAKEHOLDER_LABEL,
   type Actor,
-  type Relationship,
 } from "../lib/data";
-import { LayerGlyph } from "../components/glyphs";
 import { useLang } from "../lib/i18n";
 import { quotesForActor, weeklyItemsForActor } from "../lib/crosslinks";
 
