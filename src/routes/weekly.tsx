@@ -106,15 +106,26 @@ function WeeklyFeed() {
 }
 
 function WeeklyCard({ item }: { item: WeeklyFeedItem }) {
+  const sourceActor = findActorByName(item.source);
+  const badgeClass =
+    "rounded-full border border-border/60 bg-background/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider";
   return (
     <article className="rounded-xl border border-border bg-card p-6 sm:p-8">
       <div className="flex items-start justify-between gap-4">
-        <span
-          className="rounded-full border border-border/60 bg-background/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider"
-          style={{ color: sourceColor(item.kind) }}
-        >
-          {item.source}
-        </span>
+        {sourceActor ? (
+          <Link
+            to="/actors/$id"
+            params={{ id: sourceActor.id }}
+            className={`${badgeClass} transition-colors hover:border-primary`}
+            style={{ color: sourceColor(item.kind) }}
+          >
+            {item.source}
+          </Link>
+        ) : (
+          <span className={badgeClass} style={{ color: sourceColor(item.kind) }}>
+            {item.source}
+          </span>
+        )}
         <span className="text-xs text-muted-foreground">{item.date}</span>
       </div>
 
