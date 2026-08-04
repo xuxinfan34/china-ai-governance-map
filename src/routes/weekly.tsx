@@ -34,6 +34,10 @@ function WeeklyFeed() {
 
   const weeks = [
     {
+      label: "Week of July 27 – August 3, 2026",
+      items: WEEKLY_ITEMS_JULY_27,
+    },
+    {
       label: "Week of July 19–26, 2026",
       items: WEEKLY_ITEMS,
     },
