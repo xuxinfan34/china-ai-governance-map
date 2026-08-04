@@ -16,7 +16,7 @@ import { quotesForActor, weeklyItemsForActor } from "../lib/crosslinks";
 export const Route = createFileRoute("/network")({
   head: () => ({
     meta: [
-      { title: "Network — China AI Governance Map (Sinograph AI)" },
+      { title: "Network — Sinograph 诠字" },
       {
         name: "description",
         content:

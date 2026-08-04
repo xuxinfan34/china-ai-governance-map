@@ -9,10 +9,10 @@ export function SiteNav() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-5">
         <Link to="/" className="flex flex-col leading-tight">
           <span className="font-serif text-2xl font-semibold tracking-tight text-foreground">
-            China AI Governance Map
+            Sinograph 诠字
           </span>
           <span className="text-xs text-muted-foreground sm:text-sm">
-            An interactive reference to China's AI governance
+            Understanding China's AI ecosystem — in their own words
           </span>
         </Link>
         <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">

@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-6 py-8 text-sm text-muted-foreground">
         <div className="flex flex-col justify-between gap-2 sm:flex-row">
           <p className="font-serif italic">{t("tagline")}</p>
-          <p>© {new Date().getFullYear()} China AI Governance Map · Sinograph AI</p>
+          <p>© {new Date().getFullYear()} Sinograph 诠字</p>
 
         </div>
       </div>
