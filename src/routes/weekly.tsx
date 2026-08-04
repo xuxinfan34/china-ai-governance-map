@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { WEEKLY_ITEMS, type WeeklyFeedItem, type WeeklySourceKind } from "../data/weekly";
+import { WEEKLY_ITEMS, WEEKLY_ITEMS_JULY_27, type WeeklyFeedItem, type WeeklySourceKind } from "../data/weekly";
 import { findActorByName } from "../lib/crosslinks";
 
 
