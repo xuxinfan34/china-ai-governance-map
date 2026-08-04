@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { WEEKLY_ITEMS, type WeeklyFeedItem, type WeeklySourceKind } from "../data/weekly";
+import { WEEKLY_ITEMS, WEEKLY_ITEMS_JULY_27, type WeeklyFeedItem, type WeeklySourceKind } from "../data/weekly";
 import { findActorByName } from "../lib/crosslinks";
 
 
@@ -33,6 +33,10 @@ function WeeklyFeed() {
   const [activeWeek, setActiveWeek] = useState<number | null>(null);
 
   const weeks = [
+    {
+      label: "Week of July 27 – August 3, 2026",
+      items: WEEKLY_ITEMS_JULY_27,
+    },
     {
       label: "Week of July 19–26, 2026",
       items: WEEKLY_ITEMS,
