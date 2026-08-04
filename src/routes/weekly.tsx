@@ -130,6 +130,7 @@ function WeeklyCard({ item }: { item: WeeklyFeedItem }) {
         <span className={badgeClass} style={{ color: sourceColor(item.kind) }}>
             {item.source}
           </span>
+        )}
         </div>
 
       <h3 className="mt-4 font-serif text-2xl font-semibold leading-snug text-foreground">
