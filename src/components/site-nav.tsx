@@ -9,8 +9,12 @@ export function SiteNav() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-5">
         <Link to="/" className="flex flex-col leading-tight">
           <span className="font-serif text-2xl font-semibold tracking-tight text-foreground">
-            Sinograph 诠字
+            Sinograph
+            <span className="font-zh ml-1.5 text-[60%] font-normal text-muted-foreground">
+              诠字
+            </span>
           </span>
+
           <span className="text-xs text-muted-foreground sm:text-sm">
             Understanding China's AI ecosystem — in their own words
           </span>
