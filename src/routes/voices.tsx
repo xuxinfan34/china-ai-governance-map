@@ -145,15 +145,15 @@ function QuoteCard({ group }: { group: { speaker: string; affiliation: string; q
       <div className="mt-5 flex flex-col gap-5">
         {group.quotes.map((quote, i) => (
           <div key={i} className={i > 0 ? "border-t border-border/60 pt-5" : ""}>
+            <p className="text-base leading-relaxed text-foreground">{quote.en}</p>
+
+            <p className="mt-5 text-xs italic text-muted-foreground">Original:</p>
             <blockquote
-              className="border-l-2 pl-4 text-base leading-[1.9] text-foreground"
+              className="mt-1 border-l-2 pl-4 text-sm leading-[1.9] text-muted-foreground"
               style={{ borderColor: "#9E2B25", fontFamily: CJK_STACK }}
             >
               {quote.zh}
             </blockquote>
-
-            <p className="mt-5 text-xs italic text-muted-foreground">Translation:</p>
-            <p className="mt-1 text-sm leading-relaxed text-foreground/90">{quote.en}</p>
 
             <p className="mt-5 text-xs text-muted-foreground">
               {quote.url ? (
