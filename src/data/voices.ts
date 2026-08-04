@@ -91,6 +91,18 @@ export const VOICE_TOPICS: VoiceTopic[] = [
         sourceType: "Conference speech",
         url: "https://mp.weixin.qq.com/s/TXU3VLf2wAvXvwEtoLCtWg",
       },
+      {
+        speaker: "Zeng Yi (曾毅)",
+        affiliation:
+          "Director, Beijing Institute of AI Safety and Governance; Professor, Renmin University; Member, UN High-Level Advisory Body on AI",
+        date: "July 17, 2026",
+        zh: "我们需要一个面向前沿人工智能安全评估的全球联合平台：共建共享测试环境、统一评估基准、开展联合红蓝对抗测试。我们还要推进能力建设，不让发展中国家在人工智能发展与治理进程中掉队。",
+        en: "We need a global joint platform for frontier AI safety evaluation: shared testing environments, unified evaluation benchmarks, and joint red-teaming exercises. We must also advance capacity building, so that developing countries are not left behind in AI development and governance.",
+        sourceTitle:
+          "曾毅教授在CGTN“智能文明”特别节目以“全球人工智能安全与治理”为题发表演讲 (Beijing AISI WeChat)",
+        sourceType: "CGTN keynote",
+        url: "https://mp.weixin.qq.com/s/pevLAvMBD1YmoKiR7hUDoA",
+      },
     ],
   },
   {
@@ -201,6 +213,52 @@ export const VOICE_TOPICS: VoiceTopic[] = [
           "周伯文：AGI的下一程，迎接科学元认知时刻 | WAIC 2026 (Shanghai AI Lab WeChat)",
         sourceType: "Keynote",
         url: "https://mp.weixin.qq.com/s/SGcYrMRBeiRmCcUfmEOWiA",
+      },
+      {
+        speaker: "Zhuang Rongwen (庄荣文)",
+        affiliation:
+          "Director, Cyberspace Administration of China (CAC); Deputy Head, Central Propaganda Department",
+        date: "July 31, 2026",
+        zh: "推动技术健康发展。统筹发展和安全，鼓励网信领域新技术发展，积极运用新技术赋能内容建设和乱象治理，完善分级分类的安全监管机制，加强合规指导，打击技术滥用，强化人工智能安全治理，完善大模型服务备案管理，确保新技术新应用安全可控、向善发展，筑牢网络安全和数据安全防线。",
+        en: "Promote healthy technological development. Balance development and security, encourage new technology development in the cyberspace domain, refine the tiered and classified safety regulatory mechanism, strengthen compliance guidance, combat technology abuse, strengthen AI safety governance, improve the filing management system for large model services, and ensure that new technologies and applications remain safe, controllable, and develop toward the good.",
+        sourceTitle:
+          "庄荣文：提高网络生态治理效能 营造风清气正网络空间 (CAC WeChat / Qiushi journal)",
+        sourceType: "Signed article",
+        url: "https://mp.weixin.qq.com/s/b5x1Rsw2kMi-zVZ4fTMhSQ",
+      },
+      {
+        speaker: "Xue Lan (薛澜)",
+        affiliation:
+          "State Council Counselor; Dean of Schwarzman College; Director, Institute for AI International Governance, Tsinghua University",
+        date: "July 3, 2026",
+        zh: "从人工智能的技术层面看，过去两年的发展是日新月异。与此相比，社会技术系统的构建更加迟缓。现在可以说人工智能发展进入到下半场了，构建人工智能技术在社会中应用的社会技术系统就变得非常急迫了。",
+        en: "From a technical perspective, AI has advanced at a breathtaking pace over the past two years. By comparison, the construction of socio-technical systems has lagged far behind. We can now say that AI development has entered the 'second half' — and building the socio-technical systems needed for AI's application in society has become extremely urgent.",
+        sourceTitle:
+          "薛澜：《人工智能技术的社会应用——治理挑战》 (Tsinghua I-AIIG WeChat)",
+        sourceType: "Keynote",
+        url: "https://mp.weixin.qq.com/s/dQhC_kcooKeALXEJiqqp_g",
+      },
+      {
+        speaker: "Zeng Yi (曾毅)",
+        affiliation:
+          "Director, Beijing Institute of AI Safety and Governance; Member, UN High-Level Advisory Body on AI",
+        date: "July 17, 2026",
+        zh: "前沿人工智能系统的演化速度，从某种意义而言已经超越了现阶段人类的理解，有效的管控已捉襟见肘。我们面对的不再是只会执行指令的工具。我们正在打造能够推理、规划、跨领域生成全新解决方案的智能系统——从助力科学发现到支撑经济决策，其产出有时甚至超出我们赋予人工智能的任务预期。",
+        en: "The evolution of frontier AI systems has, in a meaningful sense, outpaced human understanding. Effective control is stretched thin. We are no longer dealing with tools that merely execute instructions. We are building intelligent systems capable of reasoning, planning, and generating novel solutions across domains — from scientific discovery to economic decision-making — sometimes producing outputs that exceed the tasks we assigned them.",
+        sourceTitle: "曾毅教授在CGTN“智能文明”特别节目 (Beijing AISI WeChat)",
+        sourceType: "CGTN keynote",
+        url: "https://mp.weixin.qq.com/s/pevLAvMBD1YmoKiR7hUDoA",
+      },
+      {
+        speaker: "Zeng Yi (曾毅)",
+        affiliation:
+          "Director, Beijing Institute of AI Safety and Governance; Member, UN High-Level Advisory Body on AI",
+        date: "July 17, 2026",
+        zh: "第三是竞争博弈效应。当各国、各个企业争相研发更强性能的智能系统时，伦理与安全往往沦为事后补救的附加项，甚至是被视作发展的阻力。这是一种危险的谬误。伦理与安全并不只是在风险出现以及必要时发挥刹车的作用，而更是指引发展方向的方向盘。",
+        en: "Third is the competitive dynamics effect. When countries and companies race to develop more powerful systems, ethics and safety are often relegated to afterthought add-ons, or even viewed as obstacles to progress. This is a dangerous fallacy. Ethics and safety are not merely brakes to be applied when risks emerge — they are the steering wheel that guides the direction of development.",
+        sourceTitle: "曾毅教授在CGTN“智能文明”特别节目 (Beijing AISI WeChat)",
+        sourceType: "CGTN keynote",
+        url: "https://mp.weixin.qq.com/s/pevLAvMBD1YmoKiR7hUDoA",
       },
     ],
   },
