@@ -5,13 +5,13 @@ import { useLang } from "../lib/i18n";
 export const Route = createFileRoute("/documents")({
   head: () => ({
     meta: [
-      { title: "Governance Documents — China AI Governance Map (Sinograph AI)" },
+      { title: "Governance Documents — Sinograph 诠字" },
       {
         name: "description",
         content:
           "A chronological reference of laws, regulations, standards, and guidance documents shaping China's AI governance ecosystem.",
       },
-      { property: "og:title", content: "Governance Documents — China AI Governance Map" },
+      { property: "og:title", content: "Governance Documents — Sinograph 诠字" },
       {
         property: "og:description",
         content:

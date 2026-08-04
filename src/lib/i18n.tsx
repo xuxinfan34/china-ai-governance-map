@@ -10,7 +10,7 @@ type Ctx = {
 
 export const strings = {
   en: {
-    site_title: "China AI Governance Map",
+    site_title: "Sinograph 诠字",
     tagline: "A tool to navigate China AI Governance",
 
     nav_home: "Home",

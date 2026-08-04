@@ -6,13 +6,13 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "China AI Governance Map — Institutions, Networks & Voices" },
+      { title: "Sinograph 诠字" },
       {
         name: "description",
         content:
           "A living reference to the institutions, relationships, and discourse shaping China's AI governance ecosystem — voices, weekly feed, network, and documents.",
       },
-      { property: "og:title", content: "China AI Governance Map" },
+      { property: "og:title", content: "Sinograph 诠字" },
       {
         property: "og:description",
         content:
@@ -41,7 +41,7 @@ function Index() {
       {/* HERO */}
       <section className="max-w-3xl">
         <p className="mb-4 font-serif text-sm tracking-wider text-primary">
-          China AI Governance Map · Sinograph AI
+          Sinograph 诠字
         </p>
         <h1 className="font-serif text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-5xl">
           Understanding China's AI governance — in their own words

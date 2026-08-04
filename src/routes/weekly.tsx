@@ -8,13 +8,13 @@ import { findActorByName } from "../lib/crosslinks";
 export const Route = createFileRoute("/weekly")({
   head: () => ({
     meta: [
-      { title: "Ecosystem Weekly Feed — China AI Governance Map" },
+      { title: "Ecosystem Weekly Feed — Sinograph 诠字" },
       {
         name: "description",
         content:
           "Curated weekly highlights from official Chinese AI governance WeChat accounts, translated for English-speaking readers.",
       },
-      { property: "og:title", content: "Ecosystem Weekly Feed — China AI Governance Map" },
+      { property: "og:title", content: "Ecosystem Weekly Feed — Sinograph 诠字" },
       {
         property: "og:description",
         content:

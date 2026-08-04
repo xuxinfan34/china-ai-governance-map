@@ -10,13 +10,13 @@ export const Route = createFileRoute("/voices")({
   },
   head: () => ({
     meta: [
-      { title: "Voices — China AI Governance Map" },
+      { title: "Voices — Sinograph 诠字" },
       {
         name: "description",
         content:
           "Curated public statements from China's AI governance ecosystem, in Chinese with English translations, organized by topic.",
       },
-      { property: "og:title", content: "Voices — China AI Governance Map" },
+      { property: "og:title", content: "Voices — Sinograph 诠字" },
       {
         property: "og:description",
         content:

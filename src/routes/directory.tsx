@@ -9,13 +9,13 @@ export const Route = createFileRoute("/directory")({
   },
   head: () => ({
     meta: [
-      { title: "Directory — China AI Governance Map (Sinograph AI)" },
+      { title: "Directory — Sinograph 诠字" },
       {
         name: "description",
         content:
           "Browse every actor in China's AI governance map: regulators, research institutes, firms, and the cross-border bridges interpreting them.",
       },
-      { property: "og:title", content: "Directory — China AI Governance Map" },
+      { property: "og:title", content: "Directory — Sinograph 诠字" },
       {
         property: "og:description",
         content:
