@@ -80,7 +80,7 @@ function VoicesPage() {
               </span>
               <div className="relative z-10 mt-4 h-px w-10 bg-white/30" />
               <span className="relative z-10 mt-4 text-xs text-white/90">
-                {t.quotes.length} voices
+                {new Set(t.quotes.map((q) => q.speaker)).size} voices
               </span>
             </button>
           ))}
@@ -100,8 +100,8 @@ function VoicesPage() {
             {topic.framing}
           </p>
           <div className="mt-8 flex flex-col gap-6">
-            {topic.quotes.map((quote, i) => (
-              <QuoteCard key={`${topic.title}-${i}`} quote={quote} />
+            {groupBySpeaker(topic.quotes).map((group) => (
+              <QuoteCard key={group.speaker} group={group} />
             ))}
           </div>
         </section>
@@ -110,45 +110,70 @@ function VoicesPage() {
   );
 }
 
-function QuoteCard({ quote }: { quote: Quote }) {
+function groupBySpeaker(quotes: Quote[]): { speaker: string; affiliation: string; quotes: Quote[] }[] {
+  const map = new Map<string, { speaker: string; affiliation: string; quotes: Quote[] }>();
+  for (const quote of quotes) {
+    const existing = map.get(quote.speaker);
+    if (existing) {
+      existing.quotes.push(quote);
+    } else {
+      map.set(quote.speaker, {
+        speaker: quote.speaker,
+        affiliation: quote.affiliation,
+        quotes: [quote],
+      });
+    }
+  }
+  return Array.from(map.values());
+}
+
+function QuoteCard({ group }: { group: { speaker: string; affiliation: string; quotes: Quote[] } }) {
   return (
     <article className="rounded-xl border border-border bg-card p-6 sm:p-8">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="font-semibold leading-tight text-foreground">{quote.speaker}</p>
+          <p className="font-semibold leading-tight text-foreground">{group.speaker}</p>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-            <AffiliationLinks affiliation={quote.affiliation} />
+            <AffiliationLinks affiliation={group.affiliation} />
           </p>
         </div>
-        <p className="shrink-0 text-xs text-muted-foreground">{quote.date}</p>
+        {group.quotes.length > 1 && (
+          <p className="shrink-0 text-xs text-muted-foreground">{group.quotes.length} quotes</p>
+        )}
       </div>
 
-      <blockquote
-        className="mt-5 border-l-2 pl-4 text-base leading-[1.9] text-foreground"
-        style={{ borderColor: "#9E2B25", fontFamily: CJK_STACK }}
-      >
-        {quote.zh}
-      </blockquote>
+      <div className="mt-5 flex flex-col gap-5">
+        {group.quotes.map((quote, i) => (
+          <div key={i} className={i > 0 ? "border-t border-border/60 pt-5" : ""}>
+            <blockquote
+              className="border-l-2 pl-4 text-base leading-[1.9] text-foreground"
+              style={{ borderColor: "#9E2B25", fontFamily: CJK_STACK }}
+            >
+              {quote.zh}
+            </blockquote>
 
-      <p className="mt-5 text-xs italic text-muted-foreground">Translation:</p>
-      <p className="mt-1 text-sm leading-relaxed text-foreground/90">{quote.en}</p>
+            <p className="mt-5 text-xs italic text-muted-foreground">Translation:</p>
+            <p className="mt-1 text-sm leading-relaxed text-foreground/90">{quote.en}</p>
 
-
-      <p className="mt-5 border-t border-border/60 pt-4 text-xs text-muted-foreground">
-        {quote.url ? (
-          <a
-            href={quote.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground underline underline-offset-2 hover:text-primary"
-          >
-            {quote.sourceTitle}
-          </a>
-        ) : (
-          <span className="text-foreground">{quote.sourceTitle}</span>
-        )}
-        <span> · {quote.sourceType}</span>
-      </p>
+            <p className="mt-5 text-xs text-muted-foreground">
+              {quote.url ? (
+                <a
+                  href={quote.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground underline underline-offset-2 hover:text-primary"
+                >
+                  {quote.sourceTitle}
+                </a>
+              ) : (
+                <span className="text-foreground">{quote.sourceTitle}</span>
+              )}
+              <span> · {quote.sourceType}</span>
+              <span className="ml-2 text-muted-foreground/80">{quote.date}</span>
+            </p>
+          </div>
+        ))}
+      </div>
     </article>
   );
 }

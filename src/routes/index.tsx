@@ -90,7 +90,7 @@ function Index() {
               </span>
               <div className="relative z-10 mt-3 h-px w-8 bg-white/30" />
               <span className="relative z-10 mt-3 text-[11px] text-white/90">
-                {t.quotes.length} voices
+                {new Set(t.quotes.map((q) => q.speaker)).size} voices
               </span>
             </Link>
           ))}
