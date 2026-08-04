@@ -16,7 +16,7 @@ export const Route = createFileRoute("/about")({
   component: Page,
 });
 
-function SectionHeading({ children }: { children: React.ReactNode }) {
+function SectionHeading({ children }: { children: ReactNode }) {
   return (
     <h2 className="font-serif text-2xl font-semibold tracking-tight text-primary sm:text-3xl">
       {children}
