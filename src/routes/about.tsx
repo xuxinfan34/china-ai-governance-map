@@ -139,15 +139,6 @@ function Page() {
           </div>
         </Section>
 
-        <Section>
-          <SectionHeading>Who built this?</SectionHeading>
-          <p className="leading-relaxed text-foreground/90">
-            Sinograph is an independent research project. The team has backgrounds in public policy, mathematics, and AI governance research, with affiliations across institutions in China, the UK, and the United States.
-          </p>
-          <p className="leading-relaxed text-foreground/90">
-            The project is unfunded and editorially independent. Institutional relationships depicted on the map reflect publicly available information and do not imply endorsement by any institution profiled.
-          </p>
-        </Section>
 
         <Section>
           <SectionHeading>Contact & Feedback</SectionHeading>
