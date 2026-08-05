@@ -56,8 +56,11 @@ function VoicesPage() {
           encouraged to consult the originals for full context.
         </p>
         <p className="mt-4 text-xs italic leading-relaxed text-muted-foreground">
-          This is a curated selection, not a comprehensive survey. Inclusion does not imply
-          endorsement; omission does not imply irrelevance.
+          This is a curated selection of public statements, not a comprehensive survey of
+          Chinese AI discourse. Curation involves editorial choices — different curators would
+          select different quotes. Public statements reflect strategic communication, not
+          necessarily private positions or operational intent. Readers are encouraged to
+          consult original sources and triangulate with other perspectives.
         </p>
       </header>
 
