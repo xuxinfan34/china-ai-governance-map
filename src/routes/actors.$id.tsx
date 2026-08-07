@@ -50,7 +50,6 @@ function Profile() {
   const docs = documentsForActor(actor.id);
   const voiceRefs = quotesForActor(actor);
   const feedItems = weeklyItemsForActor(actor);
-  const bg = actor.layer === "ecosystem" ? "var(--color-ecosystem-bg)" : "var(--color-bridge-bg)";
   const dot = STAKEHOLDER_COLORS[actor.stakeholder_type];
   const typeLabel = STAKEHOLDER_LABEL[actor.stakeholder_type][lang];
 
