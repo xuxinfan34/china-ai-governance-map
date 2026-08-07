@@ -79,17 +79,17 @@ export function Directory({ layer, onLayerChange, title, subtitle }: Props) {
   });
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-12">
-      <header className="mb-8 border-b border-border pb-8">
-        <h1 className="font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+    <div className="mx-auto max-w-6xl px-6 py-8">
+      <header className="mb-6 border-b border-border pb-6">
+        <h1 className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           {title}
         </h1>
-        <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
           {subtitle}
         </p>
       </header>
 
-      <div className="mb-6 flex flex-wrap gap-2">
+      <div className="mb-4 flex flex-wrap gap-2">
         <Chip active={layer === "all"} onClick={() => onLayerChange("all")}>
           {t("filter_all_layers")} ({counts.all})
         </Chip>
@@ -101,112 +101,138 @@ export function Directory({ layer, onLayerChange, title, subtitle }: Props) {
         </Chip>
       </div>
 
-      <>
-        <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-
-            <input
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              placeholder={t("search_ph")}
-              className="w-full flex-1 border-b border-border bg-transparent px-1 py-2.5 text-sm outline-none placeholder:text-muted-foreground focus:border-primary"
-            />
-            <button
-              onClick={() => setFiltersOpen(true)}
-              className="border-b border-border px-1 py-2.5 text-sm text-foreground sm:hidden"
-            >
-              Filters
-            </button>
-          </div>
-
-          <div className="mb-8 hidden flex-wrap gap-x-6 gap-y-3 sm:flex">
-            <ChipGroup
-              label={t("filter_stakeholder")}
-              value={stakeholder}
-              onChange={setStakeholder}
-              options={stakeholderTypes}
-              tAll={t("filter_all")}
-              labelMap={Object.fromEntries(stakeholderTypes.map((k) => [k, STAKEHOLDER_LABEL[k][lang]]))}
-            />
-            {layer === "bridge" && (
-              <ChipGroup
-                label={t("filter_bridge_type")}
-                value={bridgeType}
-                onChange={setBridgeType}
-                options={bridgeTypes}
-                tAll={t("filter_all")}
-                labelMap={Object.fromEntries(bridgeTypes.map((k) => [k, BRIDGE_TYPE_LABEL[k][lang]]))}
-              />
-            )}
-            <ChipGroup
-              label={t("filter_location")}
-              value={loc}
-              onChange={setLoc}
-              options={locations}
-              tAll={t("filter_all")}
-            />
-          </div>
-
-          {filtered.length === 0 ? (
-            <p className="py-16 text-center text-muted-foreground">{t("no_results")}</p>
-          ) : (
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {filtered.map((a) => (
-                <ActorCard key={a.id} actor={a} />
-              ))}
-            </div>
-          )}
-
-          {filtersOpen && (
-            <div
-              className="fixed inset-0 z-50 flex items-end bg-black/40 sm:hidden"
-              onClick={() => setFiltersOpen(false)}
-            >
-              <div
-                className="max-h-[80vh] w-full overflow-y-auto rounded-t-2xl bg-background p-6 shadow-lg"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <div className="mb-4 flex items-center justify-between">
-                  <h2 className="font-serif text-xl">Filters</h2>
-                  <button onClick={() => setFiltersOpen(false)} className="text-sm text-muted-foreground">
-                    Done
-                  </button>
-                </div>
-                <div className="flex flex-col gap-5">
-                  <ChipGroup
-                    label={t("filter_stakeholder")}
-                    value={stakeholder}
-                    onChange={setStakeholder}
-                    options={stakeholderTypes}
-                    tAll={t("filter_all")}
-                    labelMap={Object.fromEntries(stakeholderTypes.map((k) => [k, STAKEHOLDER_LABEL[k][lang]]))}
-                    stacked
-                  />
-                  {layer === "bridge" && (
-                    <ChipGroup
-                      label={t("filter_bridge_type")}
-                      value={bridgeType}
-                      onChange={setBridgeType}
-                      options={bridgeTypes}
-                      tAll={t("filter_all")}
-                      labelMap={Object.fromEntries(bridgeTypes.map((k) => [k, BRIDGE_TYPE_LABEL[k][lang]]))}
-                      stacked
-                    />
-                  )}
-                  <ChipGroup
-                    label={t("filter_location")}
-                    value={loc}
-                    onChange={setLoc}
-                    options={locations}
-                    tAll={t("filter_all")}
-                    stacked
-                  />
-                </div>
-              </div>
-            </div>
-          )}
-        </>
+      <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <input
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+          placeholder={t("search_ph")}
+          className="w-full flex-1 border-b border-border bg-transparent px-1 py-2 text-sm outline-none placeholder:text-muted-foreground focus:border-primary"
+        />
+        <button
+          onClick={() => setFiltersOpen(true)}
+          className="border-b border-border px-1 py-2 text-sm text-foreground sm:hidden"
+        >
+          Filters
+        </button>
       </div>
-    );
+
+      <div className="mb-6 hidden flex-wrap gap-x-6 gap-y-3 sm:flex">
+        <ChipGroup
+          label={t("filter_stakeholder")}
+          value={stakeholder}
+          onChange={setStakeholder}
+          options={stakeholderTypes}
+          tAll={t("filter_all")}
+          labelMap={Object.fromEntries(stakeholderTypes.map((k) => [k, STAKEHOLDER_LABEL[k][lang]]))}
+        />
+        {layer === "bridge" && (
+          <ChipGroup
+            label={t("filter_bridge_type")}
+            value={bridgeType}
+            onChange={setBridgeType}
+            options={bridgeTypes}
+            tAll={t("filter_all")}
+            labelMap={Object.fromEntries(bridgeTypes.map((k) => [k, BRIDGE_TYPE_LABEL[k][lang]]))}
+          />
+        )}
+        <ChipGroup
+          label={t("filter_location")}
+          value={loc}
+          onChange={setLoc}
+          options={locations}
+          tAll={t("filter_all")}
+        />
+      </div>
+
+      {filtered.length === 0 ? (
+        <p className="py-12 text-center text-sm text-muted-foreground">{t("no_results")}</p>
+      ) : (
+        <div className="border-t border-border">
+          {filtered.map((a) => (
+            <ActorRow key={a.id} actor={a} />
+          ))}
+        </div>
+      )}
+
+      {filtersOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-end bg-black/40 sm:hidden"
+          onClick={() => setFiltersOpen(false)}
+        >
+          <div
+            className="max-h-[80vh] w-full overflow-y-auto rounded-t-2xl bg-background p-6 shadow-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="mb-4 flex items-center justify-between">
+              <h2 className="font-serif text-xl">Filters</h2>
+              <button onClick={() => setFiltersOpen(false)} className="text-sm text-muted-foreground">
+                Done
+              </button>
+            </div>
+            <div className="flex flex-col gap-5">
+              <ChipGroup
+                label={t("filter_stakeholder")}
+                value={stakeholder}
+                onChange={setStakeholder}
+                options={stakeholderTypes}
+                tAll={t("filter_all")}
+                labelMap={Object.fromEntries(stakeholderTypes.map((k) => [k, STAKEHOLDER_LABEL[k][lang]]))}
+                stacked
+              />
+              {layer === "bridge" && (
+                <ChipGroup
+                  label={t("filter_bridge_type")}
+                  value={bridgeType}
+                  onChange={setBridgeType}
+                  options={bridgeTypes}
+                  tAll={t("filter_all")}
+                  labelMap={Object.fromEntries(bridgeTypes.map((k) => [k, BRIDGE_TYPE_LABEL[k][lang]]))}
+                  stacked
+                />
+              )}
+              <ChipGroup
+                label={t("filter_location")}
+                value={loc}
+                onChange={setLoc}
+                options={locations}
+                tAll={t("filter_all")}
+                stacked
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ActorRow({ actor }: { actor: Actor }) {
+  return (
+    <Link
+      to="/actors/$id"
+      params={{ id: actor.id }}
+      className="group block border-b border-border py-2.5 transition-colors hover:bg-muted/40"
+    >
+      <div className="flex items-baseline justify-between gap-4">
+        <div className="min-w-0">
+          <span className="font-serif text-base font-medium text-foreground group-hover:text-primary">
+            {actor.name_en}
+          </span>
+          {actor.name_zh && (
+            <span className="ml-1.5 font-zh text-sm text-muted-foreground">
+              {actor.name_zh}
+            </span>
+          )}
+        </div>
+        <span className="shrink-0 text-right text-xs text-muted-foreground">
+          {actor.category}
+        </span>
+      </div>
+      <p className="mt-0.5 line-clamp-2 text-sm text-muted-foreground">
+        {actor.overview}
+      </p>
+    </Link>
+  );
 }
 
 
