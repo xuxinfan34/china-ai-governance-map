@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import Fuse from "fuse.js";
+import { Link } from "@tanstack/react-router";
 import {
   ACTORS,
   STAKEHOLDER_LABEL,
@@ -9,7 +10,6 @@ import {
   type StakeholderType,
   type BridgeType,
 } from "../lib/data";
-import { ActorCard } from "./actor-card";
 import { useLang } from "../lib/i18n";
 
 export type LayerFilter = Layer | "all";
