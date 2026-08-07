@@ -70,15 +70,15 @@ function VoicesPage() {
             <button
               key={t.title}
               onClick={() => setActiveTopic(i)}
-              className="group relative flex h-[220px] flex-col items-center justify-center overflow-hidden rounded-2xl border-t-[3px] border-t-[#C4443D] bg-gradient-to-b from-[#9E2B25] to-[#7A2220] px-6 text-center transition-colors duration-200 hover:from-[#8E261F] hover:to-[#6D1E1B]"
+              className="group relative flex h-[220px] flex-col items-center justify-center overflow-hidden rounded-2xl border-t-[3px] border-t-[#C4443D] bg-gradient-to-b from-[#9E2B25] to-[#7A2220] px-6 text-center shadow-sm transition-all duration-200 hover:scale-[1.03] hover:shadow-lg"
             >
               <span
-                className="pointer-events-none absolute bottom-1 right-2 select-none text-[120px] leading-none text-white opacity-[0.12] transition-opacity duration-200 group-hover:opacity-20"
+                className="pointer-events-none absolute bottom-1 right-2 select-none text-[120px] leading-none text-white opacity-[0.12] transition-all duration-200 group-hover:scale-110 group-hover:opacity-20"
                 style={{ fontFamily: ZH_STACK }}
               >
                 {WATERMARKS[i]}
               </span>
-              <span className="relative z-10 font-serif text-2xl font-semibold leading-snug text-white underline-offset-4 group-hover:underline">
+              <span className="relative z-10 font-serif text-2xl font-semibold leading-snug text-white">
                 {TAB_LABELS[i]}
               </span>
               <div className="relative z-10 mt-4 h-px w-10 bg-white/30" />
