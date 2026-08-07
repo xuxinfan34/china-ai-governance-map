@@ -148,10 +148,10 @@ function Page() {
           <p className="leading-relaxed text-foreground/90">
             Get in touch:{" "}
             <a
-              href="mailto:sinograph.quanzi@gmail.com"
+              href="mailto:xxdf1225@gmail.com"
               className="text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:text-primary/80"
             >
-              sinograph.quanzi@gmail.com
+              xxdf1225@gmail.com
             </a>
           </p>
         </Section>
