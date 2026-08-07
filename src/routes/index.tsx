@@ -76,15 +76,15 @@ function Index() {
               key={t.title}
               to="/voices"
               search={{ topic: i }}
-              className="group relative flex h-[120px] flex-col items-center justify-center overflow-hidden rounded-xl border-t-[3px] border-t-[#C4443D] bg-gradient-to-b from-[#9E2B25] to-[#7A2220] px-3 text-center shadow-sm transition-all duration-200 hover:scale-[1.03] hover:shadow-lg"
+              className="group relative flex h-[120px] flex-col items-center justify-center overflow-hidden rounded-xl border-t-[3px] border-t-[#C4443D] bg-gradient-to-b from-[#9E2B25] to-[#7A2220] px-3 text-center transition-colors duration-200 hover:from-[#8E261F] hover:to-[#6D1E1B]"
             >
               <span
-                className="pointer-events-none absolute bottom-0 right-1 select-none text-[64px] leading-none text-white opacity-[0.12] transition-all duration-200 group-hover:scale-110 group-hover:opacity-20"
+                className="pointer-events-none absolute bottom-0 right-1 select-none text-[64px] leading-none text-white opacity-[0.12] transition-opacity duration-200 group-hover:opacity-20"
                 style={{ fontFamily: ZH_STACK }}
               >
                 {WATERMARKS[i]}
               </span>
-              <span className="relative z-10 font-serif text-sm font-semibold leading-snug text-white">
+              <span className="relative z-10 font-serif text-sm font-semibold leading-snug text-white underline-offset-2 group-hover:underline">
                 {TAB_LABELS[i]}
               </span>
               <div className="relative z-10 mt-2 h-px w-8 bg-white/30" />
