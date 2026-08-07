@@ -11,6 +11,7 @@ import {
   type BridgeType,
 } from "../lib/data";
 import { useLang } from "../lib/i18n";
+import { ActorCard } from "./actor-card";
 
 export type LayerFilter = Layer | "all";
 
@@ -147,9 +148,9 @@ export function Directory({ layer, onLayerChange, title, subtitle }: Props) {
       {filtered.length === 0 ? (
         <p className="py-12 text-center text-sm text-muted-foreground">{t("no_results")}</p>
       ) : (
-        <div className="border-t border-border">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {filtered.map((a) => (
-            <ActorRow key={a.id} actor={a} />
+            <ActorCard key={a.id} actor={a} />
           ))}
         </div>
       )}
@@ -205,37 +206,6 @@ export function Directory({ layer, onLayerChange, title, subtitle }: Props) {
     </div>
   );
 }
-
-function ActorRow({ actor }: { actor: Actor }) {
-  return (
-    <Link
-      to="/actors/$id"
-      params={{ id: actor.id }}
-      className="group block border-b border-border py-2.5 transition-colors"
-    >
-      <div className="flex items-baseline justify-between gap-4">
-        <div className="min-w-0">
-          <span className="font-serif text-base font-medium text-foreground group-hover:text-primary">
-            {actor.name_en}
-          </span>
-          {actor.name_zh && (
-            <span className="ml-1.5 font-zh text-sm text-muted-foreground">
-              {actor.name_zh}
-            </span>
-          )}
-        </div>
-        <span className="shrink-0 text-right text-xs text-muted-foreground">
-          {actor.category}
-        </span>
-      </div>
-      <p className="mt-0.5 line-clamp-2 text-sm text-muted-foreground">
-        {actor.overview}
-      </p>
-    </Link>
-  );
-}
-
-
 
 function ChipGroup({
   label,
