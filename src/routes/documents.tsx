@@ -5,7 +5,7 @@ import { useLang } from "../lib/i18n";
 export const Route = createFileRoute("/documents")({
   head: () => ({
     meta: [
-      { title: "Governance Documents — Sinograph 诠字" },
+      { title: "Sinograph 诠字" },
       {
         name: "description",
         content:

@@ -4,7 +4,7 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Sinograph 诠字" },
+      { title: "Sinograph 诠字" },
       { name: "description", content: "Methodology, sourcing discipline, and inclusion criteria for Sinograph 诠字, a living reference to China's AI governance ecosystem." },
       { property: "og:title", content: "About — Sinograph 诠字" },
       { property: "og:description", content: "Methodology, sourcing discipline, and inclusion criteria for Sinograph 诠字, a living reference to China's AI governance ecosystem." },

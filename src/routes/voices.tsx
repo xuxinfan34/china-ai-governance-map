@@ -10,7 +10,7 @@ export const Route = createFileRoute("/voices")({
   },
   head: () => ({
     meta: [
-      { title: "Voices — Sinograph 诠字" },
+      { title: "Sinograph 诠字" },
       {
         name: "description",
         content:
