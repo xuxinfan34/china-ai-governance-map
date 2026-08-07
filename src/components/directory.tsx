@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import Fuse from "fuse.js";
-import { Link } from "@tanstack/react-router";
+
 import {
   ACTORS,
   STAKEHOLDER_LABEL,
