@@ -59,7 +59,7 @@ function Page() {
 
 function DocumentCard({ doc, lang }: { doc: GovDocument; lang: "en" | "zh" }) {
   return (
-    <article className="rounded-lg border border-border bg-card p-5 transition-colors hover:border-primary/40">
+    <article className="border-t border-border pt-5">
       <div className="flex flex-wrap items-center gap-2">
         <span className="rounded-sm bg-secondary px-2 py-0.5 text-xs text-secondary-foreground">
           {doc.doc_type}

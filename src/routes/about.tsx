@@ -47,20 +47,20 @@ function Page() {
             Sinograph is a living reference to China's AI ecosystem — its institutions, relationships, governance discourse, and the cross-border interpreters who make it legible to international audiences.
           </p>
           <p className="leading-relaxed text-foreground/90">The project covers three layers:</p>
-          <div className="grid gap-4 sm:grid-cols-3">
-            <div className="space-y-2 rounded-lg border border-border p-4">
+          <div className="grid gap-8 sm:grid-cols-3">
+            <div className="space-y-2 border-t border-border pt-4">
               <h3 className="font-serif text-lg font-semibold text-primary">Structure</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 A curated directory of 90 actors across China's AI governance ecosystem — government agencies, research institutes, AI companies, industry associations, and international interpreters.
               </p>
             </div>
-            <div className="space-y-2 rounded-lg border border-border p-4">
+            <div className="space-y-2 border-t border-border pt-4">
               <h3 className="font-serif text-lg font-semibold text-primary">Discourse</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 The Voices section curates public statements from Chinese AI leaders — organized by topic, presented in original Chinese with English translations.
               </p>
             </div>
-            <div className="space-y-2 rounded-lg border border-border p-4">
+            <div className="space-y-2 border-t border-border pt-4">
               <h3 className="font-serif text-lg font-semibold text-primary">Signal</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 The Ecosystem Weekly Feed translates and curates AI governance discourse from 14 official Chinese WeChat accounts for English-speaking researchers and practitioners.

@@ -132,7 +132,7 @@ function groupBySpeaker(quotes: Quote[]): { speaker: string; affiliation: string
 
 function QuoteCard({ group }: { group: { speaker: string; affiliation: string; quotes: Quote[] } }) {
   return (
-    <article className="rounded-xl border border-border bg-card p-6 sm:p-8">
+    <article className="border-t border-border pt-6">
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="font-semibold leading-tight text-foreground">{group.speaker}</p>
