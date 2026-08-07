@@ -68,8 +68,8 @@ function WeeklyFeed() {
             <section key={week.label} className="">
               <button
                 onClick={() => setActiveWeek(isOpen ? null : i)}
-                className={`flex w-full items-center justify-between rounded-r-xl border border-l-[#9E2B25] border-border bg-[#FDFBF7] px-6 py-4 text-left shadow-sm transition-all duration-200 hover:bg-[#F5F0E8] hover:shadow-md ${
-                  isOpen ? "border-l-[6px] bg-[#F5F0E8]" : "border-l-4"
+                className={`flex w-full items-center justify-between border-b border-l-[#9E2B25] border-b-border py-4 pl-5 pr-1 text-left transition-all duration-200 hover:text-primary ${
+                  isOpen ? "border-l-[6px]" : "border-l-4"
                 }`}
                 aria-expanded={isOpen}
               >
@@ -113,9 +113,9 @@ function WeeklyFeed() {
 function WeeklyCard({ item }: { item: WeeklyFeedItem }) {
   const sourceActor = findActorByName(item.source);
   const badgeClass =
-    "rounded-full border border-border/60 bg-background/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider";
+    "border-b border-border/60 pb-0.5 text-[10px] font-medium uppercase tracking-wider";
   return (
-    <article className="rounded-xl border border-border bg-card p-6 sm:p-8">
+    <article className="border-t border-border pt-6">
       <div className="flex items-start justify-between gap-4">
         {sourceActor ? (
           <Link
