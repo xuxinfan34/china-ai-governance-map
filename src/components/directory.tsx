@@ -211,7 +211,7 @@ function ActorRow({ actor }: { actor: Actor }) {
     <Link
       to="/actors/$id"
       params={{ id: actor.id }}
-      className="group block border-b border-border py-2.5 transition-colors hover:bg-muted/40"
+      className="group block border-b border-border py-2.5 transition-colors"
     >
       <div className="flex items-baseline justify-between gap-4">
         <div className="min-w-0">
