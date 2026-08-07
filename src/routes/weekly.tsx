@@ -8,7 +8,7 @@ import { findActorByName } from "../lib/crosslinks";
 export const Route = createFileRoute("/weekly")({
   head: () => ({
     meta: [
-      { title: "Ecosystem Weekly Feed — Sinograph 诠字" },
+      { title: "Sinograph 诠字" },
       {
         name: "description",
         content:

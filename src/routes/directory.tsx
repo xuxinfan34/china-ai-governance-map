@@ -9,7 +9,7 @@ export const Route = createFileRoute("/directory")({
   },
   head: () => ({
     meta: [
-      { title: "Directory — Sinograph 诠字" },
+      { title: "Sinograph 诠字" },
       {
         name: "description",
         content:
