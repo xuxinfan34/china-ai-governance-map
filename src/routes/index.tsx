@@ -118,9 +118,9 @@ function Index() {
             <Link
               key={item.titleEn}
               to="/weekly"
-              className="group rounded-xl border border-border bg-card p-5 transition-all hover:border-primary/50 hover:shadow-sm"
+              className="group border-t border-border pt-5 transition-colors"
             >
-              <span className="inline-block rounded border border-border px-2 py-0.5 text-[11px] uppercase tracking-wider text-muted-foreground">
+              <span className="inline-block text-[11px] uppercase tracking-wider text-muted-foreground">
                 {item.source}
               </span>
               <h3 className="mt-3 font-serif text-lg font-semibold leading-snug text-foreground group-hover:text-primary">
@@ -168,7 +168,7 @@ function QuietCard({ to, title, body }: { to: string; title: string; body: strin
   return (
     <Link
       to={to}
-      className="group rounded-lg border border-border bg-background p-5 transition-colors hover:border-primary/50"
+      className="group border-t border-border pt-4 transition-colors"
     >
       <p className="font-serif text-lg font-semibold text-foreground group-hover:text-primary">
         {title}

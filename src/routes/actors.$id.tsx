@@ -64,24 +64,22 @@ function Profile() {
         ← {t("back")}
       </Link>
 
-      <header
-        className="relative mt-6 rounded-lg border border-border p-8"
-        style={{ backgroundColor: bg }}
-      >
-        <div className="absolute right-6 top-6">
+      <header className="relative mt-6 border-b border-border pb-8">
+        <div className="absolute right-0 top-0">
           <span
-            className="rounded-full border border-border/60 bg-background/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide"
+            className="text-[10px] font-medium uppercase tracking-wide"
             style={{ color: actor.layer === "ecosystem" ? "#9E2B25" : "#2A2A2A" }}
           >
             {actor.layer === "ecosystem" ? t("badge_ecosystem") : t("badge_bridge")}
           </span>
         </div>
         <div className="flex flex-wrap items-center gap-2 pr-10">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background/70 px-2 py-0.5 text-xs font-medium text-foreground/80">
+          <span className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground/80">
             <span className="inline-block h-2 w-2 rounded-full" style={{ backgroundColor: dot }} />
             {typeLabel}
           </span>
-          <span className="rounded-sm bg-secondary px-2 py-0.5 text-xs text-secondary-foreground">
+          <span className="text-xs text-muted-foreground">
+            ·{" "}
             {actor.category}
           </span>
         </div>
@@ -104,9 +102,9 @@ function Profile() {
 
       {actor.leadership.length > 0 && (
         <Section title={t("leadership")}>
-          <ul className="divide-y divide-border rounded-md border border-border">
+          <ul className="divide-y divide-border border-t border-border">
             {actor.leadership.map((l: { name: string; role: string }) => (
-              <li key={l.name} className="flex justify-between px-4 py-3">
+              <li key={l.name} className="flex justify-between py-3">
                 <span className="font-serif text-foreground">{l.name}</span>
                 <span className="text-sm text-muted-foreground">{l.role}</span>
               </li>
@@ -143,9 +141,9 @@ function Profile() {
 
       {docs.length > 0 && (
         <Section title={t("issued_documents")}>
-          <ul className="divide-y divide-border rounded-md border border-border">
+          <ul className="divide-y divide-border border-t border-border">
             {docs.map((d) => (
-              <li key={d.id} className="flex flex-col gap-1 px-4 py-3">
+              <li key={d.id} className="flex flex-col gap-1 py-3">
                 <div className="flex items-baseline justify-between gap-3">
                   <a href={d.official_url} target="_blank" rel="noopener noreferrer" className="font-serif text-foreground hover:text-primary">
                     {d.title_en}
@@ -161,7 +159,7 @@ function Profile() {
 
       {rels.length > 0 && (
         <Section title={t("connections")}>
-          <ul className="divide-y divide-border rounded-md border border-border">
+          <ul className="divide-y divide-border border-t border-border">
             {[...rels]
               .sort((a, b) => a.category.localeCompare(b.category))
               .map((r) => {
@@ -169,7 +167,7 @@ function Profile() {
                 const other = ACTORS.find((a) => a.id === otherId);
                 if (!other) return null;
                 return (
-                  <li key={r.id} className="flex flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+                  <li key={r.id} className="flex flex-col gap-2 py-3 sm:flex-row sm:items-center sm:justify-between">
                     <div className="flex flex-wrap items-center gap-2">
                       <Link
                         to="/actors/$id"
@@ -181,13 +179,13 @@ function Profile() {
                       {other.name_zh && (
                         <span className="font-zh text-xs text-muted-foreground">{other.name_zh}</span>
                       )}
-                      <span className="rounded-sm bg-secondary px-2 py-0.5 text-xs text-secondary-foreground">
+                      <span className="text-xs text-muted-foreground">
                         {r.type}
                       </span>
                       <ConfidenceBadge c={r.confidence} />
                     </div>
                     <div className="flex shrink-0 items-center gap-3">
-                      <span className="rounded-full border border-border bg-background px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+                      <span className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
                         {r.category}
                       </span>
                       {r.evidence_url && (
@@ -198,7 +196,7 @@ function Profile() {
                           className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
                         >
                           {t("evidence")}
-                          <span className="rounded border border-border bg-background px-1 text-[10px] uppercase tracking-wider text-muted-foreground">
+                          <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
                             {r.evidence_lang === "Chinese" ? "ZH" : "EN"}
                           </span>
                         </a>
@@ -213,9 +211,9 @@ function Profile() {
 
       {voiceRefs.length > 0 && (
         <Section title="Quoted in Voices">
-          <ul className="flex flex-col gap-3">
+          <ul className="flex flex-col gap-5">
             {voiceRefs.map(({ quote, topicIndex, topicTitle }, i) => (
-              <li key={`${topicIndex}-${i}`} className="rounded-md border border-border bg-card p-4">
+              <li key={`${topicIndex}-${i}`} className="border-t border-border pt-4">
                 <p className="text-xs font-medium uppercase tracking-wider text-primary">
                   {topicTitle}
                 </p>
@@ -242,7 +240,7 @@ function Profile() {
 
       {feedItems.length > 0 && (
         <Section title="In the Weekly Feed">
-          <div className="rounded-md border border-border bg-card p-4">
+          <div className="border-t border-border pt-4">
             <p className="font-serif text-base leading-snug text-foreground">
               {feedItems[0].titleEn}
             </p>
